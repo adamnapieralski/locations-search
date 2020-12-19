@@ -1,7 +1,9 @@
+
+from pathlib import Path
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = ')0d3=o64e*@r&4v_&dqrlcp6$cv4i6cy3vnzzk@r)f%cw@b#^o'
@@ -18,7 +20,7 @@ ROOT_URLCONF = 'webapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'webapp/templates')],        
+        'DIRS': [os.path.join(BASE_DIR, 'client/app')],        
     },
 ]
 
@@ -42,7 +44,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'webapp/static'),    
+    os.path.join(BASE_DIR, 'client'),
 ]
 
-STATIC_URL = '/static/'
+STATIC_URL = os.path.join(BASE_DIR, 'client/')
+
