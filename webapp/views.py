@@ -1,8 +1,8 @@
-from django.shortcuts import render
 import os
+import json
 import folium
 import overpass
-import json
+from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 
 default_location = [51.782065, 19.459279]
@@ -18,14 +18,6 @@ def index(request):
 
     if location is None:
         location = default_location
-
-    print('cookies', request.COOKIES)    
-    print('index requested', location)
-
-    
-    # shp_dir = os.path.join(os.getcwd(),'media','shp')
-
-    # location = get_client_location(request)
 
     # folium
     m = folium.Map(location=location,zoom_start=13)

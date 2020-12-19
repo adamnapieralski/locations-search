@@ -30,7 +30,6 @@ angular.module('mainController', ['ngCookies'])
           }
         } else if($cookies["location"] != "none")  {          
           loc = $cookies["location"].split('_')
-          console.log(loc)
           $scope.location.latitude = parseFloat(loc[0])
           $scope.location.longitude = parseFloat(loc[1])
         }
