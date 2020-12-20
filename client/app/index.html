@@ -12,13 +12,21 @@
     <div class="col-lg-3" ng-controller="mainController" ng-init="init()">
       <h2 class="mt-2">Control panel</h2>
       {% verbatim %}
-      <form>
+      <form ng-submit="searchForLocations()">
         <div class="form-group">
           <label for="location">Location</label></br>
-          <input type="number" step="{{ location.step }}" id="latitude" ng-model="location.latitude">
-          <input type="number" step="{{ location.step }}" id="longitude" ng-model="location.longitude">
+          <input type="number" step="{{ coordsSettings.step }}" id="latitude" ng-model="formData.coords.latitude">
+          <input type="number" step="{{ coordsSettings.step }}" id="longitude" ng-model="formData.coords.longitude"></br>
+          <label for="paramSelect1"> Parameter key: </label>
+          <select name="paramSelect1" id="paramSelect1" ng-model="formData.mainObject.param.key">
+            <option ng-repeat="option in objectParams" value="{{option.id}}">{{option.name}}</option>
+          </select>
+          <label for="valueSelect1"> value: </label>
+          <select name="valueSelect1" id="valueSelect1" ng-model="formData.mainObject.param.value">
+            <option ng-repeat="option in objectParams[formData.mainObject.param.key].values" value="{{option.id}}">{{option.name}}</option>
+          </select>
         </div>        
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Search for locations</button>
       </form>
       {% endverbatim %}
     </div>
