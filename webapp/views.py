@@ -4,7 +4,7 @@ import folium
 import overpass
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, JsonResponse
-from . import objectparams
+from . import objectparams, locationsearch
 import time
 
 default_location = [51.782065, 19.459279]
@@ -42,10 +42,17 @@ def index(request):
     return render(request, 'index.html', context)
 
 def location_search(request):
-    if request.method == 'POST':
-        body = json.loads(request.body.decode('utf-8'))
-        print(body)
     print('got request')
+    if request.method == 'POST':
+        body = json.loads(request.body)
+        print(body)
+        geo_response = locationsearch.process_request(body)
+        # context = { 'my_map': result_map }
+        # print(context)
+        # return render(request, 'index.html', context)
+        return JsonResponse(geo_response, safe=False)
+    else:
+        return HttpResponseNotFound('Invalid request')
     return render(request, 'index.html')
 
 def get_object_params(request):

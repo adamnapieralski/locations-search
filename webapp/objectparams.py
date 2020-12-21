@@ -22,3 +22,10 @@ object_params = [
         ]
     }
 ]
+
+def get_key_name(key_id):
+    return next((k for k in object_params if k['id'] == key_id))['name']
+
+def get_value_name(key_id, value_id):
+    key_obj = next((k for k in object_params if k['id'] == key_id))
+    return next((v for v in key_obj['values'] if v['id'] == value_id))['name']

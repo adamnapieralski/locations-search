@@ -17,22 +17,28 @@
           <label for="location">Location</label></br>
           <input type="number" step="{{ coordsSettings.step }}" id="latitude" ng-model="formData.coords.latitude">
           <input type="number" step="{{ coordsSettings.step }}" id="longitude" ng-model="formData.coords.longitude"></br>
-          <label for="paramSelect1"> Parameter key: </label>
-          <select name="paramSelect1" id="paramSelect1" ng-model="formData.mainObject.param.key">
+          <label for="paramSelect0"> Parameter key: </label>
+          <select name="paramSelect0" id="paramSelect0" ng-model="formData.mainObject.params[0].key">
             <option ng-repeat="option in objectParams" value="{{option.id}}">{{option.name}}</option>
           </select>
-          <label for="valueSelect1"> value: </label>
-          <select name="valueSelect1" id="valueSelect1" ng-model="formData.mainObject.param.value">
-            <option ng-repeat="option in objectParams[formData.mainObject.param.key].values" value="{{option.id}}">{{option.name}}</option>
-          </select>
+          <label for="valueSelect0"> value: </label>
+          <select name="valueSelect0" id="valueSelect0" ng-model="formData.mainObject.params[0].value">
+            <option ng-repeat="option in objectParams[formData.mainObject.params[0].key].values" value="{{option.id}}">{{option.name}}</option>
+          </select></br>
+          <label for="distance">Max distance:</label>
+          <input type="number" step="1" min="1" id="distance" ng-model="formData.mainObject.maxDistance">
+          <label for="timeReach">Time reach:</label>
+          <input type="checkbox" id="timeReach" name="Time reach" ng-model="formData.mainObject.timeReachOn">
+
         </div>        
         <button type="submit" class="btn btn-primary">Search for locations</button>
       </form>
       {% endverbatim %}
     </div>
-    <div class="col-lg-9 text-center">
+    <!-- <div class="col-lg-9 text-center">
       {{ my_map|safe }}
-    </div>
+    </div> -->
+    <leaflet lf-center="center" height="480px" width="640px"></leaflet>
   </div>
 </div>
 

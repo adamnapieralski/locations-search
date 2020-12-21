@@ -14,10 +14,9 @@ angular.module('mainController', ['ngCookies'])
           },
           mainObject: {
             maxDistance: 1000, // meters or seconds
-            param: {
-              key: 0,
-              value: 0
-            },
+            params: [
+              { key: 0, value: 0 },
+            ],
             timeReachOn: false,
           },
           relativeObject: {
