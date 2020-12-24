@@ -52,7 +52,9 @@ class SearchForm extends React.Component {
       relativeObject: {
         applicable: false,
         maxDistance: 500,
-        params: [],
+        params: [
+          { key: 0, value: 0 },
+        ],
       },
     }
   }
@@ -88,35 +90,17 @@ class SearchForm extends React.Component {
     this.onLocationCoordinatesChange({ longitude: parseFloat(event.target.value), latitude: parseFloat(latitude) });
   }
 
-  // onKeyChange = (event) => {
-  //   const newParams = [...this.state.mainObject.params];
-  //   newParams[0] = { ...newParams[0], key: event.target.selectedIndex };
-  //   this.setState((state) => ({
-  //     ...state,
-  //     mainObject: {
-  //       ...state.mainObject,
-  //       params: newParams,
-  //     },
-  //   }));
-  // }
-
-  // onValueChange = (event) => {
-  //   const newParams = [...this.state.mainObject.params];
-  //   newParams[0] = { ...newParams[0], value: event.target.selectedIndex };
-  //   this.setState((state) => ({
-  //     ...state,
-  //     mainObject: {
-  //       ...state.mainObject,
-  //       params: newParams,
-  //     },
-  //   }));
-  // }
-
   onMainDistanceChange = (event) => {
     const { mainObject } = this.state;
-    const newMainObject = { ...mainObject, maxDistance: event.target.value };
+    const newMainObject = { ...mainObject, maxDistance: parseInt(event.target.value, 10) };
     this.setState({ mainObject: newMainObject });
-  }
+  };
+
+  onRelativeDistanceChange = (event) => {
+    const { relativeObject } = this.state;
+    const newRelativeObject = { ...relativeObject, maxDistance: parseInt(event.target.value, 10) };
+    this.setState({ relativeObject: newRelativeObject });
+  };
 
   onTimeReachChange = (event) => {
     const { mainObject } = this.state;
@@ -124,19 +108,37 @@ class SearchForm extends React.Component {
     this.setState({ mainObject: newMainObject });
   }
 
-  // createKeyOptions = () => {
-  //   const { objectParams } = this.state;
-  //   const keys = objectParams.map((key) => <option id={key.id} key={key.id}>{key.name}</option>);
-  //   return keys;
-  // }
+  onRelativeObjectApplicableChange = (event) => {
+    const { relativeObject } = this.state;
+    const newRelativeObject = { ...relativeObject, applicable: event.target.checked };
+    this.setState({ relativeObject: newRelativeObject });
+  }
 
-  // createValueOptions = () => {
-  //   const { mainObject: { params }, objectParams } = this.state;
+  createRelativeObjectForm = () => {
+    const { relativeObject: { applicable, maxDistance } } = this.state;
 
-  //   const values = objectParams.find((key) => key.id === params[0].key)?.values
-  //     .map((value) => <option id={value.id} key={value.id}>{value.name}</option>);
-  //   return values;
-  // }
+    if (applicable) {
+      return (
+        <Form.Group>
+          <Form.Label>Parameters</Form.Label>
+          {this.createParamsRows('relativeObject')}
+          <Row>
+            <Button variant="outline-primary" onClick={() => this.addParamRow('relativeObject')}>Add</Button>
+            <Button variant="outline-danger" onClick={() => this.removeParamRow('relativeObject')}>Remove</Button>
+          </Row>
+          <Form.Group as={Row}>
+            <Col>
+              <Form.Label>Distance:</Form.Label>
+            </Col>
+            <Col>
+              <Form.Control type="number" min="0" step="1" value={maxDistance} onChange={this.onRelativeDistanceChange} />
+            </Col>
+          </Form.Group>
+        </Form.Group>
+      );
+    }
+    return null;
+  }
 
   createParamsRows = (object) => {
     const { objectParams, [object]: { params } } = this.state;
@@ -166,9 +168,9 @@ class SearchForm extends React.Component {
   removeParamRow = (object) => {
     this.setState((state) => {
       const currObject = state[object];
-      if (currObject.params.length <= 0) {
-        return state;
-      }
+
+      if (currObject.params.length <= 1) return state;
+
       const newObject = {
         ...currObject,
         params: currObject.params.slice(0, -1),
@@ -195,7 +197,6 @@ class SearchForm extends React.Component {
     };
   };
 
-
   handleSubmit = async (event) => {
     event.preventDefault();
     const { mainObject, relativeObject } = this.state;
@@ -210,7 +211,7 @@ class SearchForm extends React.Component {
 
   render() {
     const { coords: { latitude, longitude } } = this.props;
-    const { mainObject: { maxDistance, timeReachOn } } = this.state;
+    const { mainObject: { maxDistance, timeReachOn }, relativeObject: { applicable } } = this.state;
 
     console.log('state', this.state);
     return (
@@ -229,30 +230,11 @@ class SearchForm extends React.Component {
         <Form.Group>
           <Form.Label>Parameters</Form.Label>
           {this.createParamsRows('mainObject')}
-          {/* <ParametersRow
-            objectParams={this.state.objectParams}
-            params={this.state.mainObject.params[0]}
-            handleParamsChange={this.handleParamsChange('mainObject', 0)}
-          /> */}
-          {/* <Form.Group as={Row}>
-            <Form.Label>Key:</Form.Label>
-            <Col>
-              <Form.Control as="select" onChange={this.onKeyChange}>
-                {this.createKeyOptions()}
-              </Form.Control>
-            </Col>
-            <Form.Label>Value:</Form.Label>
-            <Col>
-              <Form.Control as="select" onChange={this.onValueChange} placeholder="Value">
-                {this.createValueOptions()}
-              </Form.Control>
-            </Col>
-          </Form.Group> */}
+          <Row>
+            <Button variant="outline-primary" onClick={() => this.addParamRow('mainObject')}>Add</Button>
+            <Button variant="outline-danger" onClick={() => this.removeParamRow('mainObject')}>Remove</Button>
+          </Row>
         </Form.Group>
-        <Row>
-          <Button variant="outline-primary" onClick={() => this.addParamRow('mainObject')}>Add</Button>
-          <Button variant="outline-danger" onClick={() => this.removeParamRow('mainObject')}>Remove</Button>
-        </Row>
 
         <Form.Group as={Row}>
           <Form.Label>Distance:</Form.Label>
@@ -263,6 +245,10 @@ class SearchForm extends React.Component {
             <Form.Check type="checkbox" label="Time reach" checked={timeReachOn} onChange={this.onTimeReachChange} />
           </Col>
         </Form.Group>
+        <Form.Group>
+          <Form.Check type="checkbox" label="Relative object" checked={applicable} onChange={this.onRelativeObjectApplicableChange} />
+        </Form.Group>
+        {this.createRelativeObjectForm()}
         <Button variant="primary" type="submit">
           Submit
         </Button>
