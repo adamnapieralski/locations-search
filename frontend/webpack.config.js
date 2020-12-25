@@ -13,7 +13,7 @@ module.exports = {
   cache: true,
   devtool: 'cheap-module-eval-source-map',
   entry: {
-    main: ['@babel/polyfill', path.join(__dirname, 'src/index.jsx')],
+    main: ['@babel/polyfill', path.join(__dirname, 'src/App.jsx')],
   },
   resolve: {
     extensions: ['.js', '.jsx'],

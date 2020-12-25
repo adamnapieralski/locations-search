@@ -1,7 +1,11 @@
 import React from 'react';
-import { Form, Button, Row, Col } from 'react-bootstrap';
+import {
+  Form,
+  Button,
+  Row,
+  Col,
+} from 'react-bootstrap';
 import ParametersRow from './ParametersRow';
-
 import ErrorBoundary from '../ErrorBoundary/index';
 
 const baseURL = process.env.ENDPOINT;
@@ -45,7 +49,6 @@ class SearchForm extends React.Component {
         maxDistance: 1000, // meters or seconds
         params: [
           { key: 0, value: 0 },
-          { key: 0, value: 0 },
         ],
         timeReachOn: false,
       },
@@ -56,7 +59,7 @@ class SearchForm extends React.Component {
           { key: 0, value: 0 },
         ],
       },
-    }
+    };
   }
 
   async componentDidMount() {
@@ -128,7 +131,7 @@ class SearchForm extends React.Component {
           </Row>
           <Form.Group as={Row}>
             <Col>
-              <Form.Label>Distance:</Form.Label>
+              <Form.Label>Distance [m]:</Form.Label>
             </Col>
             <Col>
               <Form.Control type="number" min="0" step="1" value={maxDistance} onChange={this.onRelativeDistanceChange} />
@@ -237,7 +240,10 @@ class SearchForm extends React.Component {
         </Form.Group>
 
         <Form.Group as={Row}>
-          <Form.Label>Distance:</Form.Label>
+          <Form.Label>
+            Distance
+            { (() => (timeReachOn ? ' [s]:' : ' [m]:'))() }
+          </Form.Label>
           <Col>
             <Form.Control type="number" min="0" step="1" value={maxDistance} onChange={this.onMainDistanceChange} />
           </Col>

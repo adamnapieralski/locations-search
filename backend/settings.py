@@ -25,12 +25,19 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'urls'
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'client/app')],
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
     },
-]
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+}
 
 WSGI_APPLICATION = 'wsgi.application'
 

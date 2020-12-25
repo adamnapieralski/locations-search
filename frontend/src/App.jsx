@@ -27,13 +27,9 @@ class App extends React.Component {
       },
       geojson: {
         type: 'FeatureCollection',
-        features: [
-          {type: "Feature", id: 283321511, geometry: {type: "Point", coordinates: [19.492405, 51.760484]}, properties: {}}
-        ],
+        features: [],
       },
     };
-
-
   }
 
   handleGeolocationChange = (coords) => {
