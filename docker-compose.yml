@@ -1,0 +1,30 @@
+
+version: "3"
+services:
+    backend:
+        build: ./backend
+        expose:
+            - ${BACKEND_PORT}
+        environment:
+            PORT: ${BACKEND_PORT}
+        ports:
+            - ${BACKEND_PORT}:${BACKEND_PORT}
+        volumes:
+            - ./backend:/usr/src/location-search/backend
+        command: python manage.py runserver 0.0.0.0:${BACKEND_PORT}
+
+    frontend:
+        build: ./frontend
+        expose:
+            - ${FRONTEND_PORT}
+        environment:
+            HOST: ${FRONTEND_HOST}
+            PORT: ${FRONTEND_PORT}
+            ENDPOINT: ${BACKEND_ENDPOINT}
+        ports:
+            - ${FRONTEND_PORT}:${FRONTEND_PORT}
+        volumes:
+            - ./frontend/src:/usr/src/location-search/frontend/src
+        links:
+            - backend
+        command: npm start

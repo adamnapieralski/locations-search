@@ -1,8 +1,8 @@
-from django.conf.urls import url
+from django.urls import path
 from . import views
-from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    url(r'^ajax/(?P<ajax_request>\w+)/$', csrf_exempt(views.ajax), name='ajax')
+    path('', views.index, name='index'),
+    path('location-search', views.location_search, name='location_search'),
+    path('api/object-params', views.get_object_params, name='get_object_params')
 ]

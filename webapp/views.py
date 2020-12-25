@@ -3,7 +3,9 @@ import json
 import folium
 import overpass
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound, JsonResponse
+from . import objectparams, locationsearch
+import time
 
 default_location = [51.782065, 19.459279]
 
@@ -39,5 +41,25 @@ def index(request):
     ## rendering
     return render(request, 'index.html', context)
 
-def ajax(request, ajax_request):    
-    return HttpResponseNotFound('Cannot handle ajax request')
+def location_search(request):
+    print('got request')
+    if request.method == 'POST':
+        body = json.loads(request.body)
+        print(body)
+        geo_response = locationsearch.process_request(body)
+        # context = { 'my_map': result_map }
+        # print(context)
+        # return render(request, 'index.html', context)
+        return JsonResponse(geo_response, safe=False)
+    else:
+        return HttpResponseNotFound('Invalid request')
+    return render(request, 'index.html')
+
+def get_object_params(request):
+    if request.method == 'GET':
+        return JsonResponse(objectparams.object_params, safe=False)
+    else:
+        return HttpResponseNotFound('Invalid request')
+
+# def ajax(request, ajax_request):    
+#     return HttpResponseNotFound('Cannot handle ajax request')
