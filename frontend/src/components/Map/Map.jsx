@@ -2,10 +2,12 @@ import React from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet/dist/leaflet';
-import { MapContainer, TileLayer, GeoJSON, useMap} from 'react-leaflet';
+import { MapContainer, TileLayer, GeoJSON, Marker, Popup, useMap} from 'react-leaflet';
 
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+
+import positionIcon from '../../public/img/position-marker.png'
 
 // manually define marker icon due to some import problem
 const DefaultIcon = L.icon({
@@ -14,10 +16,23 @@ const DefaultIcon = L.icon({
 });
 L.Marker.prototype.options.icon = DefaultIcon;
 
+const currentPositionIcon = L.icon({
+  iconUrl: positionIcon,
+  shadowUrl: iconShadow,
+});
+
 function ChangeView({ center }) {
   const map = useMap();
   map.setView(center);
   return null;
+}
+
+function showPopup(feature, layer) {
+  if(feature.properties.name){
+    layer.bindPopup(feature.properties.name)
+  } else if(feature.properties.amenity){
+    layer.bindPopup(feature.properties.amenity)
+  }
 }
 
 class Map extends React.Component {
@@ -38,7 +53,10 @@ class Map extends React.Component {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <GeoJSON key={Math.random().toString()} data={geojson} />
+        <Marker position={[latitude, longitude]} icon={currentPositionIcon}>
+          <Popup> Your current position </Popup>
+        </Marker>
+        <GeoJSON key={Math.random().toString()} data={geojson} onEachFeature={showPopup}/>
       </MapContainer>
     );
   }

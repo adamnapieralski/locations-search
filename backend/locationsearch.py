@@ -39,7 +39,9 @@ def process_request(payload):
         query = get_ovp_main_object_search_query(main_object, coords, poly_coords)
 
     logger.info(query)
-    return ovp_api.get(query)
+
+    res = ovp_api.get(query, verbosity='geom')
+    return res
 
 def get_opr_isochrone_poly_coords(coords, maxDistance):
     params = {
@@ -104,7 +106,6 @@ def get_ovp_main_object_search_query(main_object_data, coords, poly_coords=None)
     # search by isochrone poly coords
     else:
         query += make_poly_str(poly_coords) + ';'
-    query += '(._;>;);out;'
 
     return query
 
@@ -130,5 +131,5 @@ def get_ovp_main_relative_object_search_query(main_object_data, relative_object_
             make_around_line_str(poly_coords, relative_object_data['maxDistance'])
         )
 
-    query += 'nwr.main(around.relative:{});(._;>;);out;'.format(relative_object_data['maxDistance'])
+    query += 'nwr.main(around.relative:{});'.format(relative_object_data['maxDistance'])
     return query
