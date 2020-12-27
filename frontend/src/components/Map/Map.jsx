@@ -13,12 +13,16 @@ import positionIcon from '../../public/img/position-marker.png'
 const DefaultIcon = L.icon({
   iconUrl: icon,
   shadowUrl: iconShadow,
+  iconAnchor: [22, 41],
+  popupAnchor: [-10, -41]
 });
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const currentPositionIcon = L.icon({
   iconUrl: positionIcon,
   shadowUrl: iconShadow,
+  iconAnchor: [22, 41],
+  popupAnchor: [-10, -41]
 });
 
 function ChangeView({ center }) {
