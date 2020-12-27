@@ -53,6 +53,17 @@ function ErrorBanner(props) {
   );
 }
 
+function Spinner(props) {
+  if(!props.active){
+    return null;
+  }
+  return (
+    <div className="spinner-border" role="status">
+      <span className="sr-only">Loading...</span>
+    </div>
+  );
+}
+
 class SearchForm extends React.Component {
   constructor(props) {
     super(props);
@@ -74,6 +85,7 @@ class SearchForm extends React.Component {
         ],
       },
       errorMsg: '',
+      waitingForResponse: false,
     };
   }
 
@@ -132,7 +144,11 @@ class SearchForm extends React.Component {
     this.setState({ relativeObject: newRelativeObject });
   }
 
-  onErrorStateChange = (msg) => {
+  onStateChange = (isWaiting) => {
+    this.setState({ waitingForResponse: isWaiting});
+  }
+
+  onErrorMsgChange = (msg) => {
     this.setState({ errorMsg: msg});
   }
 
@@ -223,6 +239,7 @@ class SearchForm extends React.Component {
     event.preventDefault();
     const { mainObject, relativeObject } = this.state;
     const { handleGeojsonChange, coords } = this.props;
+    this.onStateChange(true);
     const response = await postLocationSearch({
       mainObject,
       relativeObject,
@@ -230,10 +247,12 @@ class SearchForm extends React.Component {
     });
     console.log(response)
     if(response.error){
-      this.onErrorStateChange(response.error)
+      this.onErrorMsgChange(response.error);
+      this.onStateChange(false);
       handleGeojsonChange(emptyGeoJSON());
     } else {
-      this.onErrorStateChange('')
+      this.onErrorMsgChange('');
+      this.onStateChange(false);
       handleGeojsonChange(response);
     }
   }
@@ -281,9 +300,12 @@ class SearchForm extends React.Component {
           <Form.Check type="checkbox" label="Relative object" checked={applicable} onChange={this.onRelativeObjectApplicableChange} />
         </Form.Group>
         {this.createRelativeObjectForm()}
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
+        <div className="row">
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+          <Spinner active={this.state.waitingForResponse}/>
+        </div>
         <ErrorBanner msg={this.state.errorMsg} />
       </Form>
     );
