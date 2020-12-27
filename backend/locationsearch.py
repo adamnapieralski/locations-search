@@ -1,10 +1,12 @@
 import json
-import folium
+import copy
+import logging
+
+import geojson
 import overpass
 from openrouteservice import client
 from itertools import groupby
 import objectparams as opms
-import logging
 
 logger = logging.getLogger('locationsearch')
 
@@ -41,7 +43,7 @@ def process_request(payload):
     logger.info(query)
 
     try:
-        return ovp_api.get(query, verbosity='geom')
+        return process_overpass_data(ovp_api.get(query, verbosity='geom'))
     except overpass.errors.ServerRuntimeError as e:
         msg = e.__doc__ + ". " + e.message
         print('ServerRuntimeError', msg)
@@ -144,3 +146,22 @@ def get_ovp_main_relative_object_search_query(main_object_data, relative_object_
 
     query += 'nwr.main(around.relative:{});'.format(relative_object_data['maxDistance'])
     return query
+
+def process_overpass_data(data):
+    for item in data.items():
+        if(item[0] == 'features'):
+            for feature in item[1]:
+                if feature['geometry']['type'] == 'LineString':
+                    coords = feature['geometry']['coordinates']
+                    new_feature = copy.deepcopy(feature)
+                    new_feature['geometry']['type'] = 'Point'
+                    new_feature['geometry']['coordinates'] = center_coordinates(coords)
+                    item[1].append(new_feature)
+    return data
+
+def center_coordinates(coordinates):
+    x, y = 0, 0
+    for c in coordinates:
+        x += c[0]
+        y += c[1]
+    return [x/len(coordinates), y/(len(coordinates))]
