@@ -144,7 +144,7 @@ class SearchForm extends React.Component {
     this.setState({ relativeObject: newRelativeObject });
   }
 
-  onStateChange = (isWaiting) => {
+  onWaitingForResponseChange = (isWaiting) => {
     this.setState({ waitingForResponse: isWaiting});
   }
 
@@ -247,20 +247,20 @@ class SearchForm extends React.Component {
     event.preventDefault();
     const { mainObject, relativeObject } = this.state;
     const { handleGeojsonChange, coords } = this.props;
-    this.onStateChange(true);
+    this.onWaitingForResponseChange(true);
     const response = await postLocationSearch({
       mainObject,
       relativeObject,
       coords,
     });
-    console.log(response)
+
     if(response.error){
       this.onErrorMsgChange(response.error);
-      this.onStateChange(false);
+      this.onWaitingForResponseChange(false);
       handleGeojsonChange(emptyGeoJSON());
     } else {
       this.onErrorMsgChange('');
-      this.onStateChange(false);
+      this.onWaitingForResponseChange(false);
       handleGeojsonChange(response);
     }
   }
