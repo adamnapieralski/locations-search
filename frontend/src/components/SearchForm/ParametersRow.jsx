@@ -26,19 +26,25 @@ function ParametersRow({ objectParams, params, handleParamsChange }) {
   };
 
   return (
-    <Form.Group as={Row}>
-      <Form.Label>Key:</Form.Label>
-      <Col>
-        <Form.Control as="select" name="key" defaultValue={keyName} onChange={onParamsChange}>
-          {createKeyOptions()}
-        </Form.Control>
-      </Col>
-      <Form.Label>Value:</Form.Label>
-      <Col>
-        <Form.Control as="select" name="value" defaultValue={valueName} onChange={onParamsChange}>
-          {createValueOptions()}
-        </Form.Control>
-      </Col>
+    <Form.Group>
+      <Form.Row className="align-items-center">
+        <Col xs="auto">
+          <Form.Label>Key</Form.Label>
+        </Col>
+        <Col>
+          <Form.Control as="select" name="key" defaultValue={keyName} onChange={onParamsChange}>
+            {createKeyOptions()}
+          </Form.Control>
+        </Col>
+        <Col xs="auto">
+          <Form.Label>Value</Form.Label>
+        </Col>
+        <Col>
+          <Form.Control as="select" name="value" defaultValue={valueName} onChange={onParamsChange}>
+            {createValueOptions()}
+          </Form.Control>
+        </Col>
+      </Form.Row>
     </Form.Group>
   );
 }
