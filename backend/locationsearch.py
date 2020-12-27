@@ -40,8 +40,19 @@ def process_request(payload):
 
     logger.info(query)
 
-    res = ovp_api.get(query, verbosity='geom')
-    return res
+    try:
+        return ovp_api.get(query, verbosity='geom')
+    except overpass.errors.ServerRuntimeError as e:
+        msg = e.__doc__ + ". " + e.message
+        print('ServerRuntimeError', msg)
+    except overpass.errors.UnknownOverpassError as e:
+        msg = e.message
+        print('UnknownOverpassError', msg)
+    except overpass.errors.OverpassError as e:
+        msg = e.__doc__
+        print('OverpassError', msg)
+
+    return {'error': msg}
 
 def get_opr_isochrone_poly_coords(coords, maxDistance):
     params = {

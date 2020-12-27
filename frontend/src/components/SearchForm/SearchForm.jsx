@@ -35,9 +35,23 @@ const postLocationSearch = async (data) => {
     return response.json();
   } catch (error) {
     console.log(error);
+    return { error: error }
   }
-  return {};
 };
+
+function emptyGeoJSON() {
+  return {
+    type: 'FeatureCollection',
+    features: [],
+  };
+}
+
+function ErrorBanner(props) {
+  if (!props.msg) { return null; }
+  return (
+    <div className="error-banner">{props.msg}</div>
+  );
+}
 
 class SearchForm extends React.Component {
   constructor(props) {
@@ -59,6 +73,7 @@ class SearchForm extends React.Component {
           { key: 0, value: 0 },
         ],
       },
+      errorMsg: '',
     };
   }
 
@@ -115,6 +130,10 @@ class SearchForm extends React.Component {
     const { relativeObject } = this.state;
     const newRelativeObject = { ...relativeObject, applicable: event.target.checked };
     this.setState({ relativeObject: newRelativeObject });
+  }
+
+  onErrorStateChange = (msg) => {
+    this.setState({ errorMsg: msg});
   }
 
   createRelativeObjectForm = () => {
@@ -209,7 +228,14 @@ class SearchForm extends React.Component {
       relativeObject,
       coords,
     });
-    handleGeojsonChange(response);
+    console.log(response)
+    if(response.error){
+      this.onErrorStateChange(response.error)
+      handleGeojsonChange(emptyGeoJSON());
+    } else {
+      this.onErrorStateChange('')
+      handleGeojsonChange(response);
+    }
   }
 
   render() {
@@ -258,6 +284,7 @@ class SearchForm extends React.Component {
         <Button variant="primary" type="submit">
           Submit
         </Button>
+        <ErrorBanner msg={this.state.errorMsg} />
       </Form>
     );
   }
