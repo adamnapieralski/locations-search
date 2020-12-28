@@ -1,19 +1,19 @@
 import React from 'react';
-import { Form, Row, Col } from 'react-bootstrap';
+import { Form, Col } from 'react-bootstrap';
 
-function ParametersRow({ objectParams, params, handleParamsChange }) {
-  const keyName = objectParams.find((key) => key.id === params.key)?.name;
+function ParametersRow({ rowId, object, objectParams, params, handleParamsChange }) {
+  const keyName = objectParams.find((keyObj) => keyObj.id === params.key)?.name;
   const valueName = objectParams
-    .find((key) => key.id === params.key)?.values
+    .find((keyObj) => keyObj.id === params.key)?.values
     .find((value) => value.id === params.value);
 
   const createKeyOptions = () => {
-    const keys = objectParams.map((key) => <option id={key.id} key={key.id}>{key.name}</option>);
+    const keys = objectParams.map((keyObj) => <option id={keyObj.id} key={keyObj.id}>{keyObj.name}</option>);
     return keys;
   };
 
   const createValueOptions = () => {
-    const values = objectParams.find((key) => key.id === params?.key)?.values
+    const values = objectParams.find((keyObj) => keyObj.id === params?.key)?.values
       .map((value) => <option id={value.id} key={value.id}>{value.name}</option>);
     return values;
   };
@@ -26,13 +26,13 @@ function ParametersRow({ objectParams, params, handleParamsChange }) {
   };
 
   return (
-    <Form.Group>
+    <Form.Group className="parameters-form-group">
       <Form.Row className="align-items-center">
         <Col xs="auto">
           <Form.Label>Key</Form.Label>
         </Col>
         <Col>
-          <Form.Control as="select" name="key" className="key-param" defaultValue={keyName} onChange={onParamsChange}>
+          <Form.Control as="select" name="key" data-cy={`parameter-key-${object}-${rowId}`} defaultValue={keyName} onChange={onParamsChange}>
             {createKeyOptions()}
           </Form.Control>
         </Col>
@@ -40,7 +40,7 @@ function ParametersRow({ objectParams, params, handleParamsChange }) {
           <Form.Label>Value</Form.Label>
         </Col>
         <Col>
-          <Form.Control as="select" name="value" className="value-param" defaultValue={valueName} onChange={onParamsChange}>
+          <Form.Control as="select" name="value" data-cy={`parameter-value-${object}-${rowId}`} defaultValue={valueName} onChange={onParamsChange}>
             {createValueOptions()}
           </Form.Control>
         </Col>
