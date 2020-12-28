@@ -47,14 +47,15 @@ function emptyGeoJSON() {
 }
 
 function ErrorBanner(props) {
-  if (!props.msg) { return null; }
+  const { msg } = props;
+  if (!msg) { return null; }
   return (
-    <div className="error-banner">{props.msg}</div>
+    <div className="error-banner">msg</div>
   );
 }
 
 function Spinner(props) {
-  if(!props.active){
+  if (!props.active){
     return null;
   }
   return (
@@ -145,11 +146,11 @@ class SearchForm extends React.Component {
   }
 
   onWaitingForResponseChange = (isWaiting) => {
-    this.setState({ waitingForResponse: isWaiting});
+    this.setState({ waitingForResponse: isWaiting });
   }
 
   onErrorMsgChange = (msg) => {
-    this.setState({ errorMsg: msg});
+    this.setState({ errorMsg: msg });
   }
 
   createRelativeObjectForm = () => {
@@ -254,7 +255,7 @@ class SearchForm extends React.Component {
       coords,
     });
 
-    if(response.error){
+    if (response.error) {
       this.onErrorMsgChange(response.error);
       this.onWaitingForResponseChange(false);
       handleGeojsonChange(emptyGeoJSON());
@@ -276,16 +277,18 @@ class SearchForm extends React.Component {
           <Form.Label>Location coordinates</Form.Label>
           <Row>
             <Col>
-              <Form.Control type="number" value={latitude} onChange={this.onLatitudeChange} step={coordsSettings.step} placeholder="Latitude" />
+              <Form.Control id="latitude-input" type="number" value={latitude} onChange={this.onLatitudeChange} step={coordsSettings.step} placeholder="Latitude" />
             </Col>
             <Col>
-              <Form.Control type="number" value={longitude} onChange={this.onLongitudeChange} step={coordsSettings.step} placeholder="Longitude" />
+              <Form.Control id="longitude-input" type="number" value={longitude} onChange={this.onLongitudeChange} step={coordsSettings.step} placeholder="Longitude" />
             </Col>
           </Row>
         </Form.Group>
         <Form.Group>
-          <Form.Label>Parameters</Form.Label>
-          {this.createParamsRows('mainObject')}
+          <div className="main-parameters">
+            <Form.Label>Parameters</Form.Label>
+            {this.createParamsRows('mainObject')}
+          </div>
           <Row>
             <Col xs="auto">
               <Button variant="outline-primary" onClick={() => this.addParamRow('mainObject')}>Add</Button>
@@ -307,7 +310,7 @@ class SearchForm extends React.Component {
             <Col xs="auto">
               <Form.Check type="checkbox" label="Time reach" checked={timeReachOn} onChange={this.onTimeReachChange} />
             </Col>
-            </Form.Row>
+          </Form.Row>
         </Form.Group>
         <Form.Group>
           <Form.Check type="checkbox" label="Relative object" checked={applicable} onChange={this.onRelativeObjectApplicableChange} />
@@ -316,14 +319,14 @@ class SearchForm extends React.Component {
         <Row>
           <Col xs="auto">
             <Button variant="primary" type="submit">
-            Submit
+              Submit
             </Button>
           </Col>
           <Col xs="auto">
-            <Spinner active={this.state.waitingForResponse} />
+            <Spinner active={ this.state.waitingForResponse } />
           </Col>
         </Row>
-        <ErrorBanner msg={this.state.errorMsg} />
+        <ErrorBanner msg={ this.state.errorMsg } />
       </Form>
     );
   }

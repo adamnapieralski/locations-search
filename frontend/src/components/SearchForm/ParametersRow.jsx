@@ -32,7 +32,7 @@ function ParametersRow({ objectParams, params, handleParamsChange }) {
           <Form.Label>Key</Form.Label>
         </Col>
         <Col>
-          <Form.Control as="select" name="key" defaultValue={keyName} onChange={onParamsChange}>
+          <Form.Control as="select" name="key" className="key-param" defaultValue={keyName} onChange={onParamsChange}>
             {createKeyOptions()}
           </Form.Control>
         </Col>
@@ -40,7 +40,7 @@ function ParametersRow({ objectParams, params, handleParamsChange }) {
           <Form.Label>Value</Form.Label>
         </Col>
         <Col>
-          <Form.Control as="select" name="value" defaultValue={valueName} onChange={onParamsChange}>
+          <Form.Control as="select" name="value" className="value-param" defaultValue={valueName} onChange={onParamsChange}>
             {createValueOptions()}
           </Form.Control>
         </Col>
