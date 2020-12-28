@@ -1,6 +1,24 @@
 
 version: "3"
 services:
+    overpass:
+        image: wiktorn/overpass-api:0.7.54.10
+        expose:
+            - ${OVERPASS_PORT}
+        ports: 
+            - ${OVERPASS_PORT}:80
+        environment:
+          OVERPASS_META: 'no'
+          OVERPASS_MODE: init
+          OVERPASS_PLANET_URL: https://download.geofabrik.de/europe/poland-latest.osm.bz2
+        #   OVERPASS_DIFF_URL: https://download.geofabrik.de/europe/poland-updates
+          OVERPASS_RULES_LOAD: 1
+          OVERPASS_RATE_LIMIT: 10
+        volumes: 
+            - ./db:/db
+        stdin_open: true
+        tty: true
+
     backend:
         build: ./backend
         expose:
@@ -12,6 +30,10 @@ services:
         volumes:
             - ./backend:/usr/src/location-search/backend
         command: python manage.py runserver 0.0.0.0:${BACKEND_PORT}
+        links:
+            - overpass
+        stdin_open: true
+        tty: true
 
     frontend:
         build: ./frontend
