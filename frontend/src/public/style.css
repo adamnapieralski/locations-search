@@ -67,3 +67,11 @@ body {
   height: 3em
 }
 
+.error-banner {
+  margin: 5px;
+  color: #920202
+}
+
+.spinner-border {
+  padding-top: 2px
+}

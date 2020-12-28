@@ -35,9 +35,34 @@ const postLocationSearch = async (data) => {
     return response.json();
   } catch (error) {
     console.log(error);
+    return { error: error }
   }
-  return {};
 };
+
+function emptyGeoJSON() {
+  return {
+    type: 'FeatureCollection',
+    features: [],
+  };
+}
+
+function ErrorBanner(props) {
+  if (!props.msg) { return null; }
+  return (
+    <div className="error-banner">{props.msg}</div>
+  );
+}
+
+function Spinner(props) {
+  if(!props.active){
+    return null;
+  }
+  return (
+    <div className="spinner-border" role="status">
+      <span className="sr-only">Loading...</span>
+    </div>
+  );
+}
 
 class SearchForm extends React.Component {
   constructor(props) {
@@ -59,6 +84,8 @@ class SearchForm extends React.Component {
           { key: 0, value: 0 },
         ],
       },
+      errorMsg: '',
+      waitingForResponse: false,
     };
   }
 
@@ -117,6 +144,14 @@ class SearchForm extends React.Component {
     this.setState({ relativeObject: newRelativeObject });
   }
 
+  onWaitingForResponseChange = (isWaiting) => {
+    this.setState({ waitingForResponse: isWaiting});
+  }
+
+  onErrorMsgChange = (msg) => {
+    this.setState({ errorMsg: msg});
+  }
+
   createRelativeObjectForm = () => {
     const { relativeObject: { applicable, maxDistance } } = this.state;
 
@@ -125,17 +160,25 @@ class SearchForm extends React.Component {
         <Form.Group>
           <Form.Label>Parameters</Form.Label>
           {this.createParamsRows('relativeObject')}
-          <Row>
-            <Button variant="outline-primary" onClick={() => this.addParamRow('relativeObject')}>Add</Button>
-            <Button variant="outline-danger" onClick={() => this.removeParamRow('relativeObject')}>Remove</Button>
-          </Row>
-          <Form.Group as={Row}>
-            <Col>
-              <Form.Label>Distance [m]:</Form.Label>
-            </Col>
-            <Col>
-              <Form.Control type="number" min="0" step="1" value={maxDistance} onChange={this.onRelativeDistanceChange} />
-            </Col>
+          <Form.Group>
+            <Row>
+              <Col xs="auto">
+                <Button variant="outline-primary" onClick={() => this.addParamRow('relativeObject')}>Add</Button>
+              </Col>
+              <Col xs="auto">
+                <Button variant="outline-danger" onClick={() => this.removeParamRow('relativeObject')}>Remove</Button>
+              </Col>
+            </Row>
+          </Form.Group>
+          <Form.Group>
+              <Form.Row className="align-items-center">
+              <Col xs="auto">
+                <Form.Label>Distance [m]:</Form.Label>
+              </Col>
+              <Col xs="auto">
+                <Form.Control type="number" min="0" step="1" value={maxDistance} onChange={this.onRelativeDistanceChange} />
+              </Col>
+            </Form.Row>
           </Form.Group>
         </Form.Group>
       );
@@ -204,12 +247,22 @@ class SearchForm extends React.Component {
     event.preventDefault();
     const { mainObject, relativeObject } = this.state;
     const { handleGeojsonChange, coords } = this.props;
+    this.onWaitingForResponseChange(true);
     const response = await postLocationSearch({
       mainObject,
       relativeObject,
       coords,
     });
-    handleGeojsonChange(response);
+
+    if(response.error){
+      this.onErrorMsgChange(response.error);
+      this.onWaitingForResponseChange(false);
+      handleGeojsonChange(emptyGeoJSON());
+    } else {
+      this.onErrorMsgChange('');
+      this.onWaitingForResponseChange(false);
+      handleGeojsonChange(response);
+    }
   }
 
   render() {
@@ -234,30 +287,43 @@ class SearchForm extends React.Component {
           <Form.Label>Parameters</Form.Label>
           {this.createParamsRows('mainObject')}
           <Row>
-            <Button variant="outline-primary" onClick={() => this.addParamRow('mainObject')}>Add</Button>
-            <Button variant="outline-danger" onClick={() => this.removeParamRow('mainObject')}>Remove</Button>
+            <Col xs="auto">
+              <Button variant="outline-primary" onClick={() => this.addParamRow('mainObject')}>Add</Button>
+            </Col>
+            <Col xs="auto">
+              <Button variant="outline-danger" onClick={() => this.removeParamRow('mainObject')}>Remove</Button>
+            </Col>
           </Row>
         </Form.Group>
-
-        <Form.Group as={Row}>
-          <Form.Label>
-            Distance
-            { (() => (timeReachOn ? ' [s]:' : ' [m]:'))() }
-          </Form.Label>
-          <Col>
-            <Form.Control type="number" min="0" step="1" value={maxDistance} onChange={this.onMainDistanceChange} />
-          </Col>
-          <Col>
-            <Form.Check type="checkbox" label="Time reach" checked={timeReachOn} onChange={this.onTimeReachChange} />
-          </Col>
+        <Form.Group>
+          <Form.Row className="align-items-center">
+            <Form.Label as={Col} xs="auto">
+              Distance
+              { (() => (timeReachOn ? ' [s]:' : ' [m]:'))() }
+            </Form.Label>
+            <Col xs="auto">
+              <Form.Control type="number" min="0" step="1" value={maxDistance} onChange={this.onMainDistanceChange} />
+            </Col>
+            <Col xs="auto">
+              <Form.Check type="checkbox" label="Time reach" checked={timeReachOn} onChange={this.onTimeReachChange} />
+            </Col>
+            </Form.Row>
         </Form.Group>
         <Form.Group>
           <Form.Check type="checkbox" label="Relative object" checked={applicable} onChange={this.onRelativeObjectApplicableChange} />
         </Form.Group>
         {this.createRelativeObjectForm()}
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
+        <Row>
+          <Col xs="auto">
+            <Button variant="primary" type="submit">
+            Submit
+            </Button>
+          </Col>
+          <Col xs="auto">
+            <Spinner active={this.state.waitingForResponse} />
+          </Col>
+        </Row>
+        <ErrorBanner msg={this.state.errorMsg} />
       </Form>
     );
   }

@@ -1,10 +1,12 @@
 import json
-import folium
+import copy
+import logging
+
+import geojson
 import overpass
 from openrouteservice import client
 from itertools import groupby
 import objectparams as opms
-import logging
 
 logger = logging.getLogger('locationsearch')
 
@@ -39,7 +41,20 @@ def process_request(payload):
         query = get_ovp_main_object_search_query(main_object, coords, poly_coords)
 
     logger.info(query)
-    return ovp_api.get(query)
+
+    try:
+        return process_overpass_data(ovp_api.get(query, verbosity='geom'))
+    except overpass.errors.ServerRuntimeError as e:
+        msg = e.__doc__ + ". " + e.message
+        print('ServerRuntimeError', msg)
+    except overpass.errors.UnknownOverpassError as e:
+        msg = e.message
+        print('UnknownOverpassError', msg)
+    except overpass.errors.OverpassError as e:
+        msg = e.__doc__
+        print('OverpassError', msg)
+
+    return {'error': msg}
 
 def get_opr_isochrone_poly_coords(coords, maxDistance):
     params = {
@@ -104,7 +119,6 @@ def get_ovp_main_object_search_query(main_object_data, coords, poly_coords=None)
     # search by isochrone poly coords
     else:
         query += make_poly_str(poly_coords) + ';'
-    query += '(._;>;);out;'
 
     return query
 
@@ -130,5 +144,24 @@ def get_ovp_main_relative_object_search_query(main_object_data, relative_object_
             make_around_line_str(poly_coords, relative_object_data['maxDistance'])
         )
 
-    query += 'nwr.main(around.relative:{});(._;>;);out;'.format(relative_object_data['maxDistance'])
+    query += 'nwr.main(around.relative:{});'.format(relative_object_data['maxDistance'])
     return query
+
+def process_overpass_data(data):
+    for item in data.items():
+        if(item[0] == 'features'):
+            for feature in item[1]:
+                if feature['geometry']['type'] == 'LineString':
+                    coords = feature['geometry']['coordinates']
+                    new_feature = copy.deepcopy(feature)
+                    new_feature['geometry']['type'] = 'Point'
+                    new_feature['geometry']['coordinates'] = center_coordinates(coords)
+                    item[1].append(new_feature)
+    return data
+
+def center_coordinates(coordinates):
+    x, y = 0, 0
+    for c in coordinates:
+        x += c[0]
+        y += c[1]
+    return [x/len(coordinates), y/(len(coordinates))]
