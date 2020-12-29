@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("checkPointMarkersCount", {
+  prevSubject: true
+}, (subject) => {
+  if (subject) {
+    const pointsNum = subject?.features.filter((feat) => feat.geometry.type === 'Point')?.length
+    cy.get('.leaflet-marker-icon').should('have.length', pointsNum + 1) // + current location marker
+  }
+})
