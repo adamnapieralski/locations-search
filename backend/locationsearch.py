@@ -7,6 +7,7 @@ import overpass
 from openrouteservice import client
 from itertools import groupby
 import objectparams as opms
+import transportmeans as trmns
 
 logger = logging.getLogger('locationsearch')
 
@@ -29,8 +30,7 @@ def process_request(payload):
 
     # search considering time reach distance
     if main_object['timeReachOn']:
-        # pass
-        poly_coords = get_opr_isochrone_poly_coords(coords, main_object['maxDistance'])
+        poly_coords = get_opr_isochrone_poly_coords(coords, main_object['maxDistance'], main_object['transportMean'])
 
     # search considering also relative object
     if relative_object['applicable']:
@@ -56,12 +56,12 @@ def process_request(payload):
 
     return {'error': msg}
 
-def get_opr_isochrone_poly_coords(coords, maxDistance):
+def get_opr_isochrone_poly_coords(coords, max_distance, transport_mean_id):
     params = {
         'locations': [(coords['longitude'], coords['latitude'])],
-        'profile': 'foot-walking',
+        'profile': trmns.get_key_name(int(transport_mean_id)),
         'range_type': 'time',
-        'range': [maxDistance],
+        'range': [max_distance],
         'smoothing': 1.
     }
     response = opr_client.isochrones(**params)
