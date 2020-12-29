@@ -109,6 +109,36 @@ object_params = [
             { 'id': 14, 'name': 'toys' },
             { 'id': 15, 'name': 'ticket' },
         ]
+    },
+    {
+        'id': 7,
+        'name': 'highway',
+        'values': [
+            { 'id': 0, 'name': 'residential' },
+            { 'id': 1, 'name': 'service' },
+            { 'id': 2, 'name': 'track' },
+            { 'id': 3, 'name': 'footway' },
+            { 'id': 4, 'name': 'path' },
+            { 'id': 5, 'name': 'tertiary' },
+            { 'id': 6, 'name': 'crossing' },
+            { 'id': 7, 'name': 'pedestrian' },
+            { 'id': 8, 'name': 'cycleway' },
+        ]
+    },
+    {
+        'id': 8,
+        'name': 'surface',
+        'values': [
+            { 'id': 0, 'name': 'asphalt' },
+            { 'id': 1, 'name': 'unpaved' },
+            { 'id': 2, 'name': 'paved' },
+            { 'id': 3, 'name': 'ground' },
+            { 'id': 4, 'name': 'gravel' },
+            { 'id': 5, 'name': 'concrete' },
+            { 'id': 6, 'name': 'paving_stones' },
+            { 'id': 7, 'name': 'dirt' },
+            { 'id': 8, 'name': 'grass' },
+        ]
     }
 
 ]

@@ -74,7 +74,71 @@ context('Location search', () => {
   
   // TODO after adding more easily overlapping parameters
   describe('Main object only, multiple parameters', () => {
-    it('', () => {
+    it('Alternatives of the same parameter key', () => {
+      cy.fixture('geojson-responses/fast-food-post-1.json').as('geoResponse')
+
+      // main object params
+      cy.get('[data-cy=parameter-key-mainObject-0]')
+        .select('amenity')
+
+      cy.get('[data-cy=parameter-value-mainObject-0]')
+        .select('fast_food')
+
+      cy.get('[data-cy=add-param-button-main]').click()
+
+      cy.get('[data-cy=parameter-key-mainObject-1]')
+      .select('amenity')
+
+      cy.get('[data-cy=parameter-value-mainObject-1]')
+        .select('post_office')
+
+      cy.get('[data-cy=main-distance-input]')
+        .clear()
+        .type(1234)
+
+      cy.intercept('POST', '**/api/location-search').as('locationSearch')
+
+      cy.get('[data-cy=submit]')
+        .click()
+        .wait('@locationSearch').then((interception) => {
+          cy.get('@geoResponse').should('deep.equal', interception.response.body)
+        })
+        .get('@geoResponse').checkPointMarkersCount()
+    })
+
+    it('Joined parameters with different keys', () => {
+      cy.fixture('geojson-responses/pedestrian-paving-stones-1.json').as('geoResponse')
+
+      // main object params
+      cy.get('[data-cy=parameter-key-mainObject-0]')
+        .select('highway')
+
+      cy.get('[data-cy=parameter-value-mainObject-0]')
+        .select('pedestrian')
+
+      cy.get('[data-cy=add-param-button-main]').click()
+
+      cy.get('[data-cy=parameter-key-mainObject-1]')
+      .select('surface')
+
+      cy.get('[data-cy=parameter-value-mainObject-1]')
+        .select('paving_stones')
+
+      // distance
+      cy.get('[data-cy=time-reach-checkbox]').check()
+
+      cy.get('[data-cy=main-distance-input]')
+        .clear()
+        .type(60 * 30)
+
+      cy.intercept('POST', '**/api/location-search').as('locationSearch')
+
+      cy.get('[data-cy=submit]')
+        .click()
+        .wait('@locationSearch').then((interception) => {
+          cy.get('@geoResponse').should('deep.equal', interception.response.body)
+        })
+        .get('@geoResponse').checkPointMarkersCount()
     })
   })
 
