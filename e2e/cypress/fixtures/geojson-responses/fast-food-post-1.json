@@ -1,0 +1,717 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "id": 1329125980,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.456919,
+            51.799332
+          ]
+        },
+        "properties": {
+          "amenity": "post_office",
+          "operator": "Poczta Polska"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 1883944431,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.464831,
+            51.788731
+          ]
+        },
+        "properties": {
+          "amenity": "post_office"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 1892235448,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.464586,
+            51.79007
+          ]
+        },
+        "properties": {
+          "addr:city": "Łódź",
+          "addr:housenumber": "45",
+          "addr:street": "Marynarska",
+          "amenity": "fast_food",
+          "cuisine": "asian",
+          "name": "Bar orientalny Bambus II",
+          "phone": "+48426574444"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 1892235498,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.448599,
+            51.787548
+          ]
+        },
+        "properties": {
+          "addr:city": "Łódź",
+          "addr:housenumber": "1",
+          "addr:postcode": "91-301",
+          "addr:street": "Snycerska",
+          "amenity": "post_office",
+          "name": "UP Łódź 38",
+          "opening_hours": "Mo-Fr 08:00-19:30",
+          "phone": "+48426543276",
+          "website": "http://poczta-polska.pl"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 3450992523,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.446258,
+            51.780139
+          ]
+        },
+        "properties": {
+          "addr:city": "Łódź",
+          "alt_name": "Kentucky Fried Chicken",
+          "amenity": "fast_food",
+          "brand": "KFC",
+          "brand:wikidata": "Q524757",
+          "brand:wikipedia": "en:KFC",
+          "cuisine": "chicken",
+          "level": "1",
+          "name": "KFC",
+          "operator": "AmRest",
+          "takeaway": "yes"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 3450992524,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.446201,
+            51.780394
+          ]
+        },
+        "properties": {
+          "addr:city": "Łódź",
+          "amenity": "fast_food",
+          "brand": "McDonald's",
+          "brand:wikidata": "Q38076",
+          "brand:wikipedia": "en:McDonald's",
+          "cuisine": "burger",
+          "name": "McDonald's",
+          "operator": "McDonald's",
+          "takeaway": "yes"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 3450992525,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.446224,
+            51.780298
+          ]
+        },
+        "properties": {
+          "addr:city": "Łódź",
+          "amenity": "fast_food",
+          "brand": "Subway",
+          "brand:wikidata": "Q244457",
+          "brand:wikipedia": "en:Subway (restaurant)",
+          "cuisine": "sandwich",
+          "name": "Subway",
+          "operator": "Subway",
+          "takeaway": "yes"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 4439634356,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.454664,
+            51.78966
+          ]
+        },
+        "properties": {
+          "amenity": "post_office"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 4798977523,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.454651,
+            51.787696
+          ]
+        },
+        "properties": {
+          "addr:city": "Łódź",
+          "addr:street": "Łagiewnicka",
+          "amenity": "fast_food",
+          "cuisine": "indian;turkish",
+          "name": "Zahir Kebab",
+          "name:en": "Zahir Kebab",
+          "name:pl": "Zahir Kebab",
+          "phone": "730860306"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 5715147922,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.446245,
+            51.780183
+          ]
+        },
+        "properties": {
+          "addr:city": "Łódź",
+          "amenity": "fast_food",
+          "cuisine": "burger",
+          "drive_through": "no",
+          "name": "Pasibus",
+          "outdoor_seating": "no",
+          "smoking": "no",
+          "takeaway": "yes"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 5715149375,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.446236,
+            51.780239
+          ]
+        },
+        "properties": {
+          "addr:city": "Łódź",
+          "amenity": "fast_food",
+          "cuisine": "thai",
+          "drive_through": "no",
+          "name": "Thai Wok",
+          "outdoor_seating": "no",
+          "smoking": "no",
+          "takeaway": "yes"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 5752715789,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.446211,
+            51.780347
+          ]
+        },
+        "properties": {
+          "addr:city": "Łódź",
+          "amenity": "fast_food",
+          "cuisine": "fish",
+          "name": "North Fish"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 6520681338,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.460442,
+            51.792856
+          ]
+        },
+        "properties": {
+          "amenity": "post_office",
+          "name": "AP Łódź",
+          "operator": "Poczta Polska",
+          "phone": "+48733595700"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 103690327,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              19.4489,
+              51.795619
+            ],
+            [
+              19.449043,
+              51.795433
+            ],
+            [
+              19.449157,
+              51.795466
+            ],
+            [
+              19.449162,
+              51.795459
+            ],
+            [
+              19.449147,
+              51.795455
+            ],
+            [
+              19.449144,
+              51.79545
+            ],
+            [
+              19.449174,
+              51.795409
+            ],
+            [
+              19.449184,
+              51.795406
+            ],
+            [
+              19.449246,
+              51.795424
+            ],
+            [
+              19.449249,
+              51.79543
+            ],
+            [
+              19.44922,
+              51.795472
+            ],
+            [
+              19.449212,
+              51.795473
+            ],
+            [
+              19.449198,
+              51.795469
+            ],
+            [
+              19.449192,
+              51.795476
+            ],
+            [
+              19.4493,
+              51.795506
+            ],
+            [
+              19.449165,
+              51.795696
+            ],
+            [
+              19.4489,
+              51.795619
+            ]
+          ]
+        },
+        "properties": {
+          "addr:city": "Łódź",
+          "addr:country": "PL",
+          "addr:housenumber": "8",
+          "addr:postcode": "91-462",
+          "addr:street": "Wspólna",
+          "amenity": "post_office",
+          "building": "yes",
+          "source": "mapa.lodz.pl",
+          "source:addr": "EMUiA (emuia.geoportal.gov.pl)"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 180379619,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              19.445533,
+              51.779655
+            ],
+            [
+              19.445626,
+              51.779664
+            ],
+            [
+              19.445638,
+              51.779614
+            ],
+            [
+              19.445545,
+              51.779606
+            ],
+            [
+              19.445533,
+              51.779655
+            ]
+          ]
+        },
+        "properties": {
+          "addr:city": "Łódź",
+          "addr:housenumber": "5",
+          "addr:postcode": "91-071",
+          "addr:street": "Jana Karskiego",
+          "amenity": "post_office",
+          "level": "0",
+          "name": "FUP Łódź 40",
+          "official_name": "Filia Urzędu Pocztowego Łódź 40",
+          "opening_hours": "Mo-Sa 09:00-19:00; Su 09:00-16:30",
+          "operator": "Poczta Polska",
+          "phone": "+48426341158"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 180392743,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              19.446595,
+              51.78064
+            ],
+            [
+              19.446475,
+              51.780629
+            ],
+            [
+              19.44651,
+              51.780486
+            ],
+            [
+              19.44663,
+              51.780498
+            ],
+            [
+              19.446595,
+              51.78064
+            ]
+          ]
+        },
+        "properties": {
+          "addr:city": "Łódź",
+          "addr:housenumber": "58",
+          "addr:postcode": "91-002",
+          "addr:street": "Drewnowska",
+          "amenity": "fast_food",
+          "brand": "Burger King",
+          "brand:wikidata": "Q177054",
+          "brand:wikipedia": "en:Burger King",
+          "cuisine": "burger",
+          "level": "1",
+          "name": "Burger King",
+          "opening_hours": "Mo-Sa 10:00-22:00; Su 10:00-21:00",
+          "operator": "AmRest",
+          "takeaway": "yes",
+          "website": "http://www.burgerking.com.pl"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 180392745,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              19.446475,
+              51.780629
+            ],
+            [
+              19.446356,
+              51.780618
+            ],
+            [
+              19.446391,
+              51.780475
+            ],
+            [
+              19.44651,
+              51.780486
+            ],
+            [
+              19.446475,
+              51.780629
+            ]
+          ]
+        },
+        "properties": {
+          "addr:city": "Łódź",
+          "addr:housenumber": "58",
+          "addr:postcode": "91-002",
+          "addr:street": "Drewnowska",
+          "amenity": "fast_food",
+          "level": "1",
+          "name": "Berlin Döner Kebap",
+          "opening_hours": "Mo-Sa 10:00-22:00; Su 10:00-21:00",
+          "phone": "+48426348675"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 196167813,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              19.44882,
+              51.78678
+            ],
+            [
+              19.448891,
+              51.786771
+            ],
+            [
+              19.448901,
+              51.786743
+            ],
+            [
+              19.448896,
+              51.78672
+            ],
+            [
+              19.448899,
+              51.78672
+            ],
+            [
+              19.448892,
+              51.786693
+            ],
+            [
+              19.448901,
+              51.786691
+            ],
+            [
+              19.448892,
+              51.78664
+            ],
+            [
+              19.448882,
+              51.78664
+            ],
+            [
+              19.448797,
+              51.78665
+            ],
+            [
+              19.448797,
+              51.786658
+            ],
+            [
+              19.448796,
+              51.786667
+            ],
+            [
+              19.448804,
+              51.786702
+            ],
+            [
+              19.44882,
+              51.78678
+            ]
+          ]
+        },
+        "properties": {
+          "addr:city": "Łódź",
+          "amenity": "fast_food",
+          "building": "yes",
+          "name": "Bar Orientalny",
+          "phone": "+48426542241"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 328774135,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              19.444995,
+              51.797919
+            ],
+            [
+              19.445013,
+              51.797895
+            ],
+            [
+              19.444947,
+              51.797876
+            ],
+            [
+              19.444929,
+              51.797901
+            ],
+            [
+              19.444995,
+              51.797919
+            ]
+          ]
+        },
+        "properties": {
+          "amenity": "post_office",
+          "building": "yes",
+          "name": "DPD Pickup",
+          "opening_hours": "Mo-Fr 12:00-20:00",
+          "phone": "+48 515 579 008",
+          "ref": "11344",
+          "source": "mapa.lodz.pl",
+          "website": "https://www.dpdpickup.pl/"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 103690327,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.449152529411762,
+            51.79548600000001
+          ]
+        },
+        "properties": {
+          "addr:city": "Łódź",
+          "addr:country": "PL",
+          "addr:housenumber": "8",
+          "addr:postcode": "91-462",
+          "addr:street": "Wspólna",
+          "amenity": "post_office",
+          "building": "yes",
+          "source": "mapa.lodz.pl",
+          "source:addr": "EMUiA (emuia.geoportal.gov.pl)"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 180379619,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.445574999999998,
+            51.7796388
+          ]
+        },
+        "properties": {
+          "addr:city": "Łódź",
+          "addr:housenumber": "5",
+          "addr:postcode": "91-071",
+          "addr:street": "Jana Karskiego",
+          "amenity": "post_office",
+          "level": "0",
+          "name": "FUP Łódź 40",
+          "official_name": "Filia Urzędu Pocztowego Łódź 40",
+          "opening_hours": "Mo-Sa 09:00-19:00; Su 09:00-16:30",
+          "operator": "Poczta Polska",
+          "phone": "+48426341158"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 180392743,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.446561,
+            51.7805786
+          ]
+        },
+        "properties": {
+          "addr:city": "Łódź",
+          "addr:housenumber": "58",
+          "addr:postcode": "91-002",
+          "addr:street": "Drewnowska",
+          "amenity": "fast_food",
+          "brand": "Burger King",
+          "brand:wikidata": "Q177054",
+          "brand:wikipedia": "en:Burger King",
+          "cuisine": "burger",
+          "level": "1",
+          "name": "Burger King",
+          "opening_hours": "Mo-Sa 10:00-22:00; Su 10:00-21:00",
+          "operator": "AmRest",
+          "takeaway": "yes",
+          "website": "http://www.burgerking.com.pl"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 180392745,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.446441399999998,
+            51.780567399999995
+          ]
+        },
+        "properties": {
+          "addr:city": "Łódź",
+          "addr:housenumber": "58",
+          "addr:postcode": "91-002",
+          "addr:street": "Drewnowska",
+          "amenity": "fast_food",
+          "level": "1",
+          "name": "Berlin Döner Kebap",
+          "opening_hours": "Mo-Sa 10:00-22:00; Su 10:00-21:00",
+          "phone": "+48426348675"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 196167813,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.44885628571429,
+            51.78670392857142
+          ]
+        },
+        "properties": {
+          "addr:city": "Łódź",
+          "amenity": "fast_food",
+          "building": "yes",
+          "name": "Bar Orientalny",
+          "phone": "+48426542241"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 328774135,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.444975799999998,
+            51.797902
+          ]
+        },
+        "properties": {
+          "amenity": "post_office",
+          "building": "yes",
+          "name": "DPD Pickup",
+          "opening_hours": "Mo-Fr 12:00-20:00",
+          "phone": "+48 515 579 008",
+          "ref": "11344",
+          "source": "mapa.lodz.pl",
+          "website": "https://www.dpdpickup.pl/"
+        }
+      }
+    ]
+  }

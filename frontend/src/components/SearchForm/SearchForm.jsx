@@ -25,6 +25,16 @@ const getObjectParams = async () => {
   return {};
 };
 
+const getTransportMeans = async () => {
+  try {
+    const response = await fetch(`${baseURL}/transport-means`);
+    return response.json();
+  } catch (error) {
+    ErrorBoundary.getDerivedStateFromError(error);
+  }
+  return {};
+};
+
 const postLocationSearch = async (data) => {
   try {
     const body = JSON.stringify(data);
@@ -34,8 +44,7 @@ const postLocationSearch = async (data) => {
     });
     return response.json();
   } catch (error) {
-    console.log(error);
-    return { error: error }
+    return { error };
   }
 };
 
@@ -47,14 +56,16 @@ function emptyGeoJSON() {
 }
 
 function ErrorBanner(props) {
-  if (!props.msg) { return null; }
+  const { msg } = props;
+  if (!msg) { return null; }
   return (
-    <div className="error-banner">{props.msg}</div>
+    <div className="error-banner">msg</div>
   );
 }
 
 function Spinner(props) {
-  if(!props.active){
+  const { active } = props;
+  if (!active) {
     return null;
   }
   return (
@@ -70,12 +81,14 @@ class SearchForm extends React.Component {
 
     this.state = {
       objectParams: [],
+      transportMeans: [],
       mainObject: {
         maxDistance: 1000, // meters or seconds
         params: [
           { key: 0, value: 0 },
         ],
         timeReachOn: false,
+        transportMean: 0,
       },
       relativeObject: {
         applicable: false,
@@ -91,15 +104,16 @@ class SearchForm extends React.Component {
 
   async componentDidMount() {
     const objectParams = await getObjectParams();
-    this.setState({ objectParams });
+    const transportMeans = await getTransportMeans();
+    this.setState({ objectParams, transportMeans });
+
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
         this.onLocationCoordinatesChange({
           latitude: position.coords.latitude.toFixed(coordsSettings.precision),
           longitude: position.coords.longitude.toFixed(coordsSettings.precision),
         });
-      }, () => {},
-      );
+      }, () => {});
     } else {
       // TODO handle geolocation not supported
     }
@@ -124,13 +138,13 @@ class SearchForm extends React.Component {
     const { mainObject } = this.state;
     const newMainObject = { ...mainObject, maxDistance: parseInt(event.target.value, 10) };
     this.setState({ mainObject: newMainObject });
-  };
+  }
 
   onRelativeDistanceChange = (event) => {
     const { relativeObject } = this.state;
     const newRelativeObject = { ...relativeObject, maxDistance: parseInt(event.target.value, 10) };
     this.setState({ relativeObject: newRelativeObject });
-  };
+  }
 
   onTimeReachChange = (event) => {
     const { mainObject } = this.state;
@@ -145,11 +159,11 @@ class SearchForm extends React.Component {
   }
 
   onWaitingForResponseChange = (isWaiting) => {
-    this.setState({ waitingForResponse: isWaiting});
+    this.setState({ waitingForResponse: isWaiting });
   }
 
   onErrorMsgChange = (msg) => {
-    this.setState({ errorMsg: msg});
+    this.setState({ errorMsg: msg });
   }
 
   createRelativeObjectForm = () => {
@@ -157,30 +171,54 @@ class SearchForm extends React.Component {
 
     if (applicable) {
       return (
-        <Form.Group>
+        <Form.Group className="relative-form">
           <Form.Label>Parameters</Form.Label>
           {this.createParamsRows('relativeObject')}
-          <Form.Group>
-            <Row>
-              <Col xs="auto">
-                <Button variant="outline-primary" onClick={() => this.addParamRow('relativeObject')}>Add</Button>
-              </Col>
-              <Col xs="auto">
-                <Button variant="outline-danger" onClick={() => this.removeParamRow('relativeObject')}>Remove</Button>
-              </Col>
-            </Row>
-          </Form.Group>
-          <Form.Group>
-              <Form.Row className="align-items-center">
-              <Col xs="auto">
-                <Form.Label>Distance [m]:</Form.Label>
-              </Col>
-              <Col xs="auto">
-                <Form.Control type="number" min="0" step="1" value={maxDistance} onChange={this.onRelativeDistanceChange} />
-              </Col>
-            </Form.Row>
-          </Form.Group>
+          <Row>
+            <Col xs="auto">
+              <Button variant="outline-primary" data-cy="add-param-button" onClick={() => this.addParamRow('relativeObject')}>Add</Button>
+            </Col>
+            <Col xs="auto">
+              <Button variant="outline-danger" data-cy="remove-param-button" onClick={() => this.removeParamRow('relativeObject')}>Remove</Button>
+            </Col>
+          </Row>
+          <Form.Row className="align-items-center">
+            <Col xs="auto">
+              <Form.Label>Distance [m]:</Form.Label>
+            </Col>
+            <Col xs="auto">
+              <Form.Control type="number" min="0" step="1" data-cy="relative-distance-input" value={maxDistance} onChange={this.onRelativeDistanceChange} />
+            </Col>
+          </Form.Row>
         </Form.Group>
+      );
+    }
+    return null;
+  }
+
+  onTransportMeanChange = (event) => {
+    const { mainObject } = this.state;
+    const newMainObject = { ...mainObject, transportMean: event.target.selectedIndex };
+    this.setState({ mainObject: newMainObject });
+  }
+
+  createTransportMeanSelection = () => {
+    const { transportMeans, mainObject: { timeReachOn } } = this.state;
+
+    if (timeReachOn) {
+      return (
+        <Form.Row>
+          <Form.Label as={Col}>
+            Mean of transport:
+          </Form.Label>
+          <Col>
+            <Form.Control as="select" name="key" data-cy="transport-mean" onChange={this.onTransportMeanChange}>
+              {transportMeans.map((mean) => (
+                <option id={mean.id} key={mean.id}>{mean.name}</option>
+              ))}
+            </Form.Control>
+          </Col>
+        </Form.Row>
       );
     }
     return null;
@@ -191,6 +229,8 @@ class SearchForm extends React.Component {
     return Array.from(Array(params.length).keys()).map((id) => (
       <ParametersRow
         key={id}
+        rowId={id}
+        object={object}
         objectParams={objectParams}
         params={params[id]}
         handleParamsChange={this.handleParamsChange(object, id)}
@@ -254,7 +294,7 @@ class SearchForm extends React.Component {
       coords,
     });
 
-    if(response.error){
+    if (response.error) {
       this.onErrorMsgChange(response.error);
       this.onWaitingForResponseChange(false);
       handleGeojsonChange(emptyGeoJSON());
@@ -267,19 +307,23 @@ class SearchForm extends React.Component {
 
   render() {
     const { coords: { latitude, longitude } } = this.props;
-    const { mainObject: { maxDistance, timeReachOn }, relativeObject: { applicable } } = this.state;
+    const {
+      mainObject: { maxDistance, timeReachOn },
+      relativeObject: { applicable },
+      errorMsg,
+      waitingForResponse,
+    } = this.state;
 
-    console.log('state', this.state);
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Group>
           <Form.Label>Location coordinates</Form.Label>
           <Row>
             <Col>
-              <Form.Control type="number" value={latitude} onChange={this.onLatitudeChange} step={coordsSettings.step} placeholder="Latitude" />
+              <Form.Control type="number" value={latitude} onChange={this.onLatitudeChange} step={coordsSettings.step} data-cy="latitude" placeholder="Latitude" />
             </Col>
             <Col>
-              <Form.Control type="number" value={longitude} onChange={this.onLongitudeChange} step={coordsSettings.step} placeholder="Longitude" />
+              <Form.Control type="number" value={longitude} onChange={this.onLongitudeChange} step={coordsSettings.step} data-cy="longitude" placeholder="Longitude" />
             </Col>
           </Row>
         </Form.Group>
@@ -288,10 +332,10 @@ class SearchForm extends React.Component {
           {this.createParamsRows('mainObject')}
           <Row>
             <Col xs="auto">
-              <Button variant="outline-primary" onClick={() => this.addParamRow('mainObject')}>Add</Button>
+              <Button variant="outline-primary" data-cy="add-param-button-main" onClick={() => this.addParamRow('mainObject')}>Add</Button>
             </Col>
             <Col xs="auto">
-              <Button variant="outline-danger" onClick={() => this.removeParamRow('mainObject')}>Remove</Button>
+              <Button variant="outline-danger" data-cy="remove-param-button-main" onClick={() => this.removeParamRow('mainObject')}>Remove</Button>
             </Col>
           </Row>
         </Form.Group>
@@ -302,28 +346,29 @@ class SearchForm extends React.Component {
               { (() => (timeReachOn ? ' [s]:' : ' [m]:'))() }
             </Form.Label>
             <Col xs="auto">
-              <Form.Control type="number" min="0" step="1" value={maxDistance} onChange={this.onMainDistanceChange} />
+              <Form.Control type="number" min="0" step="1" data-cy="main-distance-input" value={maxDistance} onChange={this.onMainDistanceChange} />
             </Col>
             <Col xs="auto">
-              <Form.Check type="checkbox" label="Time reach" checked={timeReachOn} onChange={this.onTimeReachChange} />
+              <Form.Check type="checkbox" label="Time reach" data-cy="time-reach-checkbox" checked={timeReachOn} onChange={this.onTimeReachChange} />
             </Col>
-            </Form.Row>
+          </Form.Row>
+          {this.createTransportMeanSelection()}
         </Form.Group>
         <Form.Group>
-          <Form.Check type="checkbox" label="Relative object" checked={applicable} onChange={this.onRelativeObjectApplicableChange} />
+          <Form.Check type="checkbox" label="Relative object" data-cy="relative-object-checkbox" checked={applicable} onChange={this.onRelativeObjectApplicableChange} />
         </Form.Group>
         {this.createRelativeObjectForm()}
         <Row>
           <Col xs="auto">
-            <Button variant="primary" type="submit">
-            Submit
+            <Button variant="primary" type="submit" data-cy="submit" disabled={waitingForResponse}>
+              Submit
             </Button>
           </Col>
           <Col xs="auto">
-            <Spinner active={this.state.waitingForResponse} />
+            <Spinner active={waitingForResponse} />
           </Col>
         </Row>
-        <ErrorBanner msg={this.state.errorMsg} />
+        <ErrorBanner msg={errorMsg} />
       </Form>
     );
   }
