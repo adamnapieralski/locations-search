@@ -25,6 +25,16 @@ const getObjectParams = async () => {
   return {};
 };
 
+const getTransportMeans = async () => {
+  try {
+    const response = await fetch(`${baseURL}/transport-means`);
+    return response.json();
+  } catch (error) {
+    ErrorBoundary.getDerivedStateFromError(error);
+  }
+  return {};
+};
+
 const postLocationSearch = async (data) => {
   try {
     const body = JSON.stringify(data);
@@ -34,8 +44,7 @@ const postLocationSearch = async (data) => {
     });
     return response.json();
   } catch (error) {
-    console.log(error);
-    return { error: error }
+    return { error };
   }
 };
 
@@ -55,7 +64,8 @@ function ErrorBanner(props) {
 }
 
 function Spinner(props) {
-  if (!props.active){
+  const { active } = props;
+  if (!active) {
     return null;
   }
   return (
@@ -71,12 +81,14 @@ class SearchForm extends React.Component {
 
     this.state = {
       objectParams: [],
+      transportMeans: [],
       mainObject: {
         maxDistance: 1000, // meters or seconds
         params: [
           { key: 0, value: 0 },
         ],
         timeReachOn: false,
+        transportMean: 0,
       },
       relativeObject: {
         applicable: false,
@@ -92,15 +104,16 @@ class SearchForm extends React.Component {
 
   async componentDidMount() {
     const objectParams = await getObjectParams();
-    this.setState({ objectParams });
+    const transportMeans = await getTransportMeans();
+    this.setState({ objectParams, transportMeans });
+
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
         this.onLocationCoordinatesChange({
           latitude: position.coords.latitude.toFixed(coordsSettings.precision),
           longitude: position.coords.longitude.toFixed(coordsSettings.precision),
         });
-      }, () => {},
-      );
+      }, () => {});
     } else {
       // TODO handle geolocation not supported
     }
@@ -125,13 +138,13 @@ class SearchForm extends React.Component {
     const { mainObject } = this.state;
     const newMainObject = { ...mainObject, maxDistance: parseInt(event.target.value, 10) };
     this.setState({ mainObject: newMainObject });
-  };
+  }
 
   onRelativeDistanceChange = (event) => {
     const { relativeObject } = this.state;
     const newRelativeObject = { ...relativeObject, maxDistance: parseInt(event.target.value, 10) };
     this.setState({ relativeObject: newRelativeObject });
-  };
+  }
 
   onTimeReachChange = (event) => {
     const { mainObject } = this.state;
@@ -178,6 +191,34 @@ class SearchForm extends React.Component {
             </Col>
           </Form.Row>
         </Form.Group>
+      );
+    }
+    return null;
+  }
+
+  onTransportMeanChange = (event) => {
+    const { mainObject } = this.state;
+    const newMainObject = { ...mainObject, transportMean: event.target.selectedIndex };
+    this.setState({ mainObject: newMainObject });
+  }
+
+  createTransportMeanSelection = () => {
+    const { transportMeans, mainObject: { timeReachOn } } = this.state;
+
+    if (timeReachOn) {
+      return (
+        <Form.Row>
+          <Form.Label as={Col}>
+            Mean of transport:
+          </Form.Label>
+          <Col>
+            <Form.Control as="select" name="key" data-cy="transport-mean" onChange={this.onTransportMeanChange}>
+              {transportMeans.map((mean) => (
+                <option id={mean.id} key={mean.id}>{mean.name}</option>
+              ))}
+            </Form.Control>
+          </Col>
+        </Form.Row>
       );
     }
     return null;
@@ -266,9 +307,13 @@ class SearchForm extends React.Component {
 
   render() {
     const { coords: { latitude, longitude } } = this.props;
-    const { mainObject: { maxDistance, timeReachOn }, relativeObject: { applicable } } = this.state;
+    const {
+      mainObject: { maxDistance, timeReachOn },
+      relativeObject: { applicable },
+      errorMsg,
+      waitingForResponse,
+    } = this.state;
 
-    // console.log('state', this.state);
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Group>
@@ -307,6 +352,7 @@ class SearchForm extends React.Component {
               <Form.Check type="checkbox" label="Time reach" data-cy="time-reach-checkbox" checked={timeReachOn} onChange={this.onTimeReachChange} />
             </Col>
           </Form.Row>
+          {this.createTransportMeanSelection()}
         </Form.Group>
         <Form.Group>
           <Form.Check type="checkbox" label="Relative object" data-cy="relative-object-checkbox" checked={applicable} onChange={this.onRelativeObjectApplicableChange} />
@@ -314,15 +360,15 @@ class SearchForm extends React.Component {
         {this.createRelativeObjectForm()}
         <Row>
           <Col xs="auto">
-            <Button variant="primary" type="submit" data-cy="submit">
+            <Button variant="primary" type="submit" data-cy="submit" disabled={waitingForResponse}>
               Submit
             </Button>
           </Col>
           <Col xs="auto">
-            <Spinner active={ this.state.waitingForResponse } />
+            <Spinner active={waitingForResponse} />
           </Col>
         </Row>
-        <ErrorBanner msg={ this.state.errorMsg } />
+        <ErrorBanner msg={errorMsg} />
       </Form>
     );
   }

@@ -24,12 +24,14 @@ context('Location search', () => {
     it('Close schools', () => {
       cy.fixture('geojson-responses/schools-1.json').as('geoResponse')
 
+      // main object
       cy.get('[data-cy=parameter-key-mainObject-0]')
         .select('amenity')
 
       cy.get('[data-cy=parameter-value-mainObject-0]')
         .select('school')
 
+      // distance
       cy.get('[data-cy=main-distance-input]')
         .clear()
         .type(500)
@@ -49,14 +51,18 @@ context('Location search', () => {
     it('Close parkings', () => {
       cy.fixture('geojson-responses/parkings-1.json').as('geoResponse')
 
+      // main object
       cy.get('[data-cy=parameter-key-mainObject-0]')
         .select('amenity')
 
       cy.get('[data-cy=parameter-value-mainObject-0]')
         .select('parking')
 
+      // time reach
       cy.get('[data-cy=time-reach-checkbox]').check()
+      cy.get('[data-cy=transport-mean').select('foot-walking')
 
+      // distance
       cy.get('[data-cy=main-distance-input]')
         .clear()
         .type(60)
@@ -72,7 +78,6 @@ context('Location search', () => {
     })
   })
   
-  // TODO after adding more easily overlapping parameters
   describe('Main object only, multiple parameters', () => {
     it('Alternatives of the same parameter key', () => {
       cy.fixture('geojson-responses/fast-food-post-1.json').as('geoResponse')
@@ -92,6 +97,7 @@ context('Location search', () => {
       cy.get('[data-cy=parameter-value-mainObject-1]')
         .select('post_office')
 
+      // distance
       cy.get('[data-cy=main-distance-input]')
         .clear()
         .type(1234)
@@ -126,6 +132,7 @@ context('Location search', () => {
 
       // distance
       cy.get('[data-cy=time-reach-checkbox]').check()
+      cy.get('[data-cy=transport-mean').select('foot-walking')
 
       cy.get('[data-cy=main-distance-input]')
         .clear()
@@ -195,6 +202,7 @@ context('Location search', () => {
 
       // time reach on
       cy.get('[data-cy=time-reach-checkbox]').check()
+      cy.get('[data-cy=transport-mean').select('foot-walking')
 
       // main object distance
       cy.get('[data-cy=main-distance-input]')
