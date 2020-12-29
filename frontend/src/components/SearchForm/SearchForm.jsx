@@ -360,7 +360,7 @@ class SearchForm extends React.Component {
         {this.createRelativeObjectForm()}
         <Row>
           <Col xs="auto">
-            <Button variant="primary" type="submit" data-cy="submit">
+            <Button variant="primary" type="submit" data-cy="submit" disabled={waitingForResponse}>
               Submit
             </Button>
           </Col>
