@@ -48,24 +48,24 @@ context('Location search', () => {
   });
 
   describe('Main object only, single parameter, time reach distance', () => {
-    it('Close parkings', () => {
-      cy.fixture('geojson-responses/parkings-1.json').as('geoResponse')
+    it('Close supermarkets', () => {
+      cy.fixture('geojson-responses/supermarkets-1.json').as('geoResponse')
 
       // main object
       cy.get('[data-cy=parameter-key-mainObject-0]')
-        .select('amenity')
+        .select('shop')
 
       cy.get('[data-cy=parameter-value-mainObject-0]')
-        .select('parking')
+        .select('supermarket')
 
       // time reach
       cy.get('[data-cy=time-reach-checkbox]').check()
-      cy.get('[data-cy=transport-mean').select('foot-walking')
+      cy.get('[data-cy=transport-mean').select('driving-car')
 
       // distance
       cy.get('[data-cy=main-distance-input]')
         .clear()
-        .type(60)
+        .type(600)
       
       cy.intercept('POST', '**/api/location-search').as('locationSearch')
 
