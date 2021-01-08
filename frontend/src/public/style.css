@@ -47,31 +47,15 @@ body {
   height: 30vw;
 }
 
-.location {
-  text-align: center;
-  font-size: large;
-  margin: 0 0 15px 0;
-}
-
-.forecast {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.forecast-table {
-  margin: 0 auto;
-}
-
-.forecast-icon-cell {
-  height: 3em
-}
-
 .error-banner {
   margin: 5px;
   color: #920202
 }
 
 .spinner-border {
-  padding-top: 2px
+  padding-top: 2px;
+}
+
+.relative-params-buttons {
+  padding-bottom: 1rem;
 }
