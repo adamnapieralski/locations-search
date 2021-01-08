@@ -22,7 +22,7 @@ const currentPositionIcon = L.icon({
   iconUrl: positionIcon,
   shadowUrl: iconShadow,
   iconAnchor: [22, 41],
-  popupAnchor: [-10, -41]
+  popupAnchor: [-10, -41],
 });
 
 function ChangeView({ center }) {
@@ -32,11 +32,11 @@ function ChangeView({ center }) {
 }
 
 function showPopup(feature, layer) {
-  if(feature.properties.name){
-    layer.bindPopup(feature.properties.name)
-  } else if(feature.properties.amenity){
-    layer.bindPopup(feature.properties.amenity)
-  }
+  let popupText = '';
+  Object.entries(feature.properties).forEach((e) => {
+    popupText += `${e[0]}: ${e[1]}</br>`;
+  });
+  layer.bindPopup(popupText);
 }
 
 class Map extends React.Component {
@@ -60,7 +60,7 @@ class Map extends React.Component {
         <Marker position={[latitude, longitude]} icon={currentPositionIcon}>
           <Popup> Your current position </Popup>
         </Marker>
-        <GeoJSON key={Math.random().toString()} data={geojson} onEachFeature={showPopup}/>
+        <GeoJSON key={Math.random().toString()} data={geojson} onEachFeature={showPopup} />
       </MapContainer>
     );
   }
