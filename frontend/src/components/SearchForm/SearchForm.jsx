@@ -59,7 +59,7 @@ function ErrorBanner(props) {
   const { msg } = props;
   if (!msg) { return null; }
   return (
-    <div className="error-banner">msg</div>
+    <div className="error-banner">Error: {msg}</div>
   );
 }
 
@@ -174,7 +174,7 @@ class SearchForm extends React.Component {
         <Form.Group className="relative-form">
           <Form.Label>Parameters</Form.Label>
           {this.createParamsRows('relativeObject')}
-          <Row>
+          <Row className="relative-params-buttons">
             <Col xs="auto">
               <Button variant="outline-primary" data-cy="add-param-button" onClick={() => this.addParamRow('relativeObject')}>Add</Button>
             </Col>
@@ -183,9 +183,9 @@ class SearchForm extends React.Component {
             </Col>
           </Row>
           <Form.Row className="align-items-center">
-            <Col xs="auto">
-              <Form.Label>Distance [m]:</Form.Label>
-            </Col>
+            <Form.Label as={Col} xs="auto">
+              Distance [m]:
+            </Form.Label>
             <Col xs="auto">
               <Form.Control type="number" min="0" step="1" data-cy="relative-distance-input" value={maxDistance} onChange={this.onRelativeDistanceChange} />
             </Col>
@@ -287,6 +287,7 @@ class SearchForm extends React.Component {
     event.preventDefault();
     const { mainObject, relativeObject } = this.state;
     const { handleGeojsonChange, coords } = this.props;
+    this.onErrorMsgChange(null);
     this.onWaitingForResponseChange(true);
     const response = await postLocationSearch({
       mainObject,
@@ -299,7 +300,7 @@ class SearchForm extends React.Component {
       this.onWaitingForResponseChange(false);
       handleGeojsonChange(emptyGeoJSON());
     } else {
-      this.onErrorMsgChange('');
+      this.onErrorMsgChange(null);
       this.onWaitingForResponseChange(false);
       handleGeojsonChange(response);
     }
@@ -361,7 +362,7 @@ class SearchForm extends React.Component {
         <Row>
           <Col xs="auto">
             <Button variant="primary" type="submit" data-cy="submit" disabled={waitingForResponse}>
-              Submit
+              Search
             </Button>
           </Col>
           <Col xs="auto">
