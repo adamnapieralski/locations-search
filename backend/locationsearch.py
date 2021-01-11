@@ -15,6 +15,8 @@ opr_api_key = '5b3ce3597851110001cf62480279a95227aa4e5f9ccf7cfa946e69f3'
 
 opr_client = client.Client(key=opr_api_key)
 
+timeout = 120
+
 def process_request(payload):
     coords = payload['coords']
     main_object = payload['mainObject']
@@ -107,7 +109,7 @@ def make_params_query_part(params):
 
 def get_ovp_main_object_search_query(main_object_data, coords, poly_coords=None):
     query = ''
-    query += '[timeout:600];'
+    query += '[timeout:{}];'.format(timeout)
     query += 'nwr'
 
     query += make_params_query_part(main_object_data['params'])
@@ -123,7 +125,7 @@ def get_ovp_main_object_search_query(main_object_data, coords, poly_coords=None)
 
 def get_ovp_main_relative_object_search_query(main_object_data, relative_object_data, coords, poly_coords):
     query = ''
-    query += '[timeout:600];'
+    query += '[timeout:{}];'.format(timeout)
     query += 'nwr'
 
     query += make_params_query_part(main_object_data['params'])
