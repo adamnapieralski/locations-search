@@ -33,7 +33,7 @@ function ChangeView({ center }) {
 
 function showPopup(feature, layer) {
   let popupText = '';
-  Object.entries(feature.properties).forEach((e) => {
+  Object.entries(feature.properties.tags).forEach((e) => {
     popupText += `${e[0]}: ${e[1]}</br>`;
   });
   layer.bindPopup(popupText);

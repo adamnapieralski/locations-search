@@ -3,21 +3,17 @@ import copy
 import logging
 
 import geojson
-import overpass
 from openrouteservice import client
 from itertools import groupby
 import objectparams as opms
 import transportmeans as trmns
+import osm2geojson as o2g
 
 logger = logging.getLogger('locationsearch')
 
 opr_api_key = '5b3ce3597851110001cf62480279a95227aa4e5f9ccf7cfa946e69f3'
 
-ovp_api = overpass.API(timeout=600)
 opr_client = client.Client(key=opr_api_key)
-
-def get_location_search_results(coordinates, main_object_params, relative_object_params):
-    pass
 
 def process_request(payload):
     coords = payload['coords']
@@ -40,10 +36,12 @@ def process_request(payload):
     else:
         query = get_ovp_main_object_search_query(main_object, coords, poly_coords)
 
+    query += "(._;>;);out body;"
     logger.info(query)
 
     try:
-        return process_overpass_data(ovp_api.get(query, verbosity='geom'))
+        return process_overpass_data(o2g.xml2geojson(o2g.overpass_call(query), filter_used_refs=True))
+    # TODO edjust errors since not using overpass
     except overpass.errors.ServerRuntimeError as e:
         msg = e.__doc__ + ". " + e.message
         print('ServerRuntimeError', msg)
@@ -108,8 +106,9 @@ def make_params_query_part(params):
     return q
 
 def get_ovp_main_object_search_query(main_object_data, coords, poly_coords=None):
-
-    query = 'nwr'
+    query = ''
+    query += '[timeout:600];'
+    query += 'nwr'
 
     query += make_params_query_part(main_object_data['params'])
 
@@ -123,7 +122,10 @@ def get_ovp_main_object_search_query(main_object_data, coords, poly_coords=None)
     return query
 
 def get_ovp_main_relative_object_search_query(main_object_data, relative_object_data, coords, poly_coords):
-    query = 'nwr'
+    query = ''
+    query += '[timeout:600];'
+    query += 'nwr'
+
     query += make_params_query_part(main_object_data['params'])
 
     if poly_coords == None:
@@ -149,14 +151,25 @@ def get_ovp_main_relative_object_search_query(main_object_data, relative_object_
 
 def process_overpass_data(data):
     for item in data.items():
-        if(item[0] == 'features'):
+        if item[0] == 'features':
             for feature in item[1]:
-                if feature['geometry']['type'] == 'LineString':
-                    coords = feature['geometry']['coordinates']
-                    new_feature = copy.deepcopy(feature)
-                    new_feature['geometry']['type'] = 'Point'
-                    new_feature['geometry']['coordinates'] = center_coordinates(coords)
-                    item[1].append(new_feature)
+                prop_type = feature['properties']['type']
+
+                if prop_type != 'way' and prop_type != 'relation':
+                    continue
+
+                coords = feature['geometry']['coordinates']
+
+                if feature['properties']['type'] == 'way':
+                    new_center = center_coordinates(coords[0])
+                else:
+                    new_center = center_coordinates(coords[0][0])
+
+                new_feature = copy.deepcopy(feature)
+                new_feature['geometry']['type'] = 'Point'
+                new_feature['properties']['type'] = 'node'
+                new_feature['geometry']['coordinates'] = new_center
+                item[1].append(new_feature)
     return data
 
 def center_coordinates(coordinates):
