@@ -81,7 +81,8 @@ class Map extends React.Component {
     return (
       <div className="mapBlock">
         <div className="form-check">
-          <input className="form-check-input" type="checkbox" defaultChecked={showSearchDistance} onChange={this.handleShowDistanceChange} id="searchDistanceCheck" />
+          <input className="form-check-input" type="checkbox" defaultChecked={showSearchDistance}
+           onChange={this.handleShowDistanceChange} id="searchDistanceCheck" />
           <label className="form-check-label">Show search distance</label>
         </div>
         <MapContainer className="map" center={[latitude, longitude]} zoom={13} scrollWheelZoom="true">

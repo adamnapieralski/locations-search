@@ -27,7 +27,8 @@ def process_request(payload):
 
     # search considering time reach distance
     if main_object['timeReachOn']:
-        poly_coords = get_opr_isochrone_poly_coords(coords, main_object['maxDistance'], main_object['transportMean'])
+        time = main_object['maxDistance'] * 60
+        poly_coords = get_opr_isochrone_poly_coords(coords, time, main_object['transportMean'])
 
     # search considering also relative object
     if relative_object['applicable']:

@@ -11,8 +11,13 @@ import ErrorBoundary from '../ErrorBoundary/index';
 const baseURL = process.env.ENDPOINT;
 
 const coordsSettings = {
-  precision: 6,
-  step: 0.000001,
+  precision: 4,
+  step: 0.0001,
+};
+
+const limits = {
+  time: 60,        // [min]
+  distance: 100000 // [m]
 };
 
 const getObjectParams = async () => {
@@ -83,7 +88,7 @@ class SearchForm extends React.Component {
       objectParams: [],
       transportMeans: [],
       mainObject: {
-        maxDistance: 1000, // meters or seconds
+        maxDistance: 1000, // meters or minutes
         params: [
           { key: 0, value: 0 },
         ],
@@ -125,7 +130,7 @@ class SearchForm extends React.Component {
   }
 
   onLatitudeChange = (event) => {
-    if(isNaN(event.target.value)){
+    if(!event.target.value){
       return;
     }
     const { coords: { longitude } } = this.props;
@@ -133,7 +138,7 @@ class SearchForm extends React.Component {
   }
 
   onLongitudeChange = (event) => {
-    if(isNaN(event.target.value)){
+    if(!event.target.value){
       return;
     }
     const { coords: { latitude } } = this.props;
@@ -141,6 +146,9 @@ class SearchForm extends React.Component {
   }
 
   onMainDistanceChange = (event) => {
+    if(!event.target.value){
+      return;
+    }
     const { mainObject } = this.state;
     const newMainObject = { ...mainObject, maxDistance: parseInt(event.target.value, 10) };
     this.setState({ mainObject: newMainObject });
@@ -157,7 +165,8 @@ class SearchForm extends React.Component {
 
   onTimeReachChange = (event) => {
     const { mainObject } = this.state;
-    const newMainObject = { ...mainObject, timeReachOn: event.target.checked };
+    const distance = Math.min(mainObject.maxDistance, event.target.checked ? limits.time : limits.distance)
+    const newMainObject = { ...mainObject, timeReachOn: event.target.checked, maxDistance: distance };
     this.setState({ mainObject: newMainObject });
 
     const handleMainObjectChange = this.props.handleMainObjectChange;
@@ -356,10 +365,10 @@ class SearchForm extends React.Component {
           <Form.Row className="align-items-center">
             <Form.Label as={Col} xs="auto">
               Distance
-              { (() => (timeReachOn ? ' [s]:' : ' [m]:'))() }
+              { (() => (timeReachOn ? ' [min]:' : ' [m]:'))() }
             </Form.Label>
             <Col xs="auto">
-              <Form.Control type="number" min="0" step="1" data-cy="main-distance-input" value={maxDistance} onChange={this.onMainDistanceChange} />
+              <Form.Control type="number" min="0" max={ (() => (timeReachOn ? String(limits.time) : String(limits.distance)))() } step="1" data-cy="main-distance-input" value={maxDistance} onChange={this.onMainDistanceChange} />
             </Col>
             <Col xs="auto">
               <Form.Check type="checkbox" label="Time reach" data-cy="time-reach-checkbox" checked={timeReachOn} onChange={this.onTimeReachChange} />

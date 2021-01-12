@@ -10,8 +10,8 @@ class App extends React.Component {
     // this.handleGeolocationChange = this.handleGeolocationChange.bind(this);
     this.state = {
       coords: {
-        latitude: 51.782065,
-        longitude: 19.459279,
+        latitude: 51.7820,
+        longitude: 19.4593,
       },
       mainObject: {
         maxDistance: 1000, // meters or seconds
@@ -47,7 +47,6 @@ class App extends React.Component {
   }
 
   handleGeojsonChange = (data) => {
-    console.log(data)
     this.setState({ geojson: data.geojson, searchPolygon: data.polygon });
   }
 
