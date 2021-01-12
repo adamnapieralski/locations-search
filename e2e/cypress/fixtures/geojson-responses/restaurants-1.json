@@ -1,66 +1,70 @@
 {
-    "type": "FeatureCollection",
-    "features": [
-      {
-        "type": "Feature",
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 475362644,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.4563,
-            51.768598
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "amenity": "restaurant",
           "name": "Chłopska Izba",
           "opening_hours": "Mo-Th 12:00-23:00; Fr,Sa 12:00-24:00, Su 12:00-22:00"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4562999,
+          51.7685978
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 475362646,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.455488,
-            51.768225
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "amenity": "restaurant",
           "name": "The Mexican"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4554882,
+          51.7682252
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 475362647,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.457862,
-            51.768199
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "amenity": "restaurant",
           "name": "Fanaberia"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4578617,
+          51.7681991
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 475372905,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.456411,
-            51.767389
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "77",
           "addr:street": "Piotrkowska",
@@ -68,17 +72,20 @@
           "name": "Klub Spadkobierców"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.456411,
+          51.7673894
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 475373798,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.457463,
-            51.765168
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "100",
           "addr:street": "Piotrkowska",
@@ -87,17 +94,20 @@
           "name": "Bierhalle"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4574626,
+          51.7651682
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 475963866,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.440818,
-            51.821056
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "49a",
           "addr:postcode": "91-496",
@@ -110,31 +120,37 @@
           "takeaway": "yes"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4408182,
+          51.8210558
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 759673611,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.403808,
-            51.682309
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4038078,
+          51.6823086
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 989417258,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.590727,
-            51.793646
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:housenumber": "1",
           "addr:street": "Rynek Nowosolna",
           "amenity": "restaurant",
@@ -142,46 +158,55 @@
           "name": "Pizzeria Margherita"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.590727,
+          51.7936459
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 1187744329,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.461361,
-            51.748086
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Bar u Andzi"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4613605,
+          51.7480856
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 1329750569,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.52268,
-            51.755323
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.5226798,
+          51.7553231
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 1360232267,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.455927,
-            51.768614
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "65",
           "addr:street": "Piotrkowska",
@@ -191,17 +216,20 @@
           "wheelchair": "no"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4559272,
+          51.7686143
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 1649033228,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.538639,
-            51.754704
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "5G",
           "addr:street": "Fiodora Dostojewskiego",
@@ -211,34 +239,40 @@
           "source:addr": "EMUiA (emuia.geoportal.gov.pl)"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.5386385,
+          51.7547044
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 1794956363,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.448969,
-            51.727711
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "regional",
           "name": "Obiady domowe",
           "wheelchair": "no"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4489686,
+          51.727711
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 1880208261,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.481905,
-            51.790175
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:housenumber": "144A",
           "addr:street": "Wojska Polskiego",
           "amenity": "restaurant",
@@ -247,17 +281,20 @@
           "website": "http://www.ciagoty.eu/"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4819054,
+          51.7901748
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 1891403012,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.382024,
-            51.794102
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "25",
           "addr:street": "Rojna",
@@ -268,17 +305,20 @@
           "phone": "+48426523694"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.3820239,
+          51.7941019
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 1892235487,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.449451,
-            51.784768
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "email": "zachodnia@jesc.pl",
           "fax": "+48426547773",
@@ -288,33 +328,39 @@
           "website": "https://www.jesc.pl/"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4494506,
+          51.7847678
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 1970850654,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.476292,
-            51.75254
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Gronowalski",
           "website": "http://www.buddhapub.pl/"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4762919,
+          51.7525396
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 1970850658,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.472539,
-            51.751763
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "internet_access": "wlan",
           "internet_access:fee": "no",
@@ -324,66 +370,78 @@
           "website": "http://www.leloft.pl/"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.472539,
+          51.7517634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 2147809763,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.453658,
-            51.778391
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "regional",
           "name": "Naleśniczówka",
           "phone": "+48509674631"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4536576,
+          51.7783906
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 2874064463,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.449455,
-            51.749031
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "capacity": "200",
           "name": "Serenissima"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4494554,
+          51.7490307
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 3016339163,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.448836,
-            51.730775
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Spółdzielnia Socjalna Szansa",
           "website": "http://spoldzielnia-szansa.pl/"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.448836,
+          51.7307753
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 3040078916,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.359139,
-            51.663107
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Pabianice",
           "addr:postcode": "95-200",
           "addr:street": "Lipowa",
@@ -393,17 +451,20 @@
           "phone": "+48 42 206 81 00"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.3591391,
+          51.663107
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 3660467551,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.455222,
-            51.781438
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "polish,russian,german,jewish",
           "email": "restauracja@staryrynek2.pl",
@@ -412,17 +473,20 @@
           "website": "http://www.staryrynek2.pl/"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4552216,
+          51.7814376
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 3723424499,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.455363,
-            51.747362
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "215",
           "addr:street": "Wólczańska",
@@ -431,49 +495,58 @@
           "name": "Gastro Projekt"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4553632,
+          51.7473624
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 3726088593,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.477115,
-            51.767322
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "regional",
           "name": "Saga"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4771146,
+          51.7673215
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 3781770353,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.461938,
-            51.732838
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Obiady domowe",
           "phone": "+48503667449"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4619381,
+          51.7328382
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 3782110661,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.455329,
-            51.768554
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:street": "6 Sierpnia",
           "amenity": "restaurant",
@@ -481,17 +554,20 @@
           "name": "Anatewka"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4553286,
+          51.7685538
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 3782110664,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.456384,
-            51.768228
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "69",
           "addr:street": "Piotrkowska",
@@ -499,146 +575,173 @@
           "name": "Bułgarska 69"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4563837,
+          51.7682282
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 3782110673,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.457753,
-            51.768015
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "mexican",
           "name": "Senoritas"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4577533,
+          51.7680154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 3782110676,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.456287,
-            51.766753
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:city:en": "Lodz",
           "amenity": "restaurant",
           "name": "Radamenes"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4562871,
+          51.7667532
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 3782110678,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.456706,
-            51.766679
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "burger",
           "name": "Jerry's Burger"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4567056,
+          51.7666794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 3815523127,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.397845,
-            51.75193
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "pizza",
           "name": "Fiero"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.397845,
+          51.7519295
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 3815523128,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.398529,
-            51.752021
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "sushi",
           "name": "Sushi Kushi"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.3985295,
+          51.7520206
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 3815523130,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.398271,
-            51.752037
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "pizza",
           "name": "Pełny Brzuszek"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.3982708,
+          51.752037
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 3815541809,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.39739,
-            51.751153
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "asian",
           "name": "Tanlinh"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.3973901,
+          51.7511528
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 3876611766,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.465577,
-            51.773467
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "regional",
           "name": "Lamadżu"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4655768,
+          51.7734667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 3899050695,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.455932,
-            51.768078
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "69",
           "addr:postcode": "90-422",
@@ -649,17 +752,20 @@
           "website": "http://lavash.pl"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4559316,
+          51.7680783
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 4019471392,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.438926,
-            51.720431
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "115",
           "addr:postcode": "93-494",
@@ -672,17 +778,20 @@
           "phone_1": "+48602351377"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4389256,
+          51.7204309
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 4104811830,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.499158,
-            51.740595
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "5a",
           "addr:postcode": "93-213",
@@ -695,143 +804,170 @@
           "website": "https://www.dagrasso.pl/lodz-dabrowa-kossaka"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4991578,
+          51.7405955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 4146202289,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.471211,
-            51.7886
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Gorąca Kiełbasiarnia"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4712109,
+          51.7885997
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 4223599226,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.516225,
-            51.824152
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Zajazd Don Kichot"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.5162249,
+          51.8241517
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 4262671915,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.44704,
-            51.776028
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "pizza",
           "name": "Pizzeria Vita"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4470405,
+          51.7760282
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 4262893954,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.460283,
-            51.750354
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "pizza",
           "name": "Fiero Pizza"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4602827,
+          51.750354
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 4280398097,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.47642,
-            51.752729
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Browar Księży Młyn",
           "website": "http://www.browarksiezymlyn.pl/"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4764204,
+          51.7527294
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 4289336268,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.456881,
-            51.767767
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "LaVende Bistro"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4568814,
+          51.7677666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 4305829227,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.467247,
-            51.7715
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "pizza",
           "name": "Telepizza"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4672472,
+          51.7715
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 4307622724,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.600925,
-            51.900972
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "pizza",
           "name": "Pepe Pizza",
           "opening_hours": "Mo-Th 12:00-23:00; Fr-Sa 12:00-13:00; Su 12:00-21:00"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.6009255,
+          51.9009724
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 4307622725,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.602357,
-            51.90057
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "contact:website": "http://www.pizzakelo.pl/",
           "cuisine": "pizza",
@@ -839,96 +975,114 @@
           "opening_hours": "Mo-Th 11:00-22:00; Fr-Sa 11:00-23:00; Sa 11:00-22:00"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.6023569,
+          51.9005698
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 4311936000,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.39935,
-            51.773524
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "regional",
           "name": "U Wojtka"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.39935,
+          51.7735243
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 4364547449,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.637346,
-            51.725015
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Da Grasso"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.6373458,
+          51.7250147
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 4697143160,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.471916,
-            51.788639
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Cammino",
           "website": "http://www.cammino.pl/"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4719159,
+          51.7886393
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 4904133580,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.320667,
-            51.751528
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "pizza",
           "name": "Pizzeria"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.3206674,
+          51.7515275
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 4961894423,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.447599,
-            51.777025
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "regional",
           "name": "U Gosi"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4475994,
+          51.7770247
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 5076567214,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.480452,
-            51.780053
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "47",
           "addr:postcode": "91-735",
@@ -940,96 +1094,114 @@
           "phone": "+48 505 596 594"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4804521,
+          51.7800532
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 5202026428,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.447377,
-            51.776877
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "regional",
           "name": "Rumcajs"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4473774,
+          51.7768771
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 5239184602,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.466987,
-            51.773239
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Da Antonio"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4669867,
+          51.7732386
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 5287594362,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.467104,
-            51.770906
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "vietnamese",
           "name": "Bar Hôi An"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4671039,
+          51.7709063
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 5287594367,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.465818,
-            51.771629
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Quale"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.465818,
+          51.7716293
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 5579795821,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.464802,
-            51.771912
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "russian;local",
           "name": "Obiady domowe",
           "name:ru": "Вареничная"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4648015,
+          51.7719123
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 5743600960,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.456423,
-            51.768026
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "amenity": "restaurant",
           "cuisine": "turkish",
@@ -1037,17 +1209,20 @@
           "opening_hours": "Mo-Th 10:00-23:00; Fr, Sa 10:00-00:00; Su 10:00-23:00"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.456423,
+          51.7680255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 5743600965,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.455956,
-            51.768196
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:city:en": "Lodz",
           "amenity": "restaurant",
@@ -1055,110 +1230,131 @@
           "name": "Ganesh"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4559563,
+          51.7681964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 5743600966,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.455956,
-            51.768383
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "amenity": "restaurant",
           "name": "Presto"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4559563,
+          51.7683832
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 5752716180,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.455937,
-            51.767089
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city:en": "Lodz",
           "amenity": "restaurant",
           "name": "Layali Shisha Club & Restaurant"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4559373,
+          51.7670888
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 5752716181,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.455499,
-            51.767183
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Forno Nero"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4554988,
+          51.7671834
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 5752716182,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.454353,
-            51.766971
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Sushi w Dłoń",
           "opening_hours": "Mo-Th 12:00-21:00; Fr,Sa 12:00-23:00; Su 12:00-19:00"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4543535,
+          51.7669709
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 5752716185,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.45709,
-            51.766821
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Breadnia"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4570898,
+          51.766821
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 5752716198,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.457628,
-            51.76549
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Pho Shop"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4576275,
+          51.7654897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 5937472832,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.461944,
-            51.764896
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "40",
           "addr:postcode": "90-009",
@@ -1173,17 +1369,20 @@
           "takeaway": "yes"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4619442,
+          51.7648959
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 6172772154,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.441064,
-            51.820938
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "41a",
           "addr:postcode": "91-496",
@@ -1196,78 +1395,93 @@
           "takeaway": "yes"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4410643,
+          51.820938
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 6227632486,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.480386,
-            51.756086
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Fatamorgana"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4803856,
+          51.7560857
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 6255906980,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.472928,
-            51.761292
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "cuisine": "pizza",
           "name": "Pizzeria SYCYLIANA"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4729284,
+          51.7612916
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 6270098702,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.453336,
-            51.780993
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Casablanca"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4533361,
+          51.7809931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 6270098703,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.453521,
-            51.781351
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Orchidea"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4535211,
+          51.7813515
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 6274878715,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.469193,
-            51.778362
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "8",
           "addr:postcode": "90-225",
@@ -1278,146 +1492,114 @@
           "phone": "+48426337633"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4691927,
+          51.7783619
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 6371021591,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.451473,
-            51.778212
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Miska Gastro Bowls"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4514728,
+          51.7782122
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 6744388585,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.462018,
-            51.763056
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name:en": "Piwnicza Lodzka"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4620176,
+          51.7630557
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 7223062688,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.605979,
-            51.895352
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Róża Wiatrów",
           "phone": "+48 607 900 749",
           "website": "https://www.kasor.pl/"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.6059794,
+          51.8953516
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 7265484037,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.301733,
-            51.819704
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Kamienica nr 6",
           "website": "https://kamienica6.pl/"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.3017333,
+          51.8197036
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 7942426870,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.478817,
-            51.7567
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "name": "Nielada Restobar",
           "opening_hours": "Mo-Fr 10:00-18:00; Su 10:00-16:00"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4788165,
+          51.7566996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
         "id": 111799750,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
-            [
-              19.485402,
-              51.712845
-            ],
-            [
-              19.485437,
-              51.712744
-            ],
-            [
-              19.485571,
-              51.712762
-            ],
-            [
-              19.485575,
-              51.712752
-            ],
-            [
-              19.485683,
-              51.712766
-            ],
-            [
-              19.485679,
-              51.712776
-            ],
-            [
-              19.485813,
-              51.712794
-            ],
-            [
-              19.485777,
-              51.712894
-            ],
-            [
-              19.485644,
-              51.712876
-            ],
-            [
-              19.485636,
-              51.712902
-            ],
-            [
-              19.485527,
-              51.712888
-            ],
-            [
-              19.485536,
-              51.712862
-            ],
-            [
-              19.485402,
-              51.712845
-            ]
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "247",
           "addr:postcode": "93-317",
@@ -1437,35 +1619,72 @@
           "website": "http://www.dworeknachojnach.pl/"
         }
       },
-      {
-        "type": "Feature",
-        "id": 129559781,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              19.325832,
-              51.74742
+              19.4854024,
+              51.7128445
             ],
             [
-              19.325791,
-              51.747343
+              19.4854368,
+              51.7127445
             ],
             [
-              19.325958,
-              51.747309
+              19.4855709,
+              51.7127621
             ],
             [
-              19.325999,
-              51.747387
+              19.4855748,
+              51.7127516
             ],
             [
-              19.325832,
-              51.74742
+              19.4856826,
+              51.7127655
+            ],
+            [
+              19.4856789,
+              51.7127762
+            ],
+            [
+              19.4858129,
+              51.7127938
+            ],
+            [
+              19.4857773,
+              51.7128943
+            ],
+            [
+              19.4856445,
+              51.7128761
+            ],
+            [
+              19.4856359,
+              51.7129022
+            ],
+            [
+              19.4855266,
+              51.7128883
+            ],
+            [
+              19.4855359,
+              51.7128621
+            ],
+            [
+              19.4854024,
+              51.7128445
             ]
           ]
-        },
-        "properties": {
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
+        "id": 129559781,
+        "tags": {
           "addr:city": "Konstantynów Łódzki",
           "addr:housenumber": "20",
           "addr:postcode": "95-050",
@@ -1477,35 +1696,40 @@
           "opening_hours": "Mo-Fr 08:00-22:00; Sa-Su 10:00-22:00"
         }
       },
-      {
-        "type": "Feature",
-        "id": 132445803,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              19.436285,
-              51.698797
+              19.3258318,
+              51.7474204
             ],
             [
-              19.435968,
-              51.698124
+              19.3257912,
+              51.7473435
             ],
             [
-              19.436222,
-              51.698079
+              19.3259584,
+              51.7473093
             ],
             [
-              19.436539,
-              51.698751
+              19.3259988,
+              51.7473868
             ],
             [
-              19.436285,
-              51.698797
+              19.3258318,
+              51.7474204
             ]
           ]
-        },
-        "properties": {
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
+        "id": 132445803,
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "2",
           "addr:street": "Patriotyczna",
@@ -1515,59 +1739,40 @@
           "source:addr": "EMUiA (emuia.geoportal.gov.pl)"
         }
       },
-      {
-        "type": "Feature",
-        "id": 132569567,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              19.477131,
-              51.77221
+              19.436285,
+              51.6987967
             ],
             [
-              19.477129,
-              51.772215
+              19.435968,
+              51.6981245
             ],
             [
-              19.477125,
-              51.772214
+              19.4362223,
+              51.6980785
             ],
             [
-              19.477142,
-              51.772127
+              19.4365393,
+              51.6987507
             ],
             [
-              19.477236,
-              51.772136
-            ],
-            [
-              19.477243,
-              51.772104
-            ],
-            [
-              19.477304,
-              51.772111
-            ],
-            [
-              19.477276,
-              51.772228
-            ],
-            [
-              19.477204,
-              51.772222
-            ],
-            [
-              19.477206,
-              51.772217
-            ],
-            [
-              19.477131,
-              51.77221
+              19.436285,
+              51.6987967
             ]
           ]
-        },
-        "properties": {
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
+        "id": 132569567,
+        "tags": {
           "addr:housenumber": "75a",
           "addr:street": "Gabriela Narutowicza",
           "amenity": "restaurant",
@@ -1575,35 +1780,64 @@
           "name": "Sznycelek"
         }
       },
-      {
-        "type": "Feature",
-        "id": 132957638,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              19.432199,
-              51.715393
+              19.4771305,
+              51.7722105
             ],
             [
-              19.432511,
-              51.71527
+              19.477129,
+              51.7722151
             ],
             [
-              19.432411,
-              51.715172
+              19.477125,
+              51.7722144
             ],
             [
-              19.432099,
-              51.715295
+              19.4771421,
+              51.7721273
             ],
             [
-              19.432199,
-              51.715393
+              19.4772363,
+              51.7721362
+            ],
+            [
+              19.4772431,
+              51.7721045
+            ],
+            [
+              19.477304,
+              51.7721109
+            ],
+            [
+              19.477276,
+              51.7722284
+            ],
+            [
+              19.4772044,
+              51.7722223
+            ],
+            [
+              19.4772057,
+              51.7722175
+            ],
+            [
+              19.4771305,
+              51.7722105
             ]
           ]
-        },
-        "properties": {
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
+        "id": 132957638,
+        "tags": {
           "addr:housenumber": "2",
           "addr:street": "Stanisława Dubois",
           "amenity": "restaurant",
@@ -1611,51 +1845,40 @@
           "name": "Bar Bistro pod świerkami"
         }
       },
-      {
-        "type": "Feature",
-        "id": 138275304,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              19.439353,
-              51.708612
+              19.432199,
+              51.7153928
             ],
             [
-              19.439693,
-              51.70866
+              19.4325114,
+              51.71527
             ],
             [
-              19.439645,
-              51.70879
+              19.4324111,
+              51.7151721
             ],
             [
-              19.439549,
-              51.708777
+              19.4320987,
+              51.7152949
             ],
             [
-              19.439519,
-              51.708858
-            ],
-            [
-              19.43936,
-              51.708835
-            ],
-            [
-              19.439388,
-              51.708757
-            ],
-            [
-              19.439305,
-              51.708745
-            ],
-            [
-              19.439353,
-              51.708612
+              19.432199,
+              51.7153928
             ]
           ]
-        },
-        "properties": {
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
+        "id": 138275304,
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "46",
           "addr:street": "Starorudzka",
@@ -1671,160 +1894,166 @@
           "website": "http://rudzka-gora.pl/"
         }
       },
-      {
-        "type": "Feature",
-        "id": 150231367,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              19.365033,
+              19.4393531,
+              51.7086123
+            ],
+            [
+              19.4396928,
+              51.7086597
+            ],
+            [
+              19.4396453,
+              51.7087904
+            ],
+            [
+              19.4395485,
+              51.7087769
+            ],
+            [
+              19.4395192,
+              51.7088576
+            ],
+            [
+              19.43936,
+              51.7088354
+            ],
+            [
+              19.4393885,
+              51.7087569
+            ],
+            [
+              19.4393047,
+              51.7087453
+            ],
+            [
+              19.4393531,
+              51.7086123
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
+        "id": 150231367,
+        "tags": {
+          "addr:city": "Pabianice",
+          "addr:city:simc": "0959079",
+          "addr:housenumber": "53B",
+          "addr:postcode": "95-200",
+          "addr:street": "Bugaj",
+          "addr:street:sym_ul": "02367",
+          "amenity": "restaurant",
+          "building": "yes",
+          "name": "Salem",
+          "source:addr": "emuia.gugik.gov.pl"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              19.3650333,
               51.657303
             ],
             [
-              19.365035,
-              51.657275
+              19.3650354,
+              51.6572748
             ],
             [
-              19.365022,
-              51.657274
+              19.3650221,
+              51.6572744
             ],
             [
-              19.365024,
-              51.657255
+              19.3650236,
+              51.6572551
             ],
             [
               19.365025,
-              51.657235
+              51.6572351
             ],
             [
-              19.365026,
-              51.657218
+              19.3650263,
+              51.6572179
             ],
             [
-              19.365072,
-              51.657183
+              19.3650721,
+              51.6571834
             ],
             [
-              19.365161,
-              51.657184
+              19.3651605,
+              51.6571835
             ],
             [
-              19.36516,
-              51.657201
+              19.3651604,
+              51.6572005
             ],
             [
-              19.365232,
-              51.657201
+              19.3652322,
+              51.6572006
             ],
             [
-              19.365232,
-              51.657163
+              19.3652323,
+              51.6571632
             ],
             [
-              19.365276,
-              51.657141
+              19.3652763,
+              51.6571411
             ],
             [
-              19.365383,
-              51.657144
+              19.3653832,
+              51.6571442
             ],
             [
-              19.365381,
+              19.3653807,
               51.657178
             ],
             [
-              19.365445,
-              51.65718
+              19.3654448,
+              51.6571799
             ],
             [
-              19.365447,
-              51.657155
+              19.3654466,
+              51.6571552
             ],
             [
               19.36558,
               51.657159
             ],
             [
-              19.365569,
-              51.657312
+              19.3655687,
+              51.6573122
             ],
             [
-              19.365312,
-              51.657305
+              19.3653121,
+              51.6573049
             ],
             [
-              19.365312,
-              51.657311
+              19.3653116,
+              51.6573109
             ],
             [
-              19.365033,
+              19.3650333,
               51.657303
             ]
           ]
-        },
-        "properties": {
-          "addr:city": "Pabianice",
-          "addr:city:simc": "0959079",
-          "addr:housenumber": "53B",
-          "addr:postcode": "95-200",
-          "addr:street": "Bugaj",
-          "addr:street:sym_ul": "02367",
-          "amenity": "restaurant",
-          "building": "yes",
-          "name": "Salem",
-          "source:addr": "emuia.gugik.gov.pl"
-        }
-      },
-      {
-        "type": "Feature",
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
         "id": 151517852,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
-            [
-              19.32742,
-              51.747804
-            ],
-            [
-              19.327393,
-              51.747753
-            ],
-            [
-              19.327615,
-              51.747706
-            ],
-            [
-              19.327635,
-              51.747745
-            ],
-            [
-              19.327567,
-              51.747759
-            ],
-            [
-              19.327574,
-              51.747772
-            ],
-            [
-              19.327508,
-              51.747785
-            ],
-            [
-              19.327499,
-              51.747796
-            ],
-            [
-              19.327439,
-              51.747809
-            ],
-            [
-              19.32742,
-              51.747804
-            ]
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Konstantynów Łódzki",
           "addr:housenumber": "2c",
           "addr:postcode": "95-050",
@@ -1844,35 +2073,60 @@
           "website": "https://www.dagrasso.pl/konstantynow-lodzki"
         }
       },
-      {
-        "type": "Feature",
-        "id": 158223052,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              19.445406,
-              51.736293
+              19.3274202,
+              51.7478035
             ],
             [
-              19.445404,
-              51.736182
+              19.327393,
+              51.7477527
             ],
             [
-              19.445902,
-              51.736178
+              19.3276149,
+              51.7477063
             ],
             [
-              19.445904,
-              51.73629
+              19.3276355,
+              51.7477449
             ],
             [
-              19.445406,
-              51.736293
+              19.3275671,
+              51.7477588
+            ],
+            [
+              19.3275738,
+              51.7477716
+            ],
+            [
+              19.3275084,
+              51.7477851
+            ],
+            [
+              19.327499,
+              51.7477965
+            ],
+            [
+              19.3274386,
+              51.747809
+            ],
+            [
+              19.3274202,
+              51.7478035
             ]
           ]
-        },
-        "properties": {
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
+        "id": 158223052,
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "56",
           "addr:postcode": "93-494",
@@ -1888,137 +2142,111 @@
           "takeaway": "yes"
         }
       },
-      {
-        "type": "Feature",
-        "id": 158966307,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              19.511088,
-              51.761399
+              19.4454057,
+              51.7362933
             ],
             [
-              19.511513,
-              51.761451
+              19.4454037,
+              51.7361818
             ],
             [
-              19.51151,
-              51.761459
+              19.4459019,
+              51.7361783
             ],
             [
-              19.51156,
-              51.761465
+              19.4459039,
+              51.7362898
             ],
             [
-              19.51154,
-              51.761529
-            ],
-            [
-              19.511489,
-              51.761522
-            ],
-            [
-              19.511487,
-              51.761526
-            ],
-            [
-              19.511275,
-              51.7615
-            ],
-            [
-              19.511274,
-              51.761503
-            ],
-            [
-              19.511234,
-              51.761498
-            ],
-            [
-              19.511236,
-              51.761492
-            ],
-            [
-              19.511065,
-              51.761471
-            ],
-            [
-              19.511088,
-              51.761399
+              19.4454057,
+              51.7362933
             ]
           ]
-        },
-        "properties": {
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
+        "id": 158966307,
+        "tags": {
           "amenity": "restaurant",
           "building": "yes",
           "source": "mapa.lodz.pl"
         }
       },
-      {
-        "type": "Feature",
-        "id": 175904777,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              19.463569,
-              51.745496
+              19.5110878,
+              51.7613991
             ],
             [
-              19.463401,
-              51.745481
+              19.5115129,
+              51.7614511
             ],
             [
-              19.463413,
-              51.745438
+              19.5115102,
+              51.7614593
             ],
             [
-              19.463271,
-              51.745372
+              19.5115599,
+              51.7614654
             ],
             [
-              19.463228,
-              51.745304
+              19.5115397,
+              51.7615287
             ],
             [
-              19.463231,
-              51.745297
+              19.5114887,
+              51.7615225
             ],
             [
-              19.463236,
-              51.745297
+              19.5114874,
+              51.7615263
             ],
             [
-              19.463242,
-              51.745283
+              19.5112752,
+              51.7615003
             ],
             [
-              19.463298,
-              51.74529
+              19.5112743,
+              51.761503
             ],
             [
-              19.463295,
-              51.745308
+              19.511234,
+              51.7614981
             ],
             [
-              19.463472,
-              51.745395
+              19.5112359,
+              51.7614921
             ],
             [
-              19.463498,
-              51.74541
+              19.5110648,
+              51.7614712
             ],
             [
-              19.46358,
-              51.745455
-            ],
-            [
-              19.463569,
-              51.745496
+              19.5110878,
+              51.7613991
             ]
           ]
-        },
-        "properties": {
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
+        "id": 175904777,
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "282",
           "addr:street": "Piotrkowska",
@@ -2028,121 +2256,139 @@
           "source:addr": "EMUiA (emuia.geoportal.gov.pl)"
         }
       },
-      {
-        "type": "Feature",
-        "id": 206133473,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              19.488007,
-              51.751197
+              19.4635693,
+              51.7454956
             ],
             [
-              19.488012,
-              51.751181
+              19.463401,
+              51.7454815
             ],
             [
-              19.488036,
-              51.751106
+              19.4634131,
+              51.7454385
             ],
             [
-              19.488142,
-              51.751119
+              19.4632711,
+              51.7453723
             ],
             [
-              19.488568,
-              51.751171
+              19.4632285,
+              51.7453036
             ],
             [
-              19.488544,
-              51.751246
+              19.4632305,
+              51.7452966
             ],
             [
-              19.488392,
-              51.751227
+              19.4632363,
+              51.7452966
             ],
             [
-              19.488368,
-              51.751302
+              19.4632418,
+              51.7452826
             ],
             [
-              19.488091,
-              51.751268
+              19.4632984,
+              51.7452899
             ],
             [
-              19.48811,
-              51.751209
+              19.4632953,
+              51.7453082
             ],
             [
-              19.488007,
-              51.751197
+              19.4634719,
+              51.7453954
+            ],
+            [
+              19.4634983,
+              51.74541
+            ],
+            [
+              19.4635796,
+              51.7454549
+            ],
+            [
+              19.4635693,
+              51.7454956
             ]
           ]
-        },
-        "properties": {
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
+        "id": 206133473,
+        "tags": {
           "amenity": "restaurant",
           "building": "yes",
           "name": "Pierogarnia Palce Lizać"
         }
       },
-      {
-        "type": "Feature",
-        "id": 309071775,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              19.483885,
-              51.790794
+              19.4880068,
+              51.7511967
             ],
             [
-              19.484202,
-              51.790877
+              19.4880119,
+              51.7511807
             ],
             [
-              19.484203,
-              51.790892
+              19.4880361,
+              51.7511056
             ],
             [
-              19.484312,
-              51.790891
+              19.4881417,
+              51.7511186
             ],
             [
-              19.484305,
-              51.790785
+              19.4885681,
+              51.7511712
             ],
             [
-              19.484263,
-              51.790774
+              19.4885441,
+              51.751246
             ],
             [
-              19.484237,
-              51.790768
+              19.4883925,
+              51.7512273
             ],
             [
-              19.484245,
-              51.790756
+              19.4883685,
+              51.7513022
             ],
             [
-              19.484072,
-              51.790709
+              19.4880909,
+              51.751268
             ],
             [
-              19.484053,
-              51.790737
+              19.4881098,
+              51.7512094
             ],
             [
-              19.483943,
-              51.790709
-            ],
-            [
-              19.483885,
-              51.790794
+              19.4880068,
+              51.7511967
             ]
           ]
-        },
-        "properties": {
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
+        "id": 309071775,
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "152",
           "addr:street": "Wojska Polskiego",
@@ -2154,93 +2400,123 @@
           "website": "http://www.stylowa-lodz.pl"
         }
       },
-      {
-        "type": "Feature",
-        "id": 429756034,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              19.456567,
-              51.767509
+              19.4838853,
+              51.7907945
             ],
             [
-              19.456559,
-              51.767546
+              19.4842016,
+              51.790877
             ],
             [
-              19.456535,
-              51.76756
+              19.4842031,
+              51.7908917
             ],
             [
-              19.456506,
-              51.767558
+              19.4843115,
+              51.7908914
             ],
             [
-              19.45649,
-              51.767543
+              19.4843049,
+              51.7907846
             ],
             [
-              19.456491,
-              51.767536
+              19.4842627,
+              51.7907741
             ],
             [
-              19.456443,
-              51.767532
+              19.4842368,
+              51.7907675
             ],
             [
-              19.45645,
-              51.7675
+              19.484245,
+              51.7907558
             ],
             [
-              19.456567,
-              51.767509
+              19.4840719,
+              51.7907092
+            ],
+            [
+              19.4840531,
+              51.7907369
+            ],
+            [
+              19.4839435,
+              51.790709
+            ],
+            [
+              19.4838853,
+              51.7907945
             ]
           ]
-        },
-        "properties": {
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
+        "id": 429756034,
+        "tags": {
           "amenity": "restaurant",
           "building": "roof",
           "name": "Veranda"
         }
       },
-      {
-        "type": "Feature",
-        "id": 465602833,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              19.406847,
-              51.763397
+              19.4565668,
+              51.7675094
             ],
             [
-              19.406894,
-              51.763368
+              19.4565589,
+              51.7675457
             ],
             [
-              19.406912,
-              51.763379
+              19.4565354,
+              51.7675601
             ],
             [
-              19.407317,
-              51.763126
+              19.4565058,
+              51.7675578
             ],
             [
-              19.407189,
-              51.763048
+              19.4564898,
+              51.767543
             ],
             [
-              19.406705,
-              51.76335
+              19.4564914,
+              51.7675357
             ],
             [
-              19.406847,
-              51.763397
+              19.4564429,
+              51.7675317
+            ],
+            [
+              19.4564499,
+              51.7674997
+            ],
+            [
+              19.4565668,
+              51.7675094
             ]
           ]
-        },
-        "properties": {
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
+        "id": 465602833,
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "8",
           "addr:street": "Zdrowie",
@@ -2254,43 +2530,48 @@
           "website": "http://www.restauracjanazdrowie.pl/"
         }
       },
-      {
-        "type": "Feature",
-        "id": 499094698,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              19.320094,
-              51.75148
+              19.406847,
+              51.7633973
             ],
             [
-              19.320099,
-              51.751478
+              19.4068936,
+              51.7633682
             ],
             [
-              19.320079,
-              51.751441
+              19.4069121,
+              51.7633795
             ],
             [
-              19.320291,
-              51.751397
+              19.4073174,
+              51.7631264
             ],
             [
-              19.320437,
-              51.751668
+              19.4071892,
+              51.7630478
             ],
             [
-              19.32022,
-              51.751713
+              19.4067048,
+              51.7633503
             ],
             [
-              19.320094,
-              51.75148
+              19.406847,
+              51.7633973
             ]
           ]
-        },
-        "properties": {
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
+        "id": 499094698,
+        "tags": {
           "addr:city": "Konstantynów Łódzki",
           "addr:housenumber": "13",
           "addr:postcode": "95-050",
@@ -2301,39 +2582,48 @@
           "source:addr": "mkonstantynowlodzki.e-mapa.net"
         }
       },
-      {
-        "type": "Feature",
-        "id": 543115266,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              19.460542,
-              51.778975
+              19.3200937,
+              51.7514797
             ],
             [
-              19.460593,
-              51.778773
+              19.3200993,
+              51.7514782
             ],
             [
-              19.460783,
-              51.77879
+              19.3200789,
+              51.7514409
             ],
             [
-              19.460746,
-              51.778949
+              19.3202906,
+              51.7513968
             ],
             [
-              19.460736,
-              51.778992
+              19.3204374,
+              51.7516682
             ],
             [
-              19.460542,
-              51.778975
+              19.3202201,
+              51.7517134
+            ],
+            [
+              19.3200937,
+              51.7514797
             ]
           ]
-        },
-        "properties": {
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
+        "id": 543115266,
+        "tags": {
           "addr:city": "Łódź",
           "addr:housename": "Igraszka",
           "addr:housenumber": "1/3",
@@ -2349,17 +2639,44 @@
           "website": "http://rusalka-lodz.pl/"
         }
       },
-      {
-        "type": "Feature",
-        "id": 111799750,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.485590923076924,
-            51.71282353846155
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              19.460542,
+              51.7789751
+            ],
+            [
+              19.4605931,
+              51.7787732
+            ],
+            [
+              19.4607831,
+              51.7787903
+            ],
+            [
+              19.4607458,
+              51.7789487
+            ],
+            [
+              19.4607358,
+              51.7789923
+            ],
+            [
+              19.460542,
+              51.7789751
+            ]
           ]
-        },
-        "properties": {
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
+        "id": 111799750,
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "247",
           "addr:postcode": "93-317",
@@ -2379,17 +2696,20 @@
           "website": "http://www.dworeknachojnach.pl/"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.485590915384616,
+          51.71282351538462
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 129559781,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.3258824,
-            51.7473758
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Konstantynów Łódzki",
           "addr:housenumber": "20",
           "addr:postcode": "95-050",
@@ -2401,17 +2721,20 @@
           "opening_hours": "Mo-Fr 08:00-22:00; Sa-Su 10:00-22:00"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.3258824,
+          51.74737608
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 132445803,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.4362598,
-            51.6985096
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "2",
           "addr:street": "Patriotyczna",
@@ -2421,17 +2744,20 @@
           "source:addr": "EMUiA (emuia.geoportal.gov.pl)"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.436259919999998,
+          51.69850942000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 132569567,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.477193363636363,
-            51.772181272727266
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:housenumber": "75a",
           "addr:street": "Gabriela Narutowicza",
           "amenity": "restaurant",
@@ -2439,17 +2765,20 @@
           "name": "Sznycelek"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.477193327272722,
+          51.7721816
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 132957638,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.4322838,
-            51.7153046
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:housenumber": "2",
           "addr:street": "Stanisława Dubois",
           "amenity": "restaurant",
@@ -2457,17 +2786,20 @@
           "name": "Bar Bistro pod świerkami"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.43228384,
+          51.71530452
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 138275304,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.43946277777778,
-            51.70873844444445
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "46",
           "addr:street": "Starorudzka",
@@ -2483,17 +2815,20 @@
           "website": "http://rudzka-gora.pl/"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4394628,
+          51.70873853333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 150231367,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.36522666666667,
-            51.657222857142855
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Pabianice",
           "addr:city:simc": "0959079",
           "addr:housenumber": "53B",
@@ -2506,17 +2841,20 @@
           "source:addr": "emuia.gugik.gov.pl"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.365226690476188,
+          51.65722285238094
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 151517852,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.327507,
-            51.747773300000006
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Konstantynów Łódzki",
           "addr:housenumber": "2c",
           "addr:postcode": "95-050",
@@ -2536,17 +2874,20 @@
           "website": "https://www.dagrasso.pl/konstantynow-lodzki"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.32750707,
+          51.74777319
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 158223052,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.4456044,
-            51.7362472
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "56",
           "addr:postcode": "93-494",
@@ -2562,33 +2903,39 @@
           "takeaway": "yes"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.445604179999997,
+          51.7362473
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 158966307,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.511335307692306,
-            51.761478000000004
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "building": "yes",
           "source": "mapa.lodz.pl"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.511335276923077,
+          51.76147816923078
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 175904777,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.463378785714287,
-            51.74538014285714
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "282",
           "addr:street": "Piotrkowska",
@@ -2598,33 +2945,39 @@
           "source:addr": "EMUiA (emuia.geoportal.gov.pl)"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.463378885714288,
+          51.74538009285715
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 206133473,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.488207000000003,
-            51.751202090909096
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "building": "yes",
           "name": "Pierogarnia Palce Lizać"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.488207018181814,
+          51.75120203636364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 309071775,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.484133749999998,
-            51.79079050000001
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "152",
           "addr:street": "Wojska Polskiego",
@@ -2636,33 +2989,39 @@
           "website": "http://www.stylowa-lodz.pl"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.484133725000003,
+          51.79079051666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 429756034,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.456512,
-            51.76753255555556
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "restaurant",
           "building": "roof",
           "name": "Veranda"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.456511966666667,
+          51.7675325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 465602833,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.406958714285715,
-            51.76329500000001
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "8",
           "addr:street": "Zdrowie",
@@ -2676,17 +3035,20 @@
           "website": "http://www.restauracjanazdrowie.pl/"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.40695872857143,
+          51.763295257142865
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 499094698,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.320187714285716,
-            51.751522428571434
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Konstantynów Łódzki",
           "addr:housenumber": "13",
           "addr:postcode": "95-050",
@@ -2697,17 +3059,20 @@
           "source:addr": "mkonstantynowlodzki.e-mapa.net"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.320187671428574,
+          51.75152241428571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 543115266,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.460657,
-            51.778909000000006
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housename": "Igraszka",
           "addr:housenumber": "1/3",
@@ -2722,6 +3087,14 @@
           "source:addr": "EMUiA (emuia.geoportal.gov.pl)",
           "website": "http://rusalka-lodz.pl/"
         }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.460656966666665,
+          51.77890911666666
+        ]
       }
-    ]
-  }
+    }
+  ]
+}

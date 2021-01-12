@@ -15,7 +15,7 @@ opr_api_key = '5b3ce3597851110001cf62480279a95227aa4e5f9ccf7cfa946e69f3'
 
 opr_client = client.Client(key=opr_api_key)
 
-timeout = 120
+timeout = 180
 
 def process_request(payload):
     coords = payload['coords']
@@ -42,19 +42,12 @@ def process_request(payload):
     logger.info(query)
 
     try:
-        return process_overpass_data(o2g.xml2geojson(o2g.overpass_call(query), filter_used_refs=True))
-    # TODO edjust errors since not using overpass
-    except overpass.errors.ServerRuntimeError as e:
-        msg = e.__doc__ + ". " + e.message
-        print('ServerRuntimeError', msg)
-    except overpass.errors.UnknownOverpassError as e:
-        msg = e.message
-        print('UnknownOverpassError', msg)
-    except overpass.errors.OverpassError as e:
-        msg = e.__doc__
-        print('OverpassError', msg)
+        return process_overpass_data(o2g.xml2geojson(o2g.overpass_call(query), filter_used_refs=True, log_level='INFO'))
+    except Exception as e:
+        msg = 'Error processing request. Try again.'
+        logger.error(msg)
 
-    return {'error': msg}
+    return { 'error': msg }
 
 def get_opr_isochrone_poly_coords(coords, max_distance, transport_mean_id):
     params = {
@@ -66,7 +59,6 @@ def get_opr_isochrone_poly_coords(coords, max_distance, transport_mean_id):
     }
     response = opr_client.isochrones(**params)
 
-    # TODO handle error responses
     return response['features'][0]['geometry']['coordinates'][0]
 
 def make_poly_str(poly_coords):
@@ -156,27 +148,49 @@ def process_overpass_data(data):
         if item[0] == 'features':
             for feature in item[1]:
                 prop_type = feature['properties']['type']
+                geom_type = feature['geometry']['type']
 
                 if prop_type != 'way' and prop_type != 'relation':
                     continue
 
                 coords = feature['geometry']['coordinates']
-
-                if feature['properties']['type'] == 'way':
-                    new_center = center_coordinates(coords[0])
+                
+                if prop_type == 'way':
+                    if geom_type == 'LineString':
+                        appendNewFeature(item[1], feature, center_coordinates(coords, depth=0))
+                    elif geom_type == 'Polygon':
+                        appendNewFeature(item[1], feature, center_coordinates(coords, depth=1))
                 else:
-                    new_center = center_coordinates(coords[0][0])
-
-                new_feature = copy.deepcopy(feature)
-                new_feature['geometry']['type'] = 'Point'
-                new_feature['properties']['type'] = 'node'
-                new_feature['geometry']['coordinates'] = new_center
-                item[1].append(new_feature)
+                    if geom_type == 'MultiLineString':
+                        appendNewFeature(item[1], feature, center_coordinates(coords, depth=1))
+                    elif geom_type == 'MultiPolygon':
+                        appendNewFeature(item[1], feature, center_coordinates(coords, depth=2))
     return data
 
-def center_coordinates(coordinates):
+def appendNewFeature(collection, original_feature, coords):
+    new_feature = copy.deepcopy(original_feature)
+    new_feature['geometry']['type'] = 'Point'
+    new_feature['properties']['type'] = 'node'
+    new_feature['geometry']['coordinates'] = coords
+    collection.append(new_feature)
+
+def center_coordinates(coordinates, depth=0):
     x, y = 0, 0
-    for c in coordinates:
+    flat_coords = []
+
+    if depth == 0:
+        flat_coords = coordinates
+    elif depth == 1:
+        for cc in coordinates:
+            for c in cc:
+                flat_coords.append(c)
+    elif depth == 2:
+        for ccc in coordinates:
+            for cc in ccc:
+                for c in cc:
+                    flat_coords.append(c)
+
+    for c in flat_coords:
         x += c[0]
         y += c[1]
-    return [x/len(coordinates), y/(len(coordinates))]
+    return [x / len(flat_coords), y / (len(flat_coords))]
