@@ -19,6 +19,7 @@ object_params = [
             { 'id': 13, 'name': 'university' },
             { 'id': 14, 'name': 'theatre' },
             { 'id': 15, 'name': 'cinema' },
+            { 'id': 16, 'name': 'parking' }
         ]
     },
     {

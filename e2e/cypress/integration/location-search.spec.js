@@ -21,6 +21,11 @@ context('Location search', () => {
   })
 
   describe('Main object only, single parameter, normal distance', () => {
+    afterEach(() => {
+      // wait to see results on map
+      cy.wait(2000)
+    })
+
     it('Close schools', () => {
       cy.fixture('geojson-responses/schools-1.json').as('geoResponse')
 
@@ -48,6 +53,11 @@ context('Location search', () => {
   });
 
   describe('Main object only, single parameter, time reach distance', () => {
+    afterEach(() => {
+      // wait to see results on map
+      cy.wait(2000)
+    })
+
     it('Close supermarkets', () => {
       cy.fixture('geojson-responses/supermarkets-1.json').as('geoResponse')
 
@@ -79,6 +89,11 @@ context('Location search', () => {
   })
   
   describe('Main object only, multiple parameters', () => {
+    afterEach(() => {
+      // wait to see results on map
+      cy.wait(2000)
+    })
+
     it('Alternatives of the same parameter key', () => {
       cy.fixture('geojson-responses/fast-food-post-1.json').as('geoResponse')
 
@@ -150,6 +165,11 @@ context('Location search', () => {
   })
 
   describe('Main and relative object, normal distance', () => {
+    afterEach(() => {
+      // wait to see results on map
+      cy.wait(2000)
+    })
+
     it('Restaurants near parks', () => {
       cy.fixture('geojson-responses/restaurants-1.json').as('geoResponse')
 
@@ -182,7 +202,7 @@ context('Location search', () => {
 
       cy.get('[data-cy=submit]')
         .click()
-        .wait('@locationSearch').then((interception) => {
+        .wait('@locationSearch', { timeout: 40000 }).then((interception) => {
           cy.get('@geoResponse').should('deep.equal', interception.response.body)
         })
         .get('@geoResponse').checkPointMarkersCount()
@@ -190,6 +210,11 @@ context('Location search', () => {
   })
 
   describe('Main and relative object, time reach distance', () => {
+    afterEach(() => {
+      // wait to see results on map
+      cy.wait(2000)
+    })
+    
     it('Restaurants near parks', () => {
       cy.fixture('geojson-responses/swimming-pools-1.json').as('geoResponse')
 
@@ -227,7 +252,7 @@ context('Location search', () => {
 
       cy.get('[data-cy=submit]')
         .click()
-        .wait('@locationSearch', { timeout: 30000 }).then((interception) => {
+        .wait('@locationSearch', { timeout: 40000 }).then((interception) => {
           cy.get('@geoResponse').should('deep.equal', interception.response.body)
         })
         .get('@geoResponse').checkPointMarkersCount()

@@ -3,21 +3,19 @@ import copy
 import logging
 
 import geojson
-import overpass
 from openrouteservice import client
 from itertools import groupby
 import objectparams as opms
 import transportmeans as trmns
+import osm2geojson as o2g
 
 logger = logging.getLogger('locationsearch')
 
 opr_api_key = '5b3ce3597851110001cf62480279a95227aa4e5f9ccf7cfa946e69f3'
 
-ovp_api = overpass.API(timeout=600)
 opr_client = client.Client(key=opr_api_key)
 
-def get_location_search_results(coordinates, main_object_params, relative_object_params):
-    pass
+timeout = 180
 
 def process_request(payload):
     coords = payload['coords']
@@ -40,21 +38,16 @@ def process_request(payload):
     else:
         query = get_ovp_main_object_search_query(main_object, coords, poly_coords)
 
+    query += "(._;>;);out body;"
     logger.info(query)
 
     try:
-        return process_overpass_data(ovp_api.get(query, verbosity='geom'))
-    except overpass.errors.ServerRuntimeError as e:
-        msg = e.__doc__ + ". " + e.message
-        print('ServerRuntimeError', msg)
-    except overpass.errors.UnknownOverpassError as e:
-        msg = e.message
-        print('UnknownOverpassError', msg)
-    except overpass.errors.OverpassError as e:
-        msg = e.__doc__
-        print('OverpassError', msg)
+        return process_overpass_data(o2g.xml2geojson(o2g.overpass_call(query), filter_used_refs=True, log_level='INFO'))
+    except Exception as e:
+        msg = 'Error processing request. Try again.'
+        logger.error(msg)
 
-    return {'error': msg}
+    return { 'error': msg }
 
 def get_opr_isochrone_poly_coords(coords, max_distance, transport_mean_id):
     params = {
@@ -66,7 +59,6 @@ def get_opr_isochrone_poly_coords(coords, max_distance, transport_mean_id):
     }
     response = opr_client.isochrones(**params)
 
-    # TODO handle error responses
     return response['features'][0]['geometry']['coordinates'][0]
 
 def make_poly_str(poly_coords):
@@ -108,8 +100,9 @@ def make_params_query_part(params):
     return q
 
 def get_ovp_main_object_search_query(main_object_data, coords, poly_coords=None):
-
-    query = 'nwr'
+    query = ''
+    query += '[timeout:{}];'.format(timeout)
+    query += 'nwr'
 
     query += make_params_query_part(main_object_data['params'])
 
@@ -123,7 +116,10 @@ def get_ovp_main_object_search_query(main_object_data, coords, poly_coords=None)
     return query
 
 def get_ovp_main_relative_object_search_query(main_object_data, relative_object_data, coords, poly_coords):
-    query = 'nwr'
+    query = ''
+    query += '[timeout:{}];'.format(timeout)
+    query += 'nwr'
+
     query += make_params_query_part(main_object_data['params'])
 
     if poly_coords == None:
@@ -149,19 +145,52 @@ def get_ovp_main_relative_object_search_query(main_object_data, relative_object_
 
 def process_overpass_data(data):
     for item in data.items():
-        if(item[0] == 'features'):
+        if item[0] == 'features':
             for feature in item[1]:
-                if feature['geometry']['type'] == 'LineString':
-                    coords = feature['geometry']['coordinates']
-                    new_feature = copy.deepcopy(feature)
-                    new_feature['geometry']['type'] = 'Point'
-                    new_feature['geometry']['coordinates'] = center_coordinates(coords)
-                    item[1].append(new_feature)
+                prop_type = feature['properties']['type']
+                geom_type = feature['geometry']['type']
+
+                if prop_type != 'way' and prop_type != 'relation':
+                    continue
+
+                coords = feature['geometry']['coordinates']
+                
+                if prop_type == 'way':
+                    if geom_type == 'LineString':
+                        append_new_feature(item[1], feature, center_coordinates(coords, depth=0))
+                    elif geom_type == 'Polygon':
+                        append_new_feature(item[1], feature, center_coordinates(coords, depth=1))
+                else:
+                    if geom_type == 'MultiLineString':
+                        append_new_feature(item[1], feature, center_coordinates(coords, depth=1))
+                    elif geom_type == 'MultiPolygon':
+                        append_new_feature(item[1], feature, center_coordinates(coords, depth=2))
     return data
 
-def center_coordinates(coordinates):
+def append_new_feature(collection, original_feature, coords):
+    new_feature = copy.deepcopy(original_feature)
+    new_feature['geometry']['type'] = 'Point'
+    new_feature['properties']['type'] = 'node'
+    new_feature['geometry']['coordinates'] = coords
+    collection.append(new_feature)
+
+def center_coordinates(coordinates, depth=0):
     x, y = 0, 0
-    for c in coordinates:
+    flat_coords = []
+
+    if depth == 0:
+        flat_coords = coordinates
+    elif depth == 1:
+        for cc in coordinates:
+            for c in cc:
+                flat_coords.append(c)
+    elif depth == 2:
+        for ccc in coordinates:
+            for cc in ccc:
+                for c in cc:
+                    flat_coords.append(c)
+
+    for c in flat_coords:
         x += c[0]
         y += c[1]
-    return [x/len(coordinates), y/(len(coordinates))]
+    return [x / len(flat_coords), y / (len(flat_coords))]

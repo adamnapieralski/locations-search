@@ -1,46 +1,47 @@
 {
-    "type": "FeatureCollection",
-    "features": [
-      {
-        "type": "Feature",
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 1329125980,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.456919,
-            51.799332
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "post_office",
           "operator": "Poczta Polska"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4569191,
+          51.7993316
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 1883944431,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.464831,
-            51.788731
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "post_office"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.464831,
+          51.7887306
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 1892235448,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.464586,
-            51.79007
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "45",
           "addr:street": "Marynarska",
@@ -50,17 +51,20 @@
           "phone": "+48426574444"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4645859,
+          51.7900701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 1892235498,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.448599,
-            51.787548
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "1",
           "addr:postcode": "91-301",
@@ -72,17 +76,20 @@
           "website": "http://poczta-polska.pl"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4485993,
+          51.7875476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 3450992523,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.446258,
-            51.780139
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "alt_name": "Kentucky Fried Chicken",
           "amenity": "fast_food",
@@ -96,17 +103,20 @@
           "takeaway": "yes"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4462585,
+          51.780139
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 3450992524,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.446201,
-            51.780394
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "amenity": "fast_food",
           "brand": "McDonald's",
@@ -118,17 +128,20 @@
           "takeaway": "yes"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4462009,
+          51.7803939
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 3450992525,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.446224,
-            51.780298
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "amenity": "fast_food",
           "brand": "Subway",
@@ -140,31 +153,37 @@
           "takeaway": "yes"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.446224,
+          51.780298
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 4439634356,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.454664,
-            51.78966
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "post_office"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.454664,
+          51.7896596
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 4798977523,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.454651,
-            51.787696
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:street": "Łagiewnicka",
           "amenity": "fast_food",
@@ -175,17 +194,20 @@
           "phone": "730860306"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4546511,
+          51.7876964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 5715147922,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.446245,
-            51.780183
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "amenity": "fast_food",
           "cuisine": "burger",
@@ -196,17 +218,20 @@
           "takeaway": "yes"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4462455,
+          51.7801834
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 5715149375,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.446236,
-            51.780239
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "amenity": "fast_food",
           "cuisine": "thai",
@@ -217,199 +242,200 @@
           "takeaway": "yes"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4462364,
+          51.7802385
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 5752715789,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.446211,
-            51.780347
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "amenity": "fast_food",
           "cuisine": "fish",
           "name": "North Fish"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4462106,
+          51.7803473
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 6520681338,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.460442,
-            51.792856
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "post_office",
           "name": "AP Łódź",
           "operator": "Poczta Polska",
           "phone": "+48733595700"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.4604416,
+          51.792856
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
         "id": 103690327,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+        "tags": {
+          "addr:city": "Łódź",
+          "addr:country": "PL",
+          "addr:housenumber": "8",
+          "addr:postcode": "91-462",
+          "addr:street": "Wspólna",
+          "amenity": "post_office",
+          "building": "yes",
+          "source": "mapa.lodz.pl",
+          "source:addr": "EMUiA (emuia.geoportal.gov.pl)"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              19.4489,
-              51.795619
+              19.4488998,
+              51.7956186
             ],
             [
-              19.449043,
-              51.795433
+              19.4490428,
+              51.7954329
             ],
             [
-              19.449157,
-              51.795466
+              19.4491569,
+              51.7954658
             ],
             [
               19.449162,
               51.795459
             ],
             [
-              19.449147,
-              51.795455
+              19.4491472,
+              51.7954548
             ],
             [
-              19.449144,
-              51.79545
+              19.4491443,
+              51.7954496
             ],
             [
-              19.449174,
-              51.795409
+              19.4491744,
+              51.7954087
             ],
             [
-              19.449184,
+              19.4491841,
               51.795406
             ],
             [
-              19.449246,
+              19.4492459,
               51.795424
             ],
             [
-              19.449249,
+              19.4492492,
               51.79543
             ],
             [
-              19.44922,
-              51.795472
+              19.4492201,
+              51.7954718
             ],
             [
-              19.449212,
-              51.795473
+              19.4492122,
+              51.7954728
             ],
             [
-              19.449198,
-              51.795469
+              19.4491976,
+              51.7954687
             ],
             [
-              19.449192,
-              51.795476
+              19.4491925,
+              51.7954758
             ],
             [
-              19.4493,
-              51.795506
+              19.4493002,
+              51.7955063
             ],
             [
-              19.449165,
-              51.795696
+              19.4491655,
+              51.7956961
             ],
             [
-              19.4489,
-              51.795619
+              19.4488998,
+              51.7956186
             ]
           ]
-        },
-        "properties": {
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
+        "id": 180379619,
+        "tags": {
           "addr:city": "Łódź",
-          "addr:country": "PL",
-          "addr:housenumber": "8",
-          "addr:postcode": "91-462",
-          "addr:street": "Wspólna",
+          "addr:housenumber": "5",
+          "addr:postcode": "91-071",
+          "addr:street": "Jana Karskiego",
           "amenity": "post_office",
-          "building": "yes",
-          "source": "mapa.lodz.pl",
-          "source:addr": "EMUiA (emuia.geoportal.gov.pl)"
+          "level": "0",
+          "name": "FUP Łódź 40",
+          "official_name": "Filia Urzędu Pocztowego Łódź 40",
+          "opening_hours": "Mo-Sa 09:00-19:00; Su 09:00-16:30",
+          "operator": "Poczta Polska",
+          "phone": "+48426341158"
         }
       },
-      {
-        "type": "Feature",
-        "id": 180379619,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              19.445533,
-              51.779655
+              19.4455334,
+              51.7796554
             ],
             [
               19.445626,
-              51.779664
+              51.7796638
             ],
             [
-              19.445638,
-              51.779614
+              19.4456379,
+              51.7796141
             ],
             [
-              19.445545,
-              51.779606
+              19.4455452,
+              51.7796057
             ],
             [
-              19.445533,
-              51.779655
+              19.4455334,
+              51.7796554
             ]
           ]
-        },
-        "properties": {
-          "addr:city": "Łódź",
-          "addr:housenumber": "5",
-          "addr:postcode": "91-071",
-          "addr:street": "Jana Karskiego",
-          "amenity": "post_office",
-          "level": "0",
-          "name": "FUP Łódź 40",
-          "official_name": "Filia Urzędu Pocztowego Łódź 40",
-          "opening_hours": "Mo-Sa 09:00-19:00; Su 09:00-16:30",
-          "operator": "Poczta Polska",
-          "phone": "+48426341158"
-        }
-      },
-      {
-        "type": "Feature",
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
         "id": 180392743,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
-            [
-              19.446595,
-              51.78064
-            ],
-            [
-              19.446475,
-              51.780629
-            ],
-            [
-              19.44651,
-              51.780486
-            ],
-            [
-              19.44663,
-              51.780498
-            ],
-            [
-              19.446595,
-              51.78064
-            ]
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "58",
           "addr:postcode": "91-002",
@@ -427,35 +453,40 @@
           "website": "http://www.burgerking.com.pl"
         }
       },
-      {
-        "type": "Feature",
-        "id": 180392745,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              19.446475,
-              51.780629
+              19.4465947,
+              51.7806399
             ],
             [
-              19.446356,
-              51.780618
+              19.4464755,
+              51.7806287
             ],
             [
-              19.446391,
-              51.780475
+              19.4465103,
+              51.7804864
             ],
             [
-              19.44651,
-              51.780486
+              19.4466295,
+              51.7804976
             ],
             [
-              19.446475,
-              51.780629
+              19.4465947,
+              51.7806399
             ]
           ]
-        },
-        "properties": {
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
+        "id": 180392745,
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "58",
           "addr:postcode": "91-002",
@@ -467,71 +498,40 @@
           "phone": "+48426348675"
         }
       },
-      {
-        "type": "Feature",
-        "id": 196167813,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              19.44882,
-              51.78678
+              19.4464755,
+              51.7806287
             ],
             [
-              19.448891,
-              51.786771
+              19.4463563,
+              51.7806176
             ],
             [
-              19.448901,
-              51.786743
+              19.4463911,
+              51.7804753
             ],
             [
-              19.448896,
-              51.78672
+              19.4465103,
+              51.7804864
             ],
             [
-              19.448899,
-              51.78672
-            ],
-            [
-              19.448892,
-              51.786693
-            ],
-            [
-              19.448901,
-              51.786691
-            ],
-            [
-              19.448892,
-              51.78664
-            ],
-            [
-              19.448882,
-              51.78664
-            ],
-            [
-              19.448797,
-              51.78665
-            ],
-            [
-              19.448797,
-              51.786658
-            ],
-            [
-              19.448796,
-              51.786667
-            ],
-            [
-              19.448804,
-              51.786702
-            ],
-            [
-              19.44882,
-              51.78678
+              19.4464755,
+              51.7806287
             ]
           ]
-        },
-        "properties": {
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
+        "id": 196167813,
+        "tags": {
           "addr:city": "Łódź",
           "amenity": "fast_food",
           "building": "yes",
@@ -539,35 +539,76 @@
           "phone": "+48426542241"
         }
       },
-      {
-        "type": "Feature",
-        "id": 328774135,
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              19.444995,
-              51.797919
+              19.4488198,
+              51.7867795
             ],
             [
-              19.445013,
-              51.797895
+              19.4488906,
+              51.7867709
             ],
             [
-              19.444947,
-              51.797876
+              19.448901,
+              51.7867429
             ],
             [
-              19.444929,
-              51.797901
+              19.4488964,
+              51.7867203
             ],
             [
-              19.444995,
-              51.797919
+              19.4488988,
+              51.7867196
+            ],
+            [
+              19.4488917,
+              51.7866934
+            ],
+            [
+              19.4489012,
+              51.7866907
+            ],
+            [
+              19.4488925,
+              51.7866397
+            ],
+            [
+              19.4488816,
+              51.7866405
+            ],
+            [
+              19.4487967,
+              51.7866496
+            ],
+            [
+              19.4487965,
+              51.7866578
+            ],
+            [
+              19.4487963,
+              51.7866665
+            ],
+            [
+              19.4488035,
+              51.7867018
+            ],
+            [
+              19.4488198,
+              51.7867795
             ]
           ]
-        },
-        "properties": {
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "way",
+        "id": 328774135,
+        "tags": {
           "amenity": "post_office",
           "building": "yes",
           "name": "DPD Pickup",
@@ -578,17 +619,40 @@
           "website": "https://www.dpdpickup.pl/"
         }
       },
-      {
-        "type": "Feature",
-        "id": 103690327,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.449152529411762,
-            51.79548600000001
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              19.4449949,
+              51.7979193
+            ],
+            [
+              19.4450129,
+              51.7978947
+            ],
+            [
+              19.4449467,
+              51.7978761
+            ],
+            [
+              19.4449288,
+              51.7979007
+            ],
+            [
+              19.4449949,
+              51.7979193
+            ]
           ]
-        },
-        "properties": {
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
+        "id": 103690327,
+        "tags": {
           "addr:city": "Łódź",
           "addr:country": "PL",
           "addr:housenumber": "8",
@@ -600,17 +664,20 @@
           "source:addr": "EMUiA (emuia.geoportal.gov.pl)"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.449152617647055,
+          51.79548585294117
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 180379619,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.445574999999998,
-            51.7796388
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "5",
           "addr:postcode": "91-071",
@@ -624,17 +691,20 @@
           "phone": "+48426341158"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.44557518,
+          51.77963888000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 180392743,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.446561,
-            51.7805786
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "58",
           "addr:postcode": "91-002",
@@ -652,17 +722,20 @@
           "website": "http://www.burgerking.com.pl"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.44656094,
+          51.780578500000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 180392745,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.446441399999998,
-            51.780567399999995
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "addr:housenumber": "58",
           "addr:postcode": "91-002",
@@ -674,17 +747,20 @@
           "phone": "+48426348675"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.44644174,
+          51.780567340000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 196167813,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.44885628571429,
-            51.78670392857142
-          ]
-        },
-        "properties": {
+        "tags": {
           "addr:city": "Łódź",
           "amenity": "fast_food",
           "building": "yes",
@@ -692,17 +768,20 @@
           "phone": "+48426542241"
         }
       },
-      {
-        "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.44885617142857,
+          51.786703764285726
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "node",
         "id": 328774135,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            19.444975799999998,
-            51.797902
-          ]
-        },
-        "properties": {
+        "tags": {
           "amenity": "post_office",
           "building": "yes",
           "name": "DPD Pickup",
@@ -712,6 +791,14 @@
           "source": "mapa.lodz.pl",
           "website": "https://www.dpdpickup.pl/"
         }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.44497564,
+          51.797902019999995
+        ]
       }
-    ]
-  }
+    }
+  ]
+}
