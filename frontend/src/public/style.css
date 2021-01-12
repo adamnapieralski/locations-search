@@ -30,13 +30,17 @@ body {
   margin-bottom: 2rem;
 }
 
-.map {
+.mapBlock {
   flex: 2;
   min-width: 500px;
   height: 500px;
   margin-inline: 1rem;
   margin-bottom: 2rem;
+}
 
+.map {
+  min-width: 500px;
+  height: 500px;
 }
 
 .icon {

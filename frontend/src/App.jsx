@@ -29,6 +29,8 @@ class App extends React.Component {
         type: 'FeatureCollection',
         features: [],
       },
+
+      searchPolygon: null
     };
   }
 
@@ -40,12 +42,17 @@ class App extends React.Component {
     //   );
   }
 
-  handleGeojsonChange = (geojson) => {
-    this.setState({ geojson });
+  handleMainObjectChange = (newMainObject) => {
+    this.setState({ mainObject: newMainObject });
+  }
+
+  handleGeojsonChange = (data) => {
+    console.log(data)
+    this.setState({ geojson: data.geojson, searchPolygon: data.polygon });
   }
 
   render() {
-    const { coords, mainObject, relativeObject, geojson } = this.state;
+    const { coords, mainObject, relativeObject, geojson, searchPolygon } = this.state;
     return (
       <div className="wrapper">
         <div className="searchForm">
@@ -56,11 +63,14 @@ class App extends React.Component {
             geojson={geojson}
             handleGeolocationChange={this.handleGeolocationChange}
             handleGeojsonChange={this.handleGeojsonChange}
+            handleMainObjectChange={this.handleMainObjectChange}
           />
         </div>
         <Map
           coords={coords}
           geojson={geojson}
+          mainObject={mainObject}
+          searchPolygon={searchPolygon}
         />
       </div>
     );

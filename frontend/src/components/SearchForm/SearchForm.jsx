@@ -125,11 +125,17 @@ class SearchForm extends React.Component {
   }
 
   onLatitudeChange = (event) => {
+    if(isNaN(event.target.value)){
+      return;
+    }
     const { coords: { longitude } } = this.props;
     this.onLocationCoordinatesChange({ latitude: parseFloat(event.target.value), longitude: parseFloat(longitude) });
   }
 
   onLongitudeChange = (event) => {
+    if(isNaN(event.target.value)){
+      return;
+    }
     const { coords: { latitude } } = this.props;
     this.onLocationCoordinatesChange({ longitude: parseFloat(event.target.value), latitude: parseFloat(latitude) });
   }
@@ -138,6 +144,9 @@ class SearchForm extends React.Component {
     const { mainObject } = this.state;
     const newMainObject = { ...mainObject, maxDistance: parseInt(event.target.value, 10) };
     this.setState({ mainObject: newMainObject });
+
+    const handleMainObjectChange = this.props.handleMainObjectChange;
+    handleMainObjectChange(newMainObject);
   }
 
   onRelativeDistanceChange = (event) => {
@@ -150,6 +159,9 @@ class SearchForm extends React.Component {
     const { mainObject } = this.state;
     const newMainObject = { ...mainObject, timeReachOn: event.target.checked };
     this.setState({ mainObject: newMainObject });
+
+    const handleMainObjectChange = this.props.handleMainObjectChange;
+    handleMainObjectChange(newMainObject);
   }
 
   onRelativeObjectApplicableChange = (event) => {

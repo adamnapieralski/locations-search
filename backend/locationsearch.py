@@ -2,7 +2,6 @@ import json
 import copy
 import logging
 
-import geojson
 from openrouteservice import client
 from itertools import groupby
 import objectparams as opms
@@ -42,7 +41,11 @@ def process_request(payload):
     logger.info(query)
 
     try:
-        return process_overpass_data(o2g.xml2geojson(o2g.overpass_call(query), filter_used_refs=True, log_level='INFO'))
+        data = process_overpass_data(o2g.xml2geojson(o2g.overpass_call(query), filter_used_refs=True, log_level='INFO'))
+        return {
+            'geojson': data,
+            'polygon': poly_coords
+        }
     except Exception as e:
         msg = 'Error processing request. Try again.'
         logger.error(msg)
