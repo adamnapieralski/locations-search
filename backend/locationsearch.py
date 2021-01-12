@@ -157,17 +157,17 @@ def process_overpass_data(data):
                 
                 if prop_type == 'way':
                     if geom_type == 'LineString':
-                        appendNewFeature(item[1], feature, center_coordinates(coords, depth=0))
+                        append_new_feature(item[1], feature, center_coordinates(coords, depth=0))
                     elif geom_type == 'Polygon':
-                        appendNewFeature(item[1], feature, center_coordinates(coords, depth=1))
+                        append_new_feature(item[1], feature, center_coordinates(coords, depth=1))
                 else:
                     if geom_type == 'MultiLineString':
-                        appendNewFeature(item[1], feature, center_coordinates(coords, depth=1))
+                        append_new_feature(item[1], feature, center_coordinates(coords, depth=1))
                     elif geom_type == 'MultiPolygon':
-                        appendNewFeature(item[1], feature, center_coordinates(coords, depth=2))
+                        append_new_feature(item[1], feature, center_coordinates(coords, depth=2))
     return data
 
-def appendNewFeature(collection, original_feature, coords):
+def append_new_feature(collection, original_feature, coords):
     new_feature = copy.deepcopy(original_feature)
     new_feature['geometry']['type'] = 'Point'
     new_feature['properties']['type'] = 'node'
