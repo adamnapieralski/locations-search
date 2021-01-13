@@ -17,7 +17,7 @@ const coordsSettings = {
 
 const limits = {
   time: 60,        // [min]
-  distance: 100000 // [m]
+  distance: 200000 // [m]
 };
 
 const getObjectParams = async () => {

@@ -1,0 +1,17 @@
+time_distance,object,transport,time,results_num
+10,school,driving-car,3.1244146823883057,250
+30,school,driving-car,4.599111795425415,606
+60,school,driving-car,6.82725977897644,1020
+10,school,foot-walking,1.0566914081573486,8
+30,school,foot-walking,3.0027687549591064,151
+60,school,foot-walking,2.711759567260742,283
+120,school,foot-walking,4.098078966140747,483
+240,school,foot-walking,6.164682865142822,624
+480,school,foot-walking,7.506093740463257,790
+10,school,cycling-regular,2.98858642578125,161
+30,school,cycling-regular,4.398401737213135,449
+60,school,cycling-regular,5.543342113494873,598
+120,school,cycling-regular,9.755794763565063,756
+180,school,cycling-regular,6.999195337295532,1049
+240,school,cycling-regular,9.569308519363403,1348
+300,school,cycling-regular,16.912044763565063,1716
