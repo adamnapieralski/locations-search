@@ -11,8 +11,13 @@ import ErrorBoundary from '../ErrorBoundary/index';
 const baseURL = process.env.ENDPOINT;
 
 const coordsSettings = {
-  precision: 6,
-  step: 0.000001,
+  precision: 4,
+  step: 0.0001,
+};
+
+const limits = {
+  time: 60, // [min]
+  distance: 200000, // [m]
 };
 
 const getObjectParams = async () => {
@@ -59,7 +64,10 @@ function ErrorBanner(props) {
   const { msg } = props;
   if (!msg) { return null; }
   return (
-    <div className="error-banner">Error: {msg}</div>
+    <div className="error-banner">
+      Error:
+      {msg}
+    </div>
   );
 }
 
@@ -83,7 +91,7 @@ class SearchForm extends React.Component {
       objectParams: [],
       transportMeans: [],
       mainObject: {
-        maxDistance: 1000, // meters or seconds
+        maxDistance: 1000, // meters or minutes
         params: [
           { key: 0, value: 0 },
         ],
@@ -120,24 +128,36 @@ class SearchForm extends React.Component {
   }
 
   onLocationCoordinatesChange = (coords) => {
-    const handleGeolocationChange = this.props.handleGeolocationChange;
+    const { handleGeolocationChange } = this.props;
     handleGeolocationChange(coords);
   }
 
   onLatitudeChange = (event) => {
+    if (!event.target.value) {
+      return;
+    }
     const { coords: { longitude } } = this.props;
     this.onLocationCoordinatesChange({ latitude: parseFloat(event.target.value), longitude: parseFloat(longitude) });
   }
 
   onLongitudeChange = (event) => {
+    if (!event.target.value) {
+      return;
+    }
     const { coords: { latitude } } = this.props;
     this.onLocationCoordinatesChange({ longitude: parseFloat(event.target.value), latitude: parseFloat(latitude) });
   }
 
   onMainDistanceChange = (event) => {
+    if (!event.target.value) {
+      return;
+    }
     const { mainObject } = this.state;
     const newMainObject = { ...mainObject, maxDistance: parseInt(event.target.value, 10) };
     this.setState({ mainObject: newMainObject });
+
+    const { handleMainObjectChange } = this.props;
+    handleMainObjectChange(newMainObject);
   }
 
   onRelativeDistanceChange = (event) => {
@@ -148,8 +168,12 @@ class SearchForm extends React.Component {
 
   onTimeReachChange = (event) => {
     const { mainObject } = this.state;
-    const newMainObject = { ...mainObject, timeReachOn: event.target.checked };
+    const distance = Math.min(mainObject.maxDistance, event.target.checked ? limits.time : limits.distance);
+    const newMainObject = { ...mainObject, timeReachOn: event.target.checked, maxDistance: distance };
     this.setState({ mainObject: newMainObject });
+
+    const { handleMainObjectChange } = this.props;
+    handleMainObjectChange(newMainObject);
   }
 
   onRelativeObjectApplicableChange = (event) => {
@@ -243,7 +267,7 @@ class SearchForm extends React.Component {
       const currObject = state[object];
       const newObject = {
         ...currObject,
-        params: currObject.params.concat({ key: 0, value: 0}),
+        params: currObject.params.concat({ key: 0, value: 0 }),
       };
       return {
         [object]: newObject,
@@ -267,20 +291,18 @@ class SearchForm extends React.Component {
     });
   }
 
-  handleParamsChange = (object, id) => {
-    return ({ key, value }) => {
-      this.setState((state) => {
-        const newParams = [...state[object].params];
-        newParams[id] = { key, value };
-        return {
-          ...state,
-          [object]: {
-            ...state[object],
-            params: newParams,
-          },
-        };
-      });
-    };
+  handleParamsChange = (object, id) => ({ key, value }) => {
+    this.setState((state) => {
+      const newParams = [...state[object].params];
+      newParams[id] = { key, value };
+      return {
+        ...state,
+        [object]: {
+          ...state[object],
+          params: newParams,
+        },
+      };
+    });
   };
 
   handleSubmit = async (event) => {
@@ -344,10 +366,10 @@ class SearchForm extends React.Component {
           <Form.Row className="align-items-center">
             <Form.Label as={Col} xs="auto">
               Distance
-              { (() => (timeReachOn ? ' [s]:' : ' [m]:'))() }
+              { (() => (timeReachOn ? ' [min]:' : ' [m]:'))() }
             </Form.Label>
             <Col xs="auto">
-              <Form.Control type="number" min="0" step="1" data-cy="main-distance-input" value={maxDistance} onChange={this.onMainDistanceChange} />
+              <Form.Control type="number" min="0" max={(() => (timeReachOn ? String(limits.time) : String(limits.distance)))()} step="1" data-cy="main-distance-input" value={maxDistance} onChange={this.onMainDistanceChange} />
             </Col>
             <Col xs="auto">
               <Form.Check type="checkbox" label="Time reach" data-cy="time-reach-checkbox" checked={timeReachOn} onChange={this.onTimeReachChange} />
