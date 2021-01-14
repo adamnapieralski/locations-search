@@ -63,3 +63,7 @@ body {
 .relative-params-buttons {
   padding-bottom: 1rem;
 }
+
+.form-check {
+  float: right;
+}
