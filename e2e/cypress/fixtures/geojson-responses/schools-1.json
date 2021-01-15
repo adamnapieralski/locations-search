@@ -1,530 +1,533 @@
 {
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {
-        "type": "node",
-        "id": 4393654389,
-        "tags": {
-          "amenity": "school",
-          "name": "Szkoła Językowa WONDERLAND",
-          "name:pl": "Szkoła Językowa WONDERLAND"
+  "geojson": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "type": "node",
+          "id": 4393654389,
+          "tags": {
+            "amenity": "school",
+            "name": "Szkoła Językowa WONDERLAND",
+            "name:pl": "Szkoła Językowa WONDERLAND"
+          }
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.449066,
+            51.7914256
+          ]
         }
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.449066,
-          51.7914256
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "type": "way",
-        "id": 124532736,
-        "tags": {
-          "addr:city": "Łódź",
-          "amenity": "school",
-          "building": "yes",
-          "source": "mapa.lodz.pl"
-        }
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
+      {
+        "type": "Feature",
+        "properties": {
+          "type": "way",
+          "id": 124532736,
+          "tags": {
+            "addr:city": "Łódź",
+            "amenity": "school",
+            "building": "yes",
+            "source": "mapa.lodz.pl"
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
             [
-              19.4536731,
-              51.7939601
-            ],
-            [
-              19.4536777,
-              51.7940729
-            ],
-            [
-              19.4533216,
-              51.7940778
-            ],
-            [
-              19.4533203,
-              51.7940362
-            ],
-            [
-              19.4533181,
-              51.7939655
-            ],
-            [
-              19.4535131,
-              51.7939626
-            ],
-            [
-              19.453509,
-              51.7938823
-            ],
-            [
-              19.4536366,
-              51.7938803
-            ],
-            [
-              19.453641,
-              51.7939608
-            ],
-            [
-              19.4536731,
-              51.7939601
+              [
+                19.4536731,
+                51.7939601
+              ],
+              [
+                19.4536777,
+                51.7940729
+              ],
+              [
+                19.4533216,
+                51.7940778
+              ],
+              [
+                19.4533203,
+                51.7940362
+              ],
+              [
+                19.4533181,
+                51.7939655
+              ],
+              [
+                19.4535131,
+                51.7939626
+              ],
+              [
+                19.453509,
+                51.7938823
+              ],
+              [
+                19.4536366,
+                51.7938803
+              ],
+              [
+                19.453641,
+                51.7939608
+              ],
+              [
+                19.4536731,
+                51.7939601
+              ]
             ]
           ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "type": "way",
-        "id": 124532756,
-        "tags": {
-          "addr:city": "Łódź",
-          "addr:housenumber": "10/12",
-          "addr:postcode": "91-457",
-          "addr:street": "Żabia",
-          "amenity": "school",
-          "building": "yes",
-          "building:levels": "4",
-          "source": "mapa.lodz.pl",
-          "source:addr": "EMUiA (emuia.geoportal.gov.pl)"
         }
       },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
+      {
+        "type": "Feature",
+        "properties": {
+          "type": "way",
+          "id": 124532756,
+          "tags": {
+            "addr:city": "Łódź",
+            "addr:housenumber": "10/12",
+            "addr:postcode": "91-457",
+            "addr:street": "Żabia",
+            "amenity": "school",
+            "building": "yes",
+            "building:levels": "4",
+            "source": "mapa.lodz.pl",
+            "source:addr": "EMUiA (emuia.geoportal.gov.pl)"
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
             [
-              19.4539893,
-              51.7938751
-            ],
-            [
-              19.4539891,
-              51.7938683
-            ],
-            [
-              19.4539887,
-              51.7938504
-            ],
-            [
-              19.4539781,
-              51.7938506
-            ],
-            [
-              19.453908,
-              51.7938517
-            ],
-            [
-              19.4539099,
-              51.7938851
-            ],
-            [
-              19.4538669,
-              51.7938861
-            ],
-            [
-              19.4538649,
-              51.7938523
-            ],
-            [
-              19.4536618,
-              51.7938551
-            ],
-            [
-              19.4536502,
-              51.7938552
-            ],
-            [
-              19.4536507,
-              51.7938735
-            ],
-            [
-              19.4536507,
-              51.7938801
-            ],
-            [
-              19.4536366,
-              51.7938803
-            ],
-            [
-              19.453509,
-              51.7938823
-            ],
-            [
-              19.4534952,
-              51.7938825
-            ],
-            [
-              19.4534934,
-              51.7938246
-            ],
-            [
-              19.4534908,
-              51.7937401
-            ],
-            [
-              19.453752,
-              51.7937365
-            ],
-            [
-              19.4537513,
-              51.7937191
-            ],
-            [
-              19.4538769,
-              51.7937172
-            ],
-            [
-              19.4538779,
-              51.7937347
-            ],
-            [
-              19.4541408,
-              51.7937309
-            ],
-            [
-              19.4541456,
-              51.7938731
-            ],
-            [
-              19.4541149,
-              51.7938735
-            ],
-            [
-              19.4540779,
-              51.793874
-            ],
-            [
-              19.4539893,
-              51.7938751
+              [
+                19.4539893,
+                51.7938751
+              ],
+              [
+                19.4539891,
+                51.7938683
+              ],
+              [
+                19.4539887,
+                51.7938504
+              ],
+              [
+                19.4539781,
+                51.7938506
+              ],
+              [
+                19.453908,
+                51.7938517
+              ],
+              [
+                19.4539099,
+                51.7938851
+              ],
+              [
+                19.4538669,
+                51.7938861
+              ],
+              [
+                19.4538649,
+                51.7938523
+              ],
+              [
+                19.4536618,
+                51.7938551
+              ],
+              [
+                19.4536502,
+                51.7938552
+              ],
+              [
+                19.4536507,
+                51.7938735
+              ],
+              [
+                19.4536507,
+                51.7938801
+              ],
+              [
+                19.4536366,
+                51.7938803
+              ],
+              [
+                19.453509,
+                51.7938823
+              ],
+              [
+                19.4534952,
+                51.7938825
+              ],
+              [
+                19.4534934,
+                51.7938246
+              ],
+              [
+                19.4534908,
+                51.7937401
+              ],
+              [
+                19.453752,
+                51.7937365
+              ],
+              [
+                19.4537513,
+                51.7937191
+              ],
+              [
+                19.4538769,
+                51.7937172
+              ],
+              [
+                19.4538779,
+                51.7937347
+              ],
+              [
+                19.4541408,
+                51.7937309
+              ],
+              [
+                19.4541456,
+                51.7938731
+              ],
+              [
+                19.4541149,
+                51.7938735
+              ],
+              [
+                19.4540779,
+                51.793874
+              ],
+              [
+                19.4539893,
+                51.7938751
+              ]
             ]
           ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "type": "way",
-        "id": 136552661,
-        "tags": {
-          "addr:housenumber": "14A",
-          "addr:street": "Ciesielska",
-          "amenity": "school",
-          "building": "school",
-          "name": "Szkoła Podstawowa nr 24 im. Hanki Sawickiej",
-          "source": "mapa.lodz.pl"
         }
       },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
+      {
+        "type": "Feature",
+        "properties": {
+          "type": "way",
+          "id": 136552661,
+          "tags": {
+            "addr:housenumber": "14A",
+            "addr:street": "Ciesielska",
+            "amenity": "school",
+            "building": "school",
+            "name": "Szkoła Podstawowa nr 24 im. Hanki Sawickiej",
+            "source": "mapa.lodz.pl"
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
             [
-              19.4461375,
-              51.7889177
-            ],
-            [
-              19.4461876,
-              51.7890819
-            ],
-            [
-              19.4462882,
-              51.7890701
-            ],
-            [
-              19.4462847,
-              51.7890584
-            ],
-            [
-              19.4464023,
-              51.7890447
-            ],
-            [
-              19.4464044,
-              51.7890514
-            ],
-            [
-              19.4466594,
-              51.7890167
-            ],
-            [
-              19.4466574,
-              51.7890102
-            ],
-            [
-              19.446773,
-              51.7889957
-            ],
-            [
-              19.4467768,
-              51.7890073
-            ],
-            [
-              19.4468777,
-              51.7889947
-            ],
-            [
-              19.4468238,
-              51.7888291
-            ],
-            [
-              19.4467236,
-              51.7888427
-            ],
-            [
-              19.4467263,
-              51.7888517
-            ],
-            [
-              19.4466788,
-              51.7888573
-            ],
-            [
-              19.4466775,
-              51.7888554
-            ],
-            [
-              19.4465147,
-              51.7888767
-            ],
-            [
-              19.4465107,
-              51.7888645
-            ],
-            [
-              19.4464775,
-              51.7888685
-            ],
-            [
-              19.4464455,
-              51.7888725
-            ],
-            [
-              19.4464491,
-              51.7888848
-            ],
-            [
-              19.4462865,
-              51.7889057
-            ],
-            [
-              19.4462854,
-              51.7889071
-            ],
-            [
-              19.4462384,
-              51.7889132
-            ],
-            [
-              19.4462352,
-              51.7889045
-            ],
-            [
-              19.4461375,
-              51.7889177
+              [
+                19.4461375,
+                51.7889177
+              ],
+              [
+                19.4461876,
+                51.7890819
+              ],
+              [
+                19.4462882,
+                51.7890701
+              ],
+              [
+                19.4462847,
+                51.7890584
+              ],
+              [
+                19.4464023,
+                51.7890447
+              ],
+              [
+                19.4464044,
+                51.7890514
+              ],
+              [
+                19.4466594,
+                51.7890167
+              ],
+              [
+                19.4466574,
+                51.7890102
+              ],
+              [
+                19.446773,
+                51.7889957
+              ],
+              [
+                19.4467768,
+                51.7890073
+              ],
+              [
+                19.4468777,
+                51.7889947
+              ],
+              [
+                19.4468238,
+                51.7888291
+              ],
+              [
+                19.4467236,
+                51.7888427
+              ],
+              [
+                19.4467263,
+                51.7888517
+              ],
+              [
+                19.4466788,
+                51.7888573
+              ],
+              [
+                19.4466775,
+                51.7888554
+              ],
+              [
+                19.4465147,
+                51.7888767
+              ],
+              [
+                19.4465107,
+                51.7888645
+              ],
+              [
+                19.4464775,
+                51.7888685
+              ],
+              [
+                19.4464455,
+                51.7888725
+              ],
+              [
+                19.4464491,
+                51.7888848
+              ],
+              [
+                19.4462865,
+                51.7889057
+              ],
+              [
+                19.4462854,
+                51.7889071
+              ],
+              [
+                19.4462384,
+                51.7889132
+              ],
+              [
+                19.4462352,
+                51.7889045
+              ],
+              [
+                19.4461375,
+                51.7889177
+              ]
             ]
           ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "type": "way",
-        "id": 313238880,
-        "tags": {
-          "addr:city": "Łódź",
-          "amenity": "school",
-          "building": "yes",
-          "source": "mapa.lodz.pl"
         }
       },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
+      {
+        "type": "Feature",
+        "properties": {
+          "type": "way",
+          "id": 313238880,
+          "tags": {
+            "addr:city": "Łódź",
+            "amenity": "school",
+            "building": "yes",
+            "source": "mapa.lodz.pl"
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
             [
-              19.4536507,
-              51.7938735
-            ],
-            [
-              19.4536621,
-              51.7938732
-            ],
-            [
-              19.4536618,
-              51.7938551
-            ],
-            [
-              19.4536502,
-              51.7938552
-            ],
-            [
-              19.4536507,
-              51.7938735
+              [
+                19.4536507,
+                51.7938735
+              ],
+              [
+                19.4536621,
+                51.7938732
+              ],
+              [
+                19.4536618,
+                51.7938551
+              ],
+              [
+                19.4536502,
+                51.7938552
+              ],
+              [
+                19.4536507,
+                51.7938735
+              ]
             ]
           ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "type": "way",
-        "id": 673873351,
-        "tags": {
-          "amenity": "school",
-          "name": "Szkoła Podstawowa nr 24 im. Hanki Sawickiej"
         }
       },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
+      {
+        "type": "Feature",
+        "properties": {
+          "type": "way",
+          "id": 673873351,
+          "tags": {
+            "amenity": "school",
+            "name": "Szkoła Podstawowa nr 24 im. Hanki Sawickiej"
+          }
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
             [
-              19.4461601,
-              51.7895661
-            ],
-            [
-              19.4472207,
-              51.7894496
-            ],
-            [
-              19.4470022,
-              51.7887727
-            ],
-            [
-              19.4468807,
-              51.7887887
-            ],
-            [
-              19.4468073,
-              51.7885575
-            ],
-            [
-              19.4458762,
-              51.7886855
-            ],
-            [
-              19.4461601,
-              51.7895661
+              [
+                19.4461601,
+                51.7895661
+              ],
+              [
+                19.4472207,
+                51.7894496
+              ],
+              [
+                19.4470022,
+                51.7887727
+              ],
+              [
+                19.4468807,
+                51.7887887
+              ],
+              [
+                19.4468073,
+                51.7885575
+              ],
+              [
+                19.4458762,
+                51.7886855
+              ],
+              [
+                19.4461601,
+                51.7895661
+              ]
             ]
           ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "type": "node",
-        "id": 124532736,
-        "tags": {
-          "addr:city": "Łódź",
-          "amenity": "school",
-          "building": "yes",
-          "source": "mapa.lodz.pl"
         }
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.45352836,
-          51.79397586
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "type": "node",
-        "id": 124532756,
-        "tags": {
-          "addr:city": "Łódź",
-          "addr:housenumber": "10/12",
-          "addr:postcode": "91-457",
-          "addr:street": "Żabia",
-          "amenity": "school",
-          "building": "yes",
-          "building:levels": "4",
-          "source": "mapa.lodz.pl",
-          "source:addr": "EMUiA (emuia.geoportal.gov.pl)"
+      {
+        "type": "Feature",
+        "properties": {
+          "type": "node",
+          "id": 124532736,
+          "tags": {
+            "addr:city": "Łódź",
+            "amenity": "school",
+            "building": "yes",
+            "source": "mapa.lodz.pl"
+          }
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.45352836,
+            51.79397586
+          ]
         }
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.453825380769235,
-          51.79383566923075
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "type": "node",
-        "id": 136552661,
-        "tags": {
-          "addr:housenumber": "14A",
-          "addr:street": "Ciesielska",
-          "amenity": "school",
-          "building": "school",
-          "name": "Szkoła Podstawowa nr 24 im. Hanki Sawickiej",
-          "source": "mapa.lodz.pl"
+      {
+        "type": "Feature",
+        "properties": {
+          "type": "node",
+          "id": 124532756,
+          "tags": {
+            "addr:city": "Łódź",
+            "addr:housenumber": "10/12",
+            "addr:postcode": "91-457",
+            "addr:street": "Żabia",
+            "amenity": "school",
+            "building": "yes",
+            "building:levels": "4",
+            "source": "mapa.lodz.pl",
+            "source:addr": "EMUiA (emuia.geoportal.gov.pl)"
+          }
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.453825380769235,
+            51.79383566923075
+          ]
         }
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.446486903846157,
-          51.78893846923077
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "type": "node",
-        "id": 313238880,
-        "tags": {
-          "addr:city": "Łódź",
-          "amenity": "school",
-          "building": "yes",
-          "source": "mapa.lodz.pl"
+      {
+        "type": "Feature",
+        "properties": {
+          "type": "node",
+          "id": 136552661,
+          "tags": {
+            "addr:housenumber": "14A",
+            "addr:street": "Ciesielska",
+            "amenity": "school",
+            "building": "school",
+            "name": "Szkoła Podstawowa nr 24 im. Hanki Sawickiej",
+            "source": "mapa.lodz.pl"
+          }
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.446486903846157,
+            51.78893846923077
+          ]
         }
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.4536551,
-          51.7938661
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "type": "node",
-        "id": 673873351,
-        "tags": {
-          "amenity": "school",
-          "name": "Szkoła Podstawowa nr 24 im. Hanki Sawickiej"
+      {
+        "type": "Feature",
+        "properties": {
+          "type": "node",
+          "id": 313238880,
+          "tags": {
+            "addr:city": "Łódź",
+            "amenity": "school",
+            "building": "yes",
+            "source": "mapa.lodz.pl"
+          }
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.4536551,
+            51.7938661
+          ]
         }
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.446586757142857,
-          51.78905517142857
-        ]
+      {
+        "type": "Feature",
+        "properties": {
+          "type": "node",
+          "id": 673873351,
+          "tags": {
+            "amenity": "school",
+            "name": "Szkoła Podstawowa nr 24 im. Hanki Sawickiej"
+          }
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.446586757142857,
+            51.78905517142857
+          ]
+        }
       }
-    }
-  ]
+    ]
+  },
+  "polygon": null
 }

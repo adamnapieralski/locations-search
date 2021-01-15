@@ -20,6 +20,11 @@ const limits = {
   distance: 200000, // [m]
 };
 
+const initialDistance = {
+  time: 15,
+  distance: 1000,
+};
+
 const getObjectParams = async () => {
   try {
     const response = await fetch(`${baseURL}/object-params`);
@@ -168,8 +173,8 @@ class SearchForm extends React.Component {
 
   onTimeReachChange = (event) => {
     const { mainObject } = this.state;
-    const distance = Math.min(mainObject.maxDistance, event.target.checked ? limits.time : limits.distance);
-    const newMainObject = { ...mainObject, timeReachOn: event.target.checked, maxDistance: distance };
+    const maxDistance = event.target.checked ? initialDistance.time : initialDistance.distance;
+    const newMainObject = { ...mainObject, timeReachOn: event.target.checked, maxDistance };
     this.setState({ mainObject: newMainObject });
 
     const { handleMainObjectChange } = this.props;
