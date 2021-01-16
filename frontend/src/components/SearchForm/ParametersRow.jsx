@@ -1,7 +1,9 @@
 import React from 'react';
 import { Form, Col } from 'react-bootstrap';
 
-function ParametersRow({ rowId, object, objectParams, params, handleParamsChange }) {
+function ParametersRow({
+  rowId, object, objectParams, params, handleParamsChange,
+}) {
   const keyName = objectParams.find((keyObj) => keyObj.id === params.key)?.name;
   const valueName = objectParams
     .find((keyObj) => keyObj.id === params.key)?.values
@@ -32,7 +34,7 @@ function ParametersRow({ rowId, object, objectParams, params, handleParamsChange
           <Form.Label>Key</Form.Label>
         </Col>
         <Col>
-          <Form.Control as="select" name="key" data-cy={`parameter-key-${object}-${rowId}`} defaultValue={keyName} onChange={onParamsChange}>
+          <Form.Control as="select" name="key" data-cy={`parameter-key-${object}-${rowId}`} defaultValue={keyName} onChange={onParamsChange} className="key-select">
             {createKeyOptions()}
           </Form.Control>
         </Col>
@@ -40,7 +42,7 @@ function ParametersRow({ rowId, object, objectParams, params, handleParamsChange
           <Form.Label>Value</Form.Label>
         </Col>
         <Col>
-          <Form.Control as="select" name="value" data-cy={`parameter-value-${object}-${rowId}`} defaultValue={valueName} onChange={onParamsChange}>
+          <Form.Control as="select" name="value" data-cy={`parameter-value-${object}-${rowId}`} defaultValue={valueName} onChange={onParamsChange} className="value-select">
             {createValueOptions()}
           </Form.Control>
         </Col>

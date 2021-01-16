@@ -23,6 +23,25 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.geolocation-icon {
+  margin-top: 0.3rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  cursor: pointer;
+}
+
+.coords-input {
+  min-width: 5rem;
+}
+
+.key-select {
+  min-width: 5rem;
+}
+
+.value-select {
+  min-width: 5rem;
+}
+
 .searchForm {
   display: inline-block;
   flex: 1;

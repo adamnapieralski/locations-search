@@ -7,6 +7,7 @@ import {
 } from 'react-bootstrap';
 import ParametersRow from './ParametersRow';
 import ErrorBoundary from '../ErrorBoundary/index';
+import geolocationIcon from '../../public/img/geolocation.png';
 
 const baseURL = process.env.ENDPOINT;
 
@@ -120,6 +121,10 @@ class SearchForm extends React.Component {
     const transportMeans = await getTransportMeans();
     this.setState({ objectParams, transportMeans });
 
+    this.setCoordsToGeolocation();
+  }
+
+  setCoordsToGeolocation = () => {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
         this.onLocationCoordinatesChange({
@@ -348,10 +353,13 @@ class SearchForm extends React.Component {
           <Form.Label>Location coordinates</Form.Label>
           <Row>
             <Col>
-              <Form.Control type="number" value={latitude} onChange={this.onLatitudeChange} step={coordsSettings.step} data-cy="latitude" placeholder="Latitude" />
+              <Form.Control type="number" value={latitude} onChange={this.onLatitudeChange} step={coordsSettings.step} data-cy="latitude" placeholder="Latitude" className="coords-input" />
             </Col>
             <Col>
-              <Form.Control type="number" value={longitude} onChange={this.onLongitudeChange} step={coordsSettings.step} data-cy="longitude" placeholder="Longitude" />
+              <Form.Control type="number" value={longitude} onChange={this.onLongitudeChange} step={coordsSettings.step} data-cy="longitude" placeholder="Longitude" className="coords-input" />
+            </Col>
+            <Col xs={1}>
+              <img src={geolocationIcon} alt="Use user's geolocation" className="geolocation-icon" onClick={this.setCoordsToGeolocation} />
             </Col>
           </Row>
         </Form.Group>
