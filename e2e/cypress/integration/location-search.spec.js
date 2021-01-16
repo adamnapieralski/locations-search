@@ -37,9 +37,7 @@ context('Location search', () => {
         .select('school')
 
       // distance
-      cy.get('[data-cy=main-distance-input]')
-        .clear()
-        .type(500)
+      cy.get('[data-cy=main-distance-input]').typeDistance(500)
       
       cy.intercept('POST', '**/api/location-search').as('locationSearch')
 
@@ -73,9 +71,7 @@ context('Location search', () => {
       cy.get('[data-cy=transport-mean').select('driving-car')
 
       // distance
-      cy.get('[data-cy=main-distance-input]')
-        .clear()
-        .type(600)
+      cy.get('[data-cy=main-distance-input]').typeDistance(8)
       
       cy.intercept('POST', '**/api/location-search').as('locationSearch')
 
@@ -113,9 +109,7 @@ context('Location search', () => {
         .select('post_office')
 
       // distance
-      cy.get('[data-cy=main-distance-input]')
-        .clear()
-        .type(1234)
+      cy.get('[data-cy=main-distance-input]').typeDistance(1234)
 
       cy.intercept('POST', '**/api/location-search').as('locationSearch')
 
@@ -149,9 +143,7 @@ context('Location search', () => {
       cy.get('[data-cy=time-reach-checkbox]').check()
       cy.get('[data-cy=transport-mean').select('foot-walking')
 
-      cy.get('[data-cy=main-distance-input]')
-        .clear()
-        .type(60 * 30)
+      cy.get('[data-cy=main-distance-input]').typeDistance(30)
 
       cy.intercept('POST', '**/api/location-search').as('locationSearch')
 
@@ -180,9 +172,7 @@ context('Location search', () => {
       cy.get('[data-cy=parameter-value-mainObject-0]')
         .select('restaurant')
 
-      cy.get('[data-cy=main-distance-input]')
-        .clear()
-        .type(20000)
+      cy.get('[data-cy=main-distance-input]').typeDistance(20000)
 
       // apply relative object
       cy.get('[data-cy=relative-object-checkbox]').check()
@@ -194,9 +184,7 @@ context('Location search', () => {
       cy.get('[data-cy=parameter-value-relativeObject-0]')
         .select('park')
 
-      cy.get('[data-cy=relative-distance-input]')
-      .clear()
-      .type(100)
+      cy.get('[data-cy=relative-distance-input]').typeDistance(100)
       
       cy.intercept('POST', '**/api/location-search').as('locationSearch')
 
@@ -227,12 +215,10 @@ context('Location search', () => {
 
       // time reach on
       cy.get('[data-cy=time-reach-checkbox]').check()
-      cy.get('[data-cy=transport-mean').select('foot-walking')
+      cy.get('[data-cy=transport-mean').select('cycling-regular')
 
       // main object distance
-      cy.get('[data-cy=main-distance-input]')
-        .clear()
-        .type(60 * 60 * 3)
+      cy.get('[data-cy=main-distance-input]').typeDistance(30)
 
       // apply relative object
       cy.get('[data-cy=relative-object-checkbox]').check()
@@ -242,11 +228,9 @@ context('Location search', () => {
         .select('amenity')
 
       cy.get('[data-cy=parameter-value-relativeObject-0]')
-        .select('fuel')
+        .select('cafe')
 
-      cy.get('[data-cy=relative-distance-input]')
-      .clear()
-      .type(1000)
+      cy.get('[data-cy=relative-distance-input]').typeDistance(500)
       
       cy.intercept('POST', '**/api/location-search').as('locationSearch')
 

@@ -28,7 +28,21 @@ Cypress.Commands.add("checkPointMarkersCount", {
   prevSubject: true
 }, (subject) => {
   if (subject) {
-    const pointsNum = subject?.features.filter((feat) => feat.geometry.type === 'Point')?.length
+    const pointsNum = subject?.geojson?.features.filter((feat) => feat.geometry.type === 'Point')?.length
     cy.get('.leaflet-marker-icon').should('have.length', pointsNum + 1) // + current location marker
+  }
+})
+
+Cypress.Commands.add("typeDistance", {
+  prevSubject: true
+}, (subject, val) => {
+  if (subject) {
+    let typeval = '{leftarrow}'.repeat(10)
+    for (const c of val.toString()) {
+      typeval += `{del}${c}`
+    }
+    typeval += '{del}'.repeat(10)
+
+    cy.wrap(subject).type(typeval, { force: true })
   }
 })
