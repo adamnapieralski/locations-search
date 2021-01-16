@@ -17,7 +17,11 @@ const coordsSettings = {
 };
 
 const limits = {
-  time: 60, // [min]
+  time: {
+    walking: 1200,
+    cycling: 300,
+    driving: 60,
+  }, // [min]
   distance: 200000, // [m]
 };
 
@@ -232,7 +236,11 @@ class SearchForm extends React.Component {
 
   onTransportMeanChange = (event) => {
     const { mainObject } = this.state;
-    const newMainObject = { ...mainObject, transportMean: event.target.selectedIndex };
+    const newMainObject = {
+      ...mainObject,
+      maxDistance: initialDistance.time,
+      transportMean: event.target.selectedIndex,
+    };
     this.setState({ mainObject: newMainObject });
   }
 
@@ -341,11 +349,23 @@ class SearchForm extends React.Component {
   render() {
     const { coords: { latitude, longitude } } = this.props;
     const {
-      mainObject: { maxDistance, timeReachOn },
+      mainObject: { maxDistance, timeReachOn, transportMean },
       relativeObject: { applicable },
       errorMsg,
       waitingForResponse,
+      transportMeans,
     } = this.state;
+
+    let distanceLimit = '60';
+
+    if (timeReachOn) {
+      if (transportMeans.length !== 0) {
+        distanceLimit = Object.entries(limits.time)
+          .find((entry) => transportMeans[transportMean].name.includes(entry[0]))[1].toString();
+      }
+    } else {
+      distanceLimit = limits.distance.toString();
+    }
 
     return (
       <Form onSubmit={this.handleSubmit}>
@@ -382,7 +402,7 @@ class SearchForm extends React.Component {
               { (() => (timeReachOn ? ' [min]:' : ' [m]:'))() }
             </Form.Label>
             <Col xs="auto">
-              <Form.Control type="number" min="0" max={(() => (timeReachOn ? String(limits.time) : String(limits.distance)))()} step="1" data-cy="main-distance-input" value={maxDistance} onChange={this.onMainDistanceChange} />
+              <Form.Control type="number" min="0" max={distanceLimit} step="1" data-cy="main-distance-input" value={maxDistance} onChange={this.onMainDistanceChange} />
             </Col>
             <Col xs="auto">
               <Form.Check type="checkbox" label="Time reach" data-cy="time-reach-checkbox" checked={timeReachOn} onChange={this.onTimeReachChange} />
