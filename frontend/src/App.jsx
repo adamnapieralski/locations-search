@@ -36,10 +36,6 @@ class App extends React.Component {
 
   handleGeolocationChange = (coords) => {
     this.setState({ coords });
-
-    // this.setState({ coords: { ...coords } },
-      
-    //   );
   }
 
   handleMainObjectChange = (newMainObject) => {
@@ -70,6 +66,7 @@ class App extends React.Component {
           geojson={geojson}
           mainObject={mainObject}
           searchPolygon={searchPolygon}
+          handleCoordsChange={this.handleGeolocationChange}
         />
       </div>
     );

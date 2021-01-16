@@ -3,7 +3,7 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet/dist/leaflet';
 import {
-  MapContainer, TileLayer, GeoJSON, Marker, Circle, Popup, Polygon, useMap,
+  MapContainer, TileLayer, GeoJSON, Marker, Circle, Popup, Polygon, useMap, useMapEvents,
 } from 'react-leaflet';
 
 import icon from 'leaflet/dist/images/marker-icon.png';
@@ -29,9 +29,22 @@ const currentPositionIcon = L.icon({
   popupAnchor: [0, -41],
 });
 
-function ChangeView({ center }) {
+function ViewChanger({ center }) {
   const map = useMap();
   map.setView(center);
+
+  return null;
+}
+
+function CoordsChanger(props) {
+  useMapEvents({
+    click(e) {
+      props.handleCoordsChange({
+        latitude: e.latlng.lat,
+        longitude: e.latlng.lng,
+      });
+    },
+  });
   return null;
 }
 
@@ -45,9 +58,7 @@ function showPopup(feature, layer) {
 
 function transformSearchPolygon(polygon) {
   polygon.forEach((p) => {
-    const tmp = p[0];
-    p[0] = p[1];
-    p[1] = tmp;
+    [p[0], p[1]] = [p[1], p[0]];
   });
 }
 
@@ -61,7 +72,6 @@ class Map extends React.Component {
   }
 
   handleShowDistanceChange = (event) => {
-    // const { showSearchDistance } = this.state;
     this.setState({ showSearchDistance: event.target.checked });
   }
 
@@ -70,7 +80,7 @@ class Map extends React.Component {
   }
 
   render() {
-    const { coords: { latitude, longitude } } = this.props;
+    const { coords: { latitude, longitude }, handleCoordsChange } = this.props;
     const { geojson } = this.props;
     const { showSearchDistance } = this.state;
     const { mainObject } = this.props;
@@ -83,7 +93,8 @@ class Map extends React.Component {
     return (
       <div className="mapBlock">
         <MapContainer className="map" center={[latitude, longitude]} zoom={13} scrollWheelZoom="true">
-          <ChangeView center={[latitude, longitude]} />
+          <ViewChanger center={[latitude, longitude]} />
+          <CoordsChanger handleCoordsChange={handleCoordsChange} />
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
