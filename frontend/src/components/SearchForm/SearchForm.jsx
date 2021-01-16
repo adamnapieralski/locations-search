@@ -30,6 +30,8 @@ const initialDistance = {
   distance: 1000,
 };
 
+const requestTimeout = 120000; // [ms]
+
 const getObjectParams = async () => {
   try {
     const response = await fetch(`${baseURL}/object-params`);
@@ -52,14 +54,24 @@ const getTransportMeans = async () => {
 
 const postLocationSearch = async (data) => {
   try {
+    const controller = new AbortController()
+    setTimeout(() => controller.abort(), requestTimeout)
     const body = JSON.stringify(data);
     const response = await fetch(`${baseURL}/location-search`, {
       method: 'POST',
       body,
+      signal: controller.signal,
     });
+    if(response.status == 500 || response.status == 404){
+      return { error: response.statusText };
+    }
     return response.json();
   } catch (error) {
-    return { error };
+    if(error.name === "AbortError"){
+      const timeoutSeconds = requestTimeout / 1000;
+      return { error: `Request timed out after ${timeoutSeconds} seconds.`}
+    }
+    return { error: error.message };
   }
 };
 
@@ -75,8 +87,7 @@ function ErrorBanner(props) {
   if (!msg) { return null; }
   return (
     <div className="error-banner">
-      Error:
-      {msg}
+      Error: {msg}
     </div>
   );
 }
@@ -89,6 +100,18 @@ function Spinner(props) {
   return (
     <div className="spinner-border" role="status">
       <span className="sr-only">Loading...</span>
+    </div>
+  );
+}
+
+function ResponseStatisticsBanner(props){
+  const { time, objectsNumber } = props;
+  if(time === null || objectsNumber === null) {
+    return null;
+  }
+  return (
+    <div className="stats-baner" role="status">
+      <span className="stats-text">Found {objectsNumber} objects in {time} seconds.</span>
     </div>
   );
 }
@@ -117,6 +140,10 @@ class SearchForm extends React.Component {
       },
       errorMsg: '',
       waitingForResponse: false,
+      reponseStats: {
+        time: null,
+        objectsNumber: null
+      }
     };
   }
 
@@ -202,6 +229,10 @@ class SearchForm extends React.Component {
 
   onErrorMsgChange = (msg) => {
     this.setState({ errorMsg: msg });
+  }
+
+  onResponseStatsChange = (time, objectsNumber) => {
+    this.setState({ reponseStats: {time, objectsNumber} });
   }
 
   createRelativeObjectForm = () => {
@@ -329,18 +360,25 @@ class SearchForm extends React.Component {
     const { handleGeojsonChange, coords } = this.props;
     this.onErrorMsgChange(null);
     this.onWaitingForResponseChange(true);
-    const response = await postLocationSearch({
-      mainObject,
-      relativeObject,
-      coords,
-    });
+    this.onResponseStatsChange(null, null);
+    handleGeojsonChange(emptyGeoJSON());
+
+    try {
+      var response = await postLocationSearch({
+        mainObject,
+        relativeObject,
+        coords,
+      });
+    } catch (exception) {
+      var response = { error: exception.message };
+    }
 
     if (response.error) {
       this.onErrorMsgChange(response.error);
       this.onWaitingForResponseChange(false);
-      handleGeojsonChange(emptyGeoJSON());
     } else {
       this.onErrorMsgChange(null);
+      this.onResponseStatsChange(response.time, response.objectsNumber);
       this.onWaitingForResponseChange(false);
       handleGeojsonChange(response);
     }
@@ -354,6 +392,7 @@ class SearchForm extends React.Component {
       errorMsg,
       waitingForResponse,
       transportMeans,
+      reponseStats,
     } = this.state;
 
     let distanceLimit = '60';
@@ -424,6 +463,7 @@ class SearchForm extends React.Component {
             <Spinner active={waitingForResponse} />
           </Col>
         </Row>
+        <ResponseStatisticsBanner time={reponseStats.time} objectsNumber={reponseStats.objectsNumber} />
         <ErrorBanner msg={errorMsg} />
       </Form>
     );
