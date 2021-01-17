@@ -1,6 +1,7 @@
 import json
 import copy
 import logging
+import time
 
 from openrouteservice import client
 from itertools import groupby
@@ -25,10 +26,12 @@ def process_request(payload):
 
     query = ""
 
+    request_begin = time.time()
+
     # search considering time reach distance
     if main_object['timeReachOn']:
-        time = main_object['maxDistance'] * 60
-        poly_coords = get_opr_isochrone_poly_coords(coords, time, main_object['transportMean'])
+        time_distance = main_object['maxDistance'] * 60
+        poly_coords = get_opr_isochrone_poly_coords(coords, time_distance, main_object['transportMean'])
 
     # search considering also relative object
     if relative_object['applicable']:
@@ -39,16 +42,26 @@ def process_request(payload):
         query = get_ovp_main_object_search_query(main_object, coords, poly_coords)
 
     query += "(._;>;);out body;"
-    logger.info(query)
+    # logger.info(query)
 
     try:
-        data = process_overpass_data(o2g.xml2geojson(o2g.overpass_call(query), filter_used_refs=True, log_level='INFO'))
+        data = o2g.xml2geojson(o2g.overpass_call(query), filter_used_refs=True, log_level='INFO')
+
+        objects_number = len(data['features'])
+
+        data = process_overpass_data(data)
+
+        response_time = round(time.time() - request_begin, 2)
+        logger.info('request time: ' + str(response_time) + 's; elements number: ' + str(objects_number))
+
         return {
             'geojson': data,
-            'polygon': poly_coords
+            'polygon': poly_coords,
+            'time': response_time,
+            'objectsNumber': objects_number
         }
     except Exception as e:
-        msg = 'Error processing request. Try again.'
+        msg = 'Error processing request. Try again. Error: ' + str(e)
         logger.error(msg)
 
     return { 'error': msg }
@@ -90,7 +103,7 @@ def make_params_query_part(params):
             key=opms.get_key_name(int(k)),
             values=list(opms.get_value_name(int(k), int(v['value'])) for v in viter))
         )
-    
+
     for g in params_grouped:
         key = g['key']
         if len(g['values']) > 1:
@@ -158,7 +171,7 @@ def process_overpass_data(data):
                     continue
 
                 coords = feature['geometry']['coordinates']
-                
+
                 if prop_type == 'way':
                     if geom_type == 'LineString':
                         append_new_feature(item[1], feature, center_coordinates(coords, depth=0))

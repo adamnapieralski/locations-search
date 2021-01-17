@@ -32,9 +32,7 @@ context('Object parameters', () => {
       cy.intercept('POST', '**/api/location-search').as('locationSearch')
 
       // distance
-      cy.get('[data-cy=main-distance-input]')
-        .clear()
-        .type(200)
+      cy.get('[data-cy=main-distance-input]').focus().type("{selectall}").type(200)
 
       for (let key of parameters) {
         cy.get('[data-cy=parameter-key-mainObject-0]')
@@ -42,8 +40,8 @@ context('Object parameters', () => {
 
         for (let value of key.values) {
           cy.get('[data-cy=parameter-value-mainObject-0]')
-            .select(value.name)   
-          
+            .select(value.name)
+
           cy.get('[data-cy=submit]')
             .click()
             .wait('@locationSearch').then((interception) => {

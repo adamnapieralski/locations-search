@@ -46,3 +46,10 @@ Cypress.Commands.add("typeDistance", {
     cy.wrap(subject).type(typeval, { force: true })
   }
 })
+
+Cypress.Commands.add("compareResponse", {
+  prevSubject: true
+}, (subject, response) => {
+  expect(subject.geojson).to.deep.equal(response.geojson)
+  expect(subject.polygon).to.deep.equal(response.polygon)
+})

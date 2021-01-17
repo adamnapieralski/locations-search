@@ -38,13 +38,13 @@ context('Location search', () => {
 
       // distance
       cy.get('[data-cy=main-distance-input]').typeDistance(500)
-      
+
       cy.intercept('POST', '**/api/location-search').as('locationSearch')
 
       cy.get('[data-cy=submit]')
         .click()
         .wait('@locationSearch').then((interception) => {
-          cy.get('@geoResponse').should('deep.equal', interception.response.body)
+          cy.get('@geoResponse').compareResponse(interception.response.body)
         })
         .get('@geoResponse').checkPointMarkersCount()
     })
@@ -72,18 +72,18 @@ context('Location search', () => {
 
       // distance
       cy.get('[data-cy=main-distance-input]').typeDistance(8)
-      
+
       cy.intercept('POST', '**/api/location-search').as('locationSearch')
 
       cy.get('[data-cy=submit]')
         .click()
         .wait('@locationSearch').then((interception) => {
-          cy.get('@geoResponse').should('deep.equal', interception.response.body)
+          cy.get('@geoResponse').compareResponse(interception.response.body)
         })
         .get('@geoResponse').checkPointMarkersCount()
     })
   })
-  
+
   describe('Main object only, multiple parameters', () => {
     afterEach(() => {
       // wait to see results on map
@@ -116,7 +116,7 @@ context('Location search', () => {
       cy.get('[data-cy=submit]')
         .click()
         .wait('@locationSearch').then((interception) => {
-          cy.get('@geoResponse').should('deep.equal', interception.response.body)
+          cy.get('@geoResponse').compareResponse(interception.response.body)
         })
         .get('@geoResponse').checkPointMarkersCount()
     })
@@ -150,7 +150,7 @@ context('Location search', () => {
       cy.get('[data-cy=submit]')
         .click()
         .wait('@locationSearch').then((interception) => {
-          cy.get('@geoResponse').should('deep.equal', interception.response.body)
+          cy.get('@geoResponse').compareResponse(interception.response.body)
         })
         .get('@geoResponse').checkPointMarkersCount()
     })
@@ -185,13 +185,13 @@ context('Location search', () => {
         .select('park')
 
       cy.get('[data-cy=relative-distance-input]').typeDistance(100)
-      
+
       cy.intercept('POST', '**/api/location-search').as('locationSearch')
 
       cy.get('[data-cy=submit]')
         .click()
         .wait('@locationSearch', { timeout: 40000 }).then((interception) => {
-          cy.get('@geoResponse').should('deep.equal', interception.response.body)
+          cy.get('@geoResponse').compareResponse(interception.response.body)
         })
         .get('@geoResponse').checkPointMarkersCount()
     })
@@ -202,7 +202,7 @@ context('Location search', () => {
       // wait to see results on map
       cy.wait(2000)
     })
-    
+
     it('Restaurants near parks', () => {
       cy.fixture('geojson-responses/swimming-pools-1.json').as('geoResponse')
 
@@ -231,13 +231,13 @@ context('Location search', () => {
         .select('cafe')
 
       cy.get('[data-cy=relative-distance-input]').typeDistance(500)
-      
+
       cy.intercept('POST', '**/api/location-search').as('locationSearch')
 
       cy.get('[data-cy=submit]')
         .click()
         .wait('@locationSearch', { timeout: 40000 }).then((interception) => {
-          cy.get('@geoResponse').should('deep.equal', interception.response.body)
+          cy.get('@geoResponse').compareResponse(interception.response.body)
         })
         .get('@geoResponse').checkPointMarkersCount()
     })
