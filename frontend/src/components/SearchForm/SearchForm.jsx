@@ -62,7 +62,7 @@ const postLocationSearch = async (data) => {
       body,
       signal: controller.signal,
     });
-    if(response.status == 500 || response.status == 404){
+    if(response.status >= 400){
       return { error: response.statusText };
     }
     return response.json();
@@ -363,14 +363,16 @@ class SearchForm extends React.Component {
     this.onResponseStatsChange(null, null);
     handleGeojsonChange(emptyGeoJSON());
 
+    let response;
+
     try {
-      var response = await postLocationSearch({
+      response = await postLocationSearch({
         mainObject,
         relativeObject,
         coords,
       });
     } catch (exception) {
-      var response = { error: exception.message };
+      response = { error: exception.message };
     }
 
     if (response.error) {

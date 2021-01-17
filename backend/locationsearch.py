@@ -45,10 +45,13 @@ def process_request(payload):
     # logger.info(query)
 
     try:
-        data = process_overpass_data(o2g.xml2geojson(o2g.overpass_call(query), filter_used_refs=True, log_level='INFO'))
-        response_time = round(time.time() - request_begin, 2)
+        data = o2g.xml2geojson(o2g.overpass_call(query), filter_used_refs=True, log_level='INFO')
+
         objects_number = len(data['features'])
 
+        data = process_overpass_data(data)
+
+        response_time = round(time.time() - request_begin, 2)
         logger.info('request time: ' + str(response_time) + 's; elements number: ' + str(objects_number))
 
         return {
@@ -100,7 +103,7 @@ def make_params_query_part(params):
             key=opms.get_key_name(int(k)),
             values=list(opms.get_value_name(int(k), int(v['value'])) for v in viter))
         )
-    
+
     for g in params_grouped:
         key = g['key']
         if len(g['values']) > 1:
@@ -168,7 +171,7 @@ def process_overpass_data(data):
                     continue
 
                 coords = feature['geometry']['coordinates']
-                
+
                 if prop_type == 'way':
                     if geom_type == 'LineString':
                         append_new_feature(item[1], feature, center_coordinates(coords, depth=0))
