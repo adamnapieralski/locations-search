@@ -1,7 +1,7 @@
 <img align="left" src="https://github.com/adamnapieralski/locations-search/blob/main/frontend/src/public/favicon.ico" title="locations-search" alt="locations-search" width="50" height="50">
 
 # locations-search
-Application for searching locations with user defined properties. (Spatial Databases course project)
+Application for searching locations with user defined criteria. (Spatial Databases course project)
 
 #### Built with
 - Django
