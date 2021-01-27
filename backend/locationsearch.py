@@ -11,7 +11,7 @@ import osm2geojson as o2g
 
 logger = logging.getLogger('locationsearch')
 
-opr_api_key = '5b3ce3597851110001cf62480279a95227aa4e5f9ccf7cfa946e69f3'
+opr_api_key = '' # put here your openrouteservice api key
 
 opr_client = client.Client(key=opr_api_key)
 
