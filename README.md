@@ -1,8 +1,21 @@
-# spdb-location-search
-Application for searching a location with user defined properties. (Spatial Databases course project)
+<img align="left" src="https://github.com/adamnapieralski/locations-search/blob/main/frontend/src/public/favicon.ico" title="locations-search" alt="locations-search" width="50" height="50">
 
+# locations-search
+Application for searching locations with user defined properties. (Spatial Databases course project)
+
+#### Built with
+- Django
+- React
+- Webpack & Babel
+- Docker & docker-compose
+
+## Installation
+Clone this repo to the desired location:
+```
+git clone https://github.com/adamnapieralski/locations-search.git
+```
 ## Development
-Set up backend and frontent with
+App has been prepared for easy development with docker-compose. You can set up backend and frontend with
 ```
 docker-compose up
 ```
@@ -26,3 +39,7 @@ or to run them headlessly in the console
 npm run cy:run:headless
 ```
 With 'run' commands, videos and screenshots from tests executions will be save locally for further analysis.
+
+## Authors
+- **Łukasz Kostrzewa** - [kost13](https://github.com/kost13)
+- **Adam Napieralski** - [adamnapieralski](https://github.com/adamnapieralski)
